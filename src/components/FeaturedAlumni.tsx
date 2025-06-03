@@ -24,12 +24,12 @@ const AlumniItem: React.FC<AlumniItemProps> = ({
 }) => {
   const content = (
     <div className="flex flex-col items-center text-center group cursor-pointer">
-      {/* Logo Container */}
-      <div className="w-32 h-32 mobile:w-36 mobile:h-36 flex items-center justify-center mb-4 bg-white rounded-lg shadow-sm group-hover:shadow-md transition-shadow duration-200">
+      {/* Logo Container - removed white background */}
+      <div className="w-32 h-32 mobile:w-36 mobile:h-36 flex items-center justify-center mb-4">
         <img 
           src={logoSrc} 
           alt={`${name} logo`}
-          className="max-w-full max-h-full object-contain p-4"
+          className="max-w-full max-h-full object-contain"
         />
       </div>
       
