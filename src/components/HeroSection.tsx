@@ -1,0 +1,130 @@
+
+import React, { useState } from 'react';
+import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
+import { Button } from '@/components/Button';
+import { GridContainer, Grid, Col } from '@/components/Grid';
+
+interface HeroSectionProps {
+  videoSrc?: string;
+  subtitle?: string;
+  headline?: string;
+  subHeadline?: string;
+  eventDetails?: string;
+  primaryCta?: string;
+  secondaryCta?: string;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({
+  videoSrc = "/placeholder-video.mp4",
+  subtitle = "Exclusive Event",
+  headline = "Design Excellence Reimagined",
+  subHeadline = "Where Innovation Meets Sophistication", 
+  eventDetails = "December 15, 2024 • 7:00 PM • Grand Ballroom",
+  primaryCta = "RSVP Now",
+  secondaryCta = "Become a Partner"
+}) => {
+  const [showRSVPModal, setShowRSVPModal] = useState(false);
+  const [showPartnerModal, setShowPartnerModal] = useState(false);
+
+  const handleRSVPClick = () => {
+    console.log('RSVP modal triggered');
+    setShowRSVPModal(true);
+  };
+
+  const handlePartnerClick = () => {
+    console.log('Partner modal triggered');
+    setShowPartnerModal(true);
+  };
+
+  return (
+    <section className="relative h-screen w-full overflow-hidden">
+      {/* Video Background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src={videoSrc} type="video/mp4" />
+        {/* Fallback for browsers that don't support video */}
+        <div className="absolute inset-0 bg-black" />
+      </video>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-60" />
+
+      {/* Hero Content */}
+      <div className="relative z-10 h-full flex items-center">
+        <GridContainer className="w-full">
+          <Grid>
+            <Col span={12} tabletSpan={10} className="tablet:col-start-2">
+              <div className="text-center text-white animate-fade-in">
+                {/* Subtitle */}
+                <BodyM className="text-gold mb-4 mobile:mb-6 uppercase tracking-widest font-medium">
+                  {subtitle}
+                </BodyM>
+
+                {/* Main Headline */}
+                <HeadingXL className="text-white mb-4 mobile:mb-6 text-4xl mobile:text-6xl tablet:text-7xl leading-tight">
+                  {headline}
+                </HeadingXL>
+
+                {/* Sub-headline */}
+                <HeadingL className="text-bone mb-6 mobile:mb-8 tablet:mb-12 text-xl mobile:text-2xl tablet:text-3xl font-normal opacity-90">
+                  {subHeadline}
+                </HeadingL>
+
+                {/* Event Details */}
+                <BodyM className="text-cream mb-8 mobile:mb-12 tablet:mb-16 text-base mobile:text-lg opacity-80">
+                  {eventDetails}
+                </BodyM>
+
+                {/* Call-to-Action Buttons */}
+                <div className="flex flex-col mobile:flex-row gap-4 mobile:gap-6 justify-center items-center">
+                  <Button 
+                    variant="primary" 
+                    size="lg"
+                    onClick={handleRSVPClick}
+                    className="w-full mobile:w-auto px-8 py-4 text-lg font-semibold"
+                  >
+                    {primaryCta}
+                  </Button>
+                  <Button 
+                    variant="secondary" 
+                    size="lg"
+                    onClick={handlePartnerClick}
+                    className="text-gold hover:text-bone text-lg"
+                  >
+                    {secondaryCta}
+                  </Button>
+                </div>
+              </div>
+            </Col>
+          </Grid>
+        </GridContainer>
+      </div>
+
+      {/* Modal State Logging (temporary) */}
+      {showRSVPModal && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
+          <div className="bg-bone p-8 rounded-lg max-w-md w-full mx-4">
+            <HeadingL className="mb-4">RSVP Modal</HeadingL>
+            <BodyM className="mb-6">RSVP form would go here</BodyM>
+            <Button onClick={() => setShowRSVPModal(false)}>Close</Button>
+          </div>
+        </div>
+      )}
+
+      {showPartnerModal && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
+          <div className="bg-bone p-8 rounded-lg max-w-md w-full mx-4">
+            <HeadingL className="mb-4">Partner Modal</HeadingL>
+            <BodyM className="mb-6">Partner form would go here</BodyM>
+            <Button onClick={() => setShowPartnerModal(false)}>Close</Button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};

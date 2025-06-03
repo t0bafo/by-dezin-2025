@@ -1,38 +1,14 @@
-
 import React from 'react';
 import { HeadingXL, HeadingL, BodyM, BodyS } from '@/components/Typography';
 import { Button } from '@/components/Button';
 import { GridContainer, Grid, Col } from '@/components/Grid';
+import { HeroSection } from '@/components/HeroSection';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-bone">
       {/* Hero Section */}
-      <section className="py-16 mobile:py-24 tablet:py-32">
-        <GridContainer>
-          <Grid>
-            <Col span={12} tabletSpan={10} className="tablet:col-start-2">
-              <div className="text-center">
-                <HeadingXL className="mb-6">
-                  Design System
-                </HeadingXL>
-                <BodyM className="mb-8 text-moody-red max-w-2xl mx-auto">
-                  A sophisticated design system featuring elegant typography, 
-                  premium colors, and responsive components built with Tailwind CSS.
-                </BodyM>
-                <div className="flex flex-col mobile:flex-row gap-4 justify-center items-center">
-                  <Button variant="primary" size="lg">
-                    Primary Button
-                  </Button>
-                  <Button variant="secondary" size="lg">
-                    Secondary Link
-                  </Button>
-                </div>
-              </div>
-            </Col>
-          </Grid>
-        </GridContainer>
-      </section>
+      <HeroSection />
 
       {/* Typography Section */}
       <section className="py-16 bg-cream">
