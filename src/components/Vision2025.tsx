@@ -9,7 +9,7 @@ interface Vision2025Props {
 
 export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
   return (
-    <section id="vision" className="bg-bone">
+    <section id="vision" className="bg-cream">
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center animate-fade-in">
           {/* Elegant Badge */}
