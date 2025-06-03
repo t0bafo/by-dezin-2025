@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { HeadingL, BodyM, BodyS } from '@/components/Typography';
@@ -9,8 +10,9 @@ const Gallery: React.FC = () => {
   const [showArrows, setShowArrows] = useState(false);
   const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Updated images with uploaded photos for the first 10 slots
+  // Complete image collection with all 20 ByDezin 2024 photos
   const images = [
+    // Opening sequence - first 10 images (existing)
     { 
       id: 1, 
       src: '/lovable-uploads/6aae11e4-7f30-4c14-be66-3b2186c4025b.png', 
@@ -71,65 +73,65 @@ const Gallery: React.FC = () => {
       designer: 'Avant-Garde Vision',
       objectPosition: 'center top'
     },
-    // Remaining placeholder images
+    // Peak moments and highlights - second batch of 10 images
     { 
       id: 11, 
-      src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop', 
-      designer: 'Ravi Kumar',
+      src: '/lovable-uploads/bc6401cc-99d5-40c3-aba9-3314833ef583.png', 
+      designer: 'Street Style Squad',
       objectPosition: 'center'
     },
     { 
       id: 12, 
-      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop', 
-      designer: 'Ava Brown',
+      src: '/lovable-uploads/73d21de6-b2e1-45b3-8504-2354e814c523.png', 
+      designer: 'Designer Showcase Moment',
       objectPosition: 'center'
     },
     { 
       id: 13, 
-      src: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop', 
-      designer: 'Dante Lopez',
+      src: '/lovable-uploads/0d034a87-8d09-49d2-9aee-b6f317a8c804.png', 
+      designer: 'Community Connections',
       objectPosition: 'center'
     },
     { 
       id: 14, 
-      src: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop', 
-      designer: 'Iris Chen',
+      src: '/lovable-uploads/8d299c30-bbe0-41b1-8c2a-3b4765d49aa4.png', 
+      designer: 'SoHo Gallery Experience',
       objectPosition: 'center'
     },
     { 
       id: 15, 
-      src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop', 
-      designer: 'Felix Garcia',
+      src: '/lovable-uploads/1369d95e-71c9-4333-83c2-e1b9f5294667.png', 
+      designer: 'Shared Memories',
       objectPosition: 'center'
     },
     { 
       id: 16, 
-      src: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop', 
-      designer: 'Mira Singh',
+      src: '/lovable-uploads/cac5d4e9-02da-4782-b0a0-35dcc4d1a3b2.png', 
+      designer: 'Genuine Moments',
       objectPosition: 'center'
     },
     { 
       id: 17, 
-      src: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop', 
-      designer: 'Ocean Davis',
+      src: '/lovable-uploads/a7e0d2d0-d7cf-4b16-88ff-c9aea44f57d2.png', 
+      designer: 'Victory Celebration',
       objectPosition: 'center'
     },
     { 
       id: 18, 
-      src: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop', 
-      designer: 'Star Wilson',
+      src: '/lovable-uploads/f1f85aea-d843-463a-a720-5950c7284db3.png', 
+      designer: 'Rising Talent Spotlight',
       objectPosition: 'center'
     },
     { 
       id: 19, 
-      src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop', 
-      designer: 'River Taylor',
+      src: '/lovable-uploads/d8f449e1-1a90-469f-a206-a1ba0c867d04.png', 
+      designer: 'Music & Atmosphere',
       objectPosition: 'center'
     },
     { 
       id: 20, 
-      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop', 
-      designer: 'Phoenix Lee',
+      src: '/lovable-uploads/6cf4c1fe-079a-4bb3-9d10-6e25b8f1cc67.png', 
+      designer: 'Luxury Showcase',
       objectPosition: 'center'
     },
   ];
@@ -230,7 +232,7 @@ const Gallery: React.FC = () => {
               >
                 <img
                   src={image.src}
-                  alt={`ByDezin 2024 – ${image.designer}`}
+                  alt={image.designer}
                   className={cn(
                     "w-full h-full rounded shadow-[0_2px_4px_rgba(0,0,0,0.2)]",
                     "transition-transform duration-300 group-hover:scale-105"
@@ -290,16 +292,6 @@ const Gallery: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   );
 };
