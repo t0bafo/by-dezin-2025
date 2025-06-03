@@ -21,8 +21,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   headline = "An Immersive Fashion Showroom Experience",
   subHeadline = "ByDezin NYFW S/S 2026", 
   eventDetails = "September 13, 2025 · New York City",
-  primaryCta = "RSVP Now",
-  secondaryCta = "Become a Partner"
+  primaryCta = "Get Early Access",
+  secondaryCta = "Partner with Us"
 }) => {
   const [showPartnerModal, setShowPartnerModal] = useState(false);
 
@@ -93,7 +93,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     variant="primary" 
                     size="lg"
                     onClick={handleRSVPClick}
-                    className="w-full mobile:w-auto px-8 py-4 text-lg font-semibold"
+                    className="w-full mobile:w-auto px-8 py-4 text-lg font-semibold bg-gold text-black hover:bg-opacity-90"
                   >
                     {primaryCta}
                   </Button>
@@ -101,7 +101,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     variant="secondary" 
                     size="lg"
                     onClick={handlePartnerClick}
-                    className="text-gold hover:text-bone text-lg"
+                    className="text-moody-red hover:text-moody-red text-lg underline underline-offset-4 decoration-1 hover:decoration-2"
                   >
                     {secondaryCta}
                   </Button>
