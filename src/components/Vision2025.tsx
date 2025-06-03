@@ -9,9 +9,8 @@ interface Vision2025Props {
 
 export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
   return (
-    <section id="vision" className="bg-bone relative overflow-hidden">
-      {/* Main content */}
-      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <section id="vision" className="bg-bone">
+      <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="text-center animate-fade-in">
           {/* Badge */}
           <BodyS className="text-black uppercase tracking-wide mb-2">
@@ -35,25 +34,19 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
             variant="primary"
             size="lg"
             onClick={onRSVPClick}
-            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-200"
+            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-200 mb-12"
           >
             Get Early Access
           </Button>
-        </div>
-      </div>
-      
-      {/* Full background image with responsive design */}
-      <div className="absolute bottom-0 left-0 right-0 h-[300px] mobile:h-[400px] tablet:h-[500px] z-0">
-        <div className="w-full h-full relative">
-          <img 
-            src="/lovable-uploads/4e38946a-c9a2-4c2d-a980-c68f45d73b73.png"
-            alt="Designer celebration with flowers and clothing rack"
-            className="w-full h-full object-contain object-bottom"
-          />
-          {/* Cream gradient overlay for text legibility */}
-          <div 
-            className="absolute inset-0 bg-gradient-to-t from-cream via-cream/20 to-transparent opacity-40"
-          />
+          
+          {/* Designer celebration image as content */}
+          <div className="w-full">
+            <img 
+              src="/lovable-uploads/4e38946a-c9a2-4c2d-a980-c68f45d73b73.png"
+              alt="Designer celebration with flowers and clothing rack"
+              className="w-full h-auto max-w-4xl mx-auto rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </section>
