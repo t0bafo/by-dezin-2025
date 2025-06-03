@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
 import { GridContainer, Grid, Col } from '@/components/Grid';
+import { RSVPModal } from '@/components/RSVPModal';
+import { PartnerModal } from '@/components/PartnerModal';
 
 interface HeroSectionProps {
   videoSrc?: string;
@@ -105,26 +107,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </GridContainer>
       </div>
 
-      {/* Modal State Logging (temporary) */}
-      {showRSVPModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
-          <div className="bg-bone p-8 rounded-lg max-w-md w-full mx-4">
-            <HeadingL className="mb-4">RSVP Modal</HeadingL>
-            <BodyM className="mb-6">RSVP form would go here</BodyM>
-            <Button onClick={() => setShowRSVPModal(false)}>Close</Button>
-          </div>
-        </div>
-      )}
-
-      {showPartnerModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
-          <div className="bg-bone p-8 rounded-lg max-w-md w-full mx-4">
-            <HeadingL className="mb-4">Partner Modal</HeadingL>
-            <BodyM className="mb-6">Partner form would go here</BodyM>
-            <Button onClick={() => setShowPartnerModal(false)}>Close</Button>
-          </div>
-        </div>
-      )}
+      {/* Modals */}
+      <RSVPModal 
+        isOpen={showRSVPModal} 
+        onClose={() => setShowRSVPModal(false)} 
+      />
+      <PartnerModal 
+        isOpen={showPartnerModal} 
+        onClose={() => setShowPartnerModal(false)} 
+      />
     </section>
   );
 };
