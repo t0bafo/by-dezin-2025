@@ -15,7 +15,9 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image }) => {
         // Desktop: 400px width, auto height for natural aspect ratio
         "w-[400px]",
         // Mobile: full width minus padding, auto height
-        "mobile:w-[calc(100vw-48px)] mobile:snap-center"
+        "mobile:w-[calc(100vw-48px)]",
+        // Scroll snap alignment
+        "snap-start mobile:snap-center"
       )}
     >
       <img

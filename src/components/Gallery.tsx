@@ -17,9 +17,13 @@ const Gallery: React.FC = () => {
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 424; // 400px card + 24px gap
+      const container = scrollContainerRef.current;
+      const cardWidth = 400; // Image width
+      const gap = 24; // Gap between images
+      const scrollAmount = cardWidth + gap;
+      
       const scrollValue = direction === 'left' ? -scrollAmount : scrollAmount;
-      scrollContainerRef.current.scrollBy({ left: scrollValue, behavior: 'smooth' });
+      container.scrollBy({ left: scrollValue, behavior: 'smooth' });
     }
   };
 
@@ -55,19 +59,21 @@ const Gallery: React.FC = () => {
             setShowArrows(false);
           }}
         >
-          {/* Scroll Container with masonry-style layout */}
+          {/* Scroll Container with snap scroll */}
           <div
             ref={scrollContainerRef}
             className={cn(
               "flex gap-6 overflow-x-auto pb-4 items-start",
               "mobile:gap-6 mobile:pb-0",
-              // Mobile: snap scroll
+              // Scroll snap
+              "scroll-smooth",
               "mobile:snap-x mobile:snap-mandatory",
               // Hide scrollbar
               "[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             )}
             style={{
-              WebkitOverflowScrolling: 'touch'
+              WebkitOverflowScrolling: 'touch',
+              scrollSnapType: 'x mandatory'
             }}
           >
             {galleryImages.map((image) => (

@@ -14,7 +14,10 @@ export const useGalleryAutoScroll = ({ isHovered, scrollContainerRef }: UseGalle
       autoScrollIntervalRef.current = setInterval(() => {
         if (!isHovered && scrollContainerRef.current) {
           const container = scrollContainerRef.current;
-          const scrollAmount = 424; // 400px card + 24px gap
+          const cardWidth = 400; // Image width
+          const gap = 24; // Gap between images
+          const scrollAmount = cardWidth + gap;
+          
           container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
           
           // Reset to beginning if at end
