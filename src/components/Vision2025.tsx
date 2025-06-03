@@ -9,12 +9,12 @@ interface Vision2025Props {
 
 export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
   return (
-    <section id="vision" className="bg-cream">
+    <section id="vision" className="bg-bone">
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center animate-fade-in">
           {/* Elegant Badge */}
           <div className="inline-flex items-center justify-center mb-6">
-            <BodyS className="text-black uppercase tracking-wide px-4 py-2 border border-black border-opacity-20 rounded-full bg-cream bg-opacity-50 font-medium text-xs">
+            <BodyS className="text-black uppercase tracking-wide px-4 py-2 border border-black border-opacity-20 rounded-full bg-bone bg-opacity-50 font-medium text-xs">
               2025 Vision
             </BodyS>
           </div>
