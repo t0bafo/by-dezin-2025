@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HeadingXL, BodyM, BodyS } from '@/components/Typography';
+import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 import { Button } from '@/components/Button';
 
 interface Vision2025Props {
@@ -19,9 +19,9 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
           </BodyS>
           
           {/* Headline */}
-          <HeadingXL className="text-black mb-4">
+          <HeadingL className="text-black mb-4">
             The Next Chapter Begins
-          </HeadingXL>
+          </HeadingL>
           
           {/* Body copy */}
           <div className="max-w-[600px] mx-auto mb-6">
@@ -47,7 +47,7 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=300&fit=crop&crop=center')"
+            backgroundImage: "url('/lovable-uploads/59fa3a4e-d619-4379-bb13-4c11b98f3e72.png')"
           }}
         />
         {/* Cream gradient overlay */}
