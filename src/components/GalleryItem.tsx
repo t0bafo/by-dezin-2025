@@ -12,17 +12,17 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image }) => {
     <div
       className={cn(
         "relative flex-none group cursor-pointer",
-        // Desktop: 400x300 (4:3)
-        "w-[400px] h-[300px]",
-        // Mobile: full width, 3:2 aspect ratio
-        "mobile:w-[calc(100vw-48px)] mobile:h-[calc((100vw-48px)*2/3)] mobile:snap-center"
+        // Desktop: 400px width, auto height for natural aspect ratio
+        "w-[400px]",
+        // Mobile: full width minus padding, auto height
+        "mobile:w-[calc(100vw-48px)] mobile:snap-center"
       )}
     >
       <img
         src={image.src}
         alt={image.designer}
         className={cn(
-          "w-full h-full rounded shadow-[0_2px_4px_rgba(0,0,0,0.2)]",
+          "w-full h-auto rounded shadow-[0_2px_4px_rgba(0,0,0,0.2)]",
           "transition-transform duration-300 group-hover:scale-105"
         )}
         style={{
