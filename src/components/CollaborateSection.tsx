@@ -45,12 +45,6 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
         
         {/* Past Sponsors Section */}
         <div className="text-center mb-20">
-          <div className="mb-3">
-            <BodyS className="text-dusty-rose uppercase tracking-[0.15em] font-medium">
-              Partners
-            </BodyS>
-          </div>
-          
           <HeadingL className="text-black mb-6">Past Sponsors</HeadingL>
           
           <div className="max-w-[500px] mx-auto mb-12">
@@ -150,12 +144,6 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
 
         {/* Partner With Us Section */}
         <div className="text-center">
-          <div className="mb-3">
-            <BodyS className="text-dusty-rose uppercase tracking-[0.15em] font-medium">
-              Collaborate
-            </BodyS>
-          </div>
-          
           <HeadingL className="text-black mb-6">Partner With ByDezin</HeadingL>
           
           <div className="max-w-[500px] mx-auto mb-20">
