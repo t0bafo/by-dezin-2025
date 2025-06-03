@@ -11,31 +11,29 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image }) => {
   return (
     <div
       className={cn(
-        "relative flex-none group cursor-pointer",
-        // Desktop: 400px width, auto height for natural aspect ratio
-        "w-[400px]",
-        // Mobile: full width minus padding, auto height
-        "mobile:w-[calc(100vw-48px)]",
+        "relative group cursor-pointer overflow-hidden rounded-lg",
+        // Mobile: full width with 450px height
+        "h-[450px] w-full",
+        // Desktop: responsive width (300px to 400px) with 500px height, prevent flex shrinking
+        "md:w-[300px] lg:w-[400px] md:h-[500px] md:flex-none",
         // Scroll snap alignment
-        "snap-start mobile:snap-center"
+        "snap-start mobile:snap-center",
+        // Hover effect
+        "hover:scale-105 transition-transform duration-700"
       )}
     >
       <img
         src={image.src}
         alt={image.designer}
-        className={cn(
-          "w-full h-auto rounded shadow-[0_2px_4px_rgba(0,0,0,0.2)]",
-          "transition-transform duration-300 group-hover:scale-105"
-        )}
-        style={{
-          objectFit: 'cover',
-          objectPosition: image.objectPosition || 'center'
-        }}
+        className="w-full h-full object-cover"
       />
       
-      {/* Hover Overlay */}
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
+      
+      {/* Hover Text Overlay */}
       <div className={cn(
-        "absolute inset-0 bg-black bg-opacity-0 rounded transition-all duration-300",
+        "absolute inset-0 bg-black bg-opacity-0 transition-all duration-300",
         "group-hover:bg-opacity-30",
         "flex items-end p-4"
       )}>

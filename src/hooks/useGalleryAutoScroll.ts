@@ -14,7 +14,20 @@ export const useGalleryAutoScroll = ({ isHovered, scrollContainerRef }: UseGalle
       autoScrollIntervalRef.current = setInterval(() => {
         if (!isHovered && scrollContainerRef.current) {
           const container = scrollContainerRef.current;
-          const cardWidth = 400; // Image width
+          
+          // Calculate scroll amount based on screen size
+          const isLargeScreen = window.innerWidth >= 1024;
+          const isMediumScreen = window.innerWidth >= 768;
+          
+          let cardWidth;
+          if (isMediumScreen && !isLargeScreen) {
+            cardWidth = 300; // md:w-[300px]
+          } else if (isLargeScreen) {
+            cardWidth = 400; // lg:w-[400px]
+          } else {
+            cardWidth = container.clientWidth; // Mobile: full width
+          }
+          
           const gap = 24; // Gap between images
           const scrollAmount = cardWidth + gap;
           
