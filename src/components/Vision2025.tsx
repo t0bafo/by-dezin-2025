@@ -14,7 +14,7 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center animate-fade-in">
           {/* Subtle divider above designer image */}
-          <div className="mb-16">
+          <div className="mb-12">
             <Separator className="bg-cream bg-opacity-60 h-px max-w-md mx-auto" />
           </div>
           
@@ -28,7 +28,7 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
           </div>
           
           {/* Subtle divider between image and content */}
-          <div className="mb-12">
+          <div className="mb-8">
             <Separator className="bg-cream bg-opacity-60 h-px max-w-md mx-auto" />
           </div>
           
