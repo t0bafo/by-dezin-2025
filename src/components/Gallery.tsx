@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { HeadingXL, BodyM, BodyS } from '@/components/Typography';
@@ -106,14 +105,14 @@ const Gallery: React.FC = () => {
           <div
             ref={scrollContainerRef}
             className={cn(
-              "flex gap-6 overflow-x-auto scrollbar-hide pb-4",
+              "flex gap-6 overflow-x-auto pb-4",
               "mobile:gap-6 mobile:pb-0",
               // Mobile: snap scroll
-              "mobile:snap-x mobile:snap-mandatory"
+              "mobile:snap-x mobile:snap-mandatory",
+              // Hide scrollbar
+              "[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             )}
             style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch'
             }}
           >
