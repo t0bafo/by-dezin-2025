@@ -119,7 +119,7 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
         </div>
 
         {/* Call to Action */}
-        <div className="text-center">
+        <div className="text-center mb-12">
           <BodyM className="text-black mb-6">
             Think your label belongs in the mix? Join the ByDezin community and showcase your vision.{' '}
             <Button
@@ -131,6 +131,15 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
               Apply to Be Featured
             </Button>
           </BodyM>
+        </div>
+
+        {/* Designer celebration image - moved from Vision section */}
+        <div className="w-full">
+          <img 
+            src="/lovable-uploads/4e38946a-c9a2-4c2d-a980-c68f45d73b73.png"
+            alt="Designer celebration with flowers and clothing rack"
+            className="w-full h-auto max-w-4xl mx-auto rounded-lg shadow-lg"
+          />
         </div>
       </div>
     </section>

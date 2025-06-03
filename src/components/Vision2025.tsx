@@ -2,7 +2,6 @@
 import React from 'react';
 import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 import { Button } from '@/components/Button';
-import { Separator } from '@/components/ui/separator';
 
 interface Vision2025Props {
   onRSVPClick: () => void;
@@ -13,25 +12,6 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
     <section id="vision" className="bg-bone">
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center animate-fade-in">
-          {/* Subtle divider above designer image */}
-          <div className="mb-12">
-            <Separator className="bg-cream bg-opacity-60 h-px max-w-md mx-auto" />
-          </div>
-          
-          {/* Designer celebration image - moved to top */}
-          <div className="w-full mb-12">
-            <img 
-              src="/lovable-uploads/4e38946a-c9a2-4c2d-a980-c68f45d73b73.png"
-              alt="Designer celebration with flowers and clothing rack"
-              className="w-full h-auto max-w-4xl mx-auto rounded-lg shadow-lg"
-            />
-          </div>
-          
-          {/* Subtle divider between image and content */}
-          <div className="mb-8">
-            <Separator className="bg-cream bg-opacity-60 h-px max-w-md mx-auto" />
-          </div>
-          
           {/* Elegant Badge */}
           <div className="inline-flex items-center justify-center mb-6">
             <BodyS className="text-black uppercase tracking-wide px-4 py-2 border border-black border-opacity-20 rounded-full bg-cream bg-opacity-50 font-medium text-xs">
