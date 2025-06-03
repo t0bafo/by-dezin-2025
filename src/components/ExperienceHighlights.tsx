@@ -4,20 +4,33 @@ import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 
 const ExperienceHighlights: React.FC = () => {
   useEffect(() => {
-    // Load Instagram embed script and process embeds
+    // Clean up any existing Instagram scripts
+    const existingScripts = document.querySelectorAll('script[src*="instagram.com/embed.js"]');
+    existingScripts.forEach(script => script.remove());
+
+    // Load Instagram embed script
     const script = document.createElement('script');
-    script.src = '//www.instagram.com/embed.js';
+    script.src = 'https://www.instagram.com/embed.js';
     script.async = true;
-    document.body.appendChild(script);
+    script.defer = true;
+    document.head.appendChild(script);
 
     script.onload = () => {
+      console.log('Instagram script loaded');
+      // Process Instagram embeds
       if (window.instgrm) {
         window.instgrm.Embeds.process();
       }
     };
 
+    script.onerror = () => {
+      console.error('Failed to load Instagram embed script');
+    };
+
     return () => {
-      document.body.removeChild(script);
+      // Clean up script on unmount
+      const scripts = document.querySelectorAll('script[src*="instagram.com/embed.js"]');
+      scripts.forEach(s => s.remove());
     };
   }, []);
 
@@ -39,11 +52,15 @@ const ExperienceHighlights: React.FC = () => {
 
         {/* Instagram Embed Container */}
         <div className="flex justify-center">
-          <div className="w-full max-w-[800px]">
+          <div className="w-full max-w-[600px]">
             {/* Instagram Blockquote Embed */}
-            <div className="flex justify-center">
+            <div 
+              className="flex justify-center"
+              style={{ minHeight: '400px' }} // Ensure space for the embed
+            >
               <blockquote 
                 className="instagram-media" 
+                data-instgrm-captioned
                 data-instgrm-permalink="https://www.instagram.com/reel/C_6RBgmpyPc/?utm_source=ig_embed&utm_campaign=loading" 
                 data-instgrm-version="14" 
                 style={{ 
@@ -55,7 +72,7 @@ const ExperienceHighlights: React.FC = () => {
                   maxWidth: '540px', 
                   minWidth: '326px', 
                   padding: 0, 
-                  width: '99.375%' 
+                  width: '99.375%'
                 }}
               >
                 <div style={{ padding: '16px' }}>
