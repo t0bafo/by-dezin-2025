@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { RSVPModal } from '@/components/RSVPModal';
 import Gallery from '@/components/Gallery';
+import ExperienceHighlights from '@/components/ExperienceHighlights';
 import { HeadingL, BodyM } from '@/components/Typography';
 
 const Index = () => {
@@ -25,6 +26,9 @@ const Index = () => {
         
         {/* Gallery Section */}
         <Gallery />
+        
+        {/* Experience Highlights Section */}
+        <ExperienceHighlights />
         
         {/* Placeholder sections for navigation anchors */}
         <section id="alumni" className="min-h-screen flex items-center justify-center bg-bone">
