@@ -17,10 +17,10 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   videoSrc = "/placeholder-video.mp4",
-  subtitle = "Exclusive Event",
-  headline = "Design Excellence Reimagined",
-  subHeadline = "Where Innovation Meets Sophistication", 
-  eventDetails = "December 15, 2024 • 7:00 PM • Grand Ballroom",
+  subtitle = "APOLLO WRLDX × ARNELL STEWART PRESENT",
+  headline = "An Immersive Fashion Showroom Experience",
+  subHeadline = "ByDezin NYFW S/S 2026", 
+  eventDetails = "September 13, 2025 · New York City",
   primaryCta = "RSVP Now",
   secondaryCta = "Become a Partner"
 }) => {
