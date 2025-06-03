@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { RSVPModal } from '@/components/RSVPModal';
+import Gallery from '@/components/Gallery';
 
 const Index = () => {
   const [showRSVPModal, setShowRSVPModal] = useState(false);
@@ -21,14 +22,10 @@ const Index = () => {
           <HeroSection />
         </section>
         
-        {/* Placeholder sections for navigation anchors */}
-        <section id="highlights" className="min-h-screen flex items-center justify-center bg-cream">
-          <div className="text-center">
-            <h2 className="font-playfair text-4xl font-bold text-black mb-4">Highlights</h2>
-            <p className="font-montserrat text-lg text-black">Coming soon...</p>
-          </div>
-        </section>
+        {/* Gallery Section */}
+        <Gallery />
         
+        {/* Placeholder sections for navigation anchors */}
         <section id="alumni" className="min-h-screen flex items-center justify-center bg-bone">
           <div className="text-center">
             <h2 className="font-playfair text-4xl font-bold text-black mb-4">Alumni</h2>
