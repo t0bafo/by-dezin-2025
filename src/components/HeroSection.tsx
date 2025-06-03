@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
 import { GridContainer, Grid, Col } from '@/components/Grid';
-import { RSVPModal } from '@/components/RSVPModal';
 import { PartnerModal } from '@/components/PartnerModal';
 
 interface HeroSectionProps {
@@ -25,12 +24,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   primaryCta = "RSVP Now",
   secondaryCta = "Become a Partner"
 }) => {
-  const [showRSVPModal, setShowRSVPModal] = useState(false);
   const [showPartnerModal, setShowPartnerModal] = useState(false);
 
   const handleRSVPClick = () => {
-    console.log('RSVP modal triggered');
-    setShowRSVPModal(true);
+    // Scroll to top to trigger header RSVP
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Small delay then trigger header RSVP
+    setTimeout(() => {
+      const headerRSVPButton = document.querySelector('header button');
+      if (headerRSVPButton) {
+        (headerRSVPButton as HTMLButtonElement).click();
+      }
+    }, 500);
   };
 
   const handlePartnerClick = () => {
@@ -107,11 +112,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </GridContainer>
       </div>
 
-      {/* Modals */}
-      <RSVPModal 
-        isOpen={showRSVPModal} 
-        onClose={() => setShowRSVPModal(false)} 
-      />
+      {/* Partner Modal */}
       <PartnerModal 
         isOpen={showPartnerModal} 
         onClose={() => setShowPartnerModal(false)} 
