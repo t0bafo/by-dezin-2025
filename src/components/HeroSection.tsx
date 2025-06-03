@@ -16,7 +16,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  videoSrc = "/hero-video.mp4", // Updated to point to your uploaded video
+  videoSrc = "/hero-video.mp4",
   subtitle = "APOLLO WRLDX × ARNELL STEWART PRESENT",
   headline = "An Immersive Fashion Showroom Experience",
   subHeadline = "ByDezin NYFW S/S 2026", 
@@ -26,6 +26,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   const [showPartnerModal, setShowPartnerModal] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
 
   const handleRSVPClick = () => {
     // Scroll to top to trigger header RSVP
@@ -44,6 +45,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     setShowPartnerModal(true);
   };
 
+  const handleVideoLoad = () => {
+    console.log('Video loaded successfully');
+    setVideoLoaded(true);
+  };
+
+  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    console.error('Video failed to load:', e);
+    console.error('Video src:', videoSrc);
+    setVideoError(true);
+  };
+
+  const handleVideoCanPlay = () => {
+    console.log('Video can start playing');
+  };
+
+  console.log('HeroSection rendering with videoSrc:', videoSrc);
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
@@ -54,17 +72,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         muted
         playsInline
         preload="metadata"
-        onLoadedData={() => setVideoLoaded(true)}
-        poster="/hero-poster.jpg" // Optional: add a poster image for better loading
+        onLoadedData={handleVideoLoad}
+        onError={handleVideoError}
+        onCanPlay={handleVideoCanPlay}
+        poster="/hero-poster.jpg"
       >
         <source src={videoSrc} type="video/mp4" />
         {/* Fallback for browsers that don't support video */}
         <div className="absolute inset-0 bg-black" />
       </video>
 
+      {/* Show error message if video fails to load */}
+      {videoError && (
+        <div className="absolute inset-0 bg-black flex items-center justify-center">
+          <p className="text-white text-center">
+            Video failed to load: {videoSrc}
+            <br />
+            <small>Check browser console for details</small>
+          </p>
+        </div>
+      )}
+
       {/* Loading state while video loads */}
-      {!videoLoaded && (
-        <div className="absolute inset-0 bg-black animate-pulse" />
+      {!videoLoaded && !videoError && (
+        <div className="absolute inset-0 bg-black animate-pulse flex items-center justify-center">
+          <p className="text-white">Loading video...</p>
+        </div>
       )}
 
       {/* Dark Overlay */}
