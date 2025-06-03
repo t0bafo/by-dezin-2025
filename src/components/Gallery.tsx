@@ -11,27 +11,127 @@ const Gallery: React.FC = () => {
 
   // Updated images with uploaded photos for the first 10 slots
   const images = [
-    { id: 1, src: '/lovable-uploads/6aae11e4-7f30-4c14-be66-3b2186c4025b.png', designer: 'Event Opening' },
-    { id: 2, src: '/lovable-uploads/115274a3-ab51-4251-9b7f-e8a786bd3a86.png', designer: 'Venue Atmosphere' },
-    { id: 3, src: '/lovable-uploads/957511f9-df48-4b10-b90a-ac8a58a2c0c2.png', designer: 'Designer Connections' },
-    { id: 4, src: '/lovable-uploads/35bc2f25-909d-4752-a16d-069f30434f4c.png', designer: 'Bold Statement Pieces' },
-    { id: 5, src: '/lovable-uploads/15114ed3-237e-4c42-abb6-fe342e2540c3.png', designer: 'Creative Collaborations' },
-    { id: 6, src: '/lovable-uploads/4c4c3460-eaeb-4354-813e-6226aaa30e78.png', designer: 'Floral Expressions' },
-    { id: 7, src: '/lovable-uploads/9f4a671e-c453-4f7c-b527-2499d014b249.png', designer: 'Street Style Moments' },
-    { id: 8, src: '/lovable-uploads/3ac51bfd-6a64-460f-b671-e9a8cfd3bb80.png', designer: 'Authentic Self-Expression' },
-    { id: 9, src: '/lovable-uploads/a5b33daf-b158-4ac7-a1af-b59aa615e777.png', designer: 'Unique Style Stories' },
-    { id: 10, src: '/lovable-uploads/153e400a-6458-4a57-ba85-6ad22df79343.png', designer: 'Avant-Garde Vision' },
+    { 
+      id: 1, 
+      src: '/lovable-uploads/6aae11e4-7f30-4c14-be66-3b2186c4025b.png', 
+      designer: 'Event Opening',
+      objectPosition: 'center'
+    },
+    { 
+      id: 2, 
+      src: '/lovable-uploads/115274a3-ab51-4251-9b7f-e8a786bd3a86.png', 
+      designer: 'Venue Atmosphere',
+      objectPosition: 'center'
+    },
+    { 
+      id: 3, 
+      src: '/lovable-uploads/957511f9-df48-4b10-b90a-ac8a58a2c0c2.png', 
+      designer: 'Designer Connections',
+      objectPosition: 'center top'
+    },
+    { 
+      id: 4, 
+      src: '/lovable-uploads/35bc2f25-909d-4752-a16d-069f30434f4c.png', 
+      designer: 'Bold Statement Pieces',
+      objectPosition: 'center'
+    },
+    { 
+      id: 5, 
+      src: '/lovable-uploads/15114ed3-237e-4c42-abb6-fe342e2540c3.png', 
+      designer: 'Creative Collaborations',
+      objectPosition: 'center'
+    },
+    { 
+      id: 6, 
+      src: '/lovable-uploads/4c4c3460-eaeb-4354-813e-6226aaa30e78.png', 
+      designer: 'Floral Expressions',
+      objectPosition: 'center top'
+    },
+    { 
+      id: 7, 
+      src: '/lovable-uploads/9f4a671e-c453-4f7c-b527-2499d014b249.png', 
+      designer: 'Street Style Moments',
+      objectPosition: 'center top'
+    },
+    { 
+      id: 8, 
+      src: '/lovable-uploads/3ac51bfd-6a64-460f-b671-e9a8cfd3bb80.png', 
+      designer: 'Authentic Self-Expression',
+      objectPosition: 'center'
+    },
+    { 
+      id: 9, 
+      src: '/lovable-uploads/a5b33daf-b158-4ac7-a1af-b59aa615e777.png', 
+      designer: 'Unique Style Stories',
+      objectPosition: 'center'
+    },
+    { 
+      id: 10, 
+      src: '/lovable-uploads/153e400a-6458-4a57-ba85-6ad22df79343.png', 
+      designer: 'Avant-Garde Vision',
+      objectPosition: 'center top'
+    },
     // Remaining placeholder images
-    { id: 11, src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop', designer: 'Ravi Kumar' },
-    { id: 12, src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop', designer: 'Ava Brown' },
-    { id: 13, src: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop', designer: 'Dante Lopez' },
-    { id: 14, src: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop', designer: 'Iris Chen' },
-    { id: 15, src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop', designer: 'Felix Garcia' },
-    { id: 16, src: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop', designer: 'Mira Singh' },
-    { id: 17, src: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop', designer: 'Ocean Davis' },
-    { id: 18, src: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop', designer: 'Star Wilson' },
-    { id: 19, src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop', designer: 'River Taylor' },
-    { id: 20, src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop', designer: 'Phoenix Lee' },
+    { 
+      id: 11, 
+      src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop', 
+      designer: 'Ravi Kumar',
+      objectPosition: 'center'
+    },
+    { 
+      id: 12, 
+      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop', 
+      designer: 'Ava Brown',
+      objectPosition: 'center'
+    },
+    { 
+      id: 13, 
+      src: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop', 
+      designer: 'Dante Lopez',
+      objectPosition: 'center'
+    },
+    { 
+      id: 14, 
+      src: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop', 
+      designer: 'Iris Chen',
+      objectPosition: 'center'
+    },
+    { 
+      id: 15, 
+      src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop', 
+      designer: 'Felix Garcia',
+      objectPosition: 'center'
+    },
+    { 
+      id: 16, 
+      src: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop', 
+      designer: 'Mira Singh',
+      objectPosition: 'center'
+    },
+    { 
+      id: 17, 
+      src: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop', 
+      designer: 'Ocean Davis',
+      objectPosition: 'center'
+    },
+    { 
+      id: 18, 
+      src: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop', 
+      designer: 'Star Wilson',
+      objectPosition: 'center'
+    },
+    { 
+      id: 19, 
+      src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop', 
+      designer: 'River Taylor',
+      objectPosition: 'center'
+    },
+    { 
+      id: 20, 
+      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop', 
+      designer: 'Phoenix Lee',
+      objectPosition: 'center'
+    },
   ];
 
   // Auto-scroll functionality
@@ -132,9 +232,13 @@ const Gallery: React.FC = () => {
                   src={image.src}
                   alt={`ByDezin 2024 – ${image.designer}`}
                   className={cn(
-                    "w-full h-full object-cover rounded shadow-[0_2px_4px_rgba(0,0,0,0.2)]",
+                    "w-full h-full rounded shadow-[0_2px_4px_rgba(0,0,0,0.2)]",
                     "transition-transform duration-300 group-hover:scale-105"
                   )}
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: image.objectPosition || 'center'
+                  }}
                 />
                 
                 {/* Hover Overlay */}
