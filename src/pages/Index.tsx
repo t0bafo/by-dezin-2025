@@ -8,7 +8,7 @@ import { PartnerModal } from '@/components/PartnerModal';
 import { Vision2025 } from '@/components/Vision2025';
 import Gallery from '@/components/Gallery';
 import ExperienceHighlights from '@/components/ExperienceHighlights';
-import { HeadingL, BodyM } from '@/components/Typography';
+import { CollaborateSection } from '@/components/CollaborateSection';
 
 const Index = () => {
   const [showRSVPModal, setShowRSVPModal] = useState(false);
@@ -44,13 +44,8 @@ const Index = () => {
         {/* Vision 2025 Section */}
         <Vision2025 onRSVPClick={handleRSVPClick} />
         
-        {/* Placeholder section for navigation anchor */}
-        <section id="collaborate" className="min-h-screen flex items-center justify-center bg-bone">
-          <div className="text-center">
-            <HeadingL className="text-black mb-4">Collaborate</HeadingL>
-            <BodyM className="text-black">Coming soon...</BodyM>
-          </div>
-        </section>
+        {/* Collaborate Section */}
+        <CollaborateSection onPartnerClick={() => setShowPartnerModal(true)} />
       </main>
 
       {/* Modals */}
