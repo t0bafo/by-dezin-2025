@@ -1,5 +1,6 @@
+
 import React, { useEffect } from 'react';
-import { HeadingL, BodyM, BodyS } from '@/components/Typography';
+import { HeadingL, HeadingM, BodyM, BodyS } from '@/components/Typography';
 import { Button } from '@/components/Button';
 import { Eye, Zap, TrendingUp } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
@@ -21,7 +22,7 @@ interface CollaborateSectionProps {
 
 export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartnerClick }) => {
   useEffect(() => {
-    // Load Instagram embed script
+    // Load Instagram embed script with only valid script properties
     if (window.instgrm) {
       window.instgrm.Embeds.process();
     } else {
@@ -58,7 +59,7 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
             </BodyM>
           </div>
 
-          {/* Sponsor Logos - more refined spacing */}
+          {/* Sponsor Logos */}
           <div className="flex justify-center items-center gap-20 mb-16 flex-wrap">
             <a 
               href="https://cheurlin.com" 
@@ -86,7 +87,7 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
             </a>
           </div>
 
-          {/* Cheurlin Partnership Reel */}
+          {/* Cheurlin Partnership Reel - Clean Instagram embed */}
           <div className="w-full max-w-[540px] mx-auto mb-8">
             <blockquote 
               className="instagram-media" 
@@ -105,9 +106,33 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
               }}
             >
               <div>
-                <a href="https://www.instagram.com/reel/C__pe13OAp7/?utm_source=ig_embed&amp;utm_campaign=loading" style={{ background: '#C8C8C8', display: 'block', fontFamily: 'sans-serif', fontWeight: 'normal', lineHeight: '17px', fontSize: '14px', fontStyle: 'normal', margin: '0 auto', maxWidth: '540px', padding: '8px 0', textAlign: 'center', width: '100%' }} target="_blank" rel="noopener noreferrer">
+                <a 
+                  href="https://www.instagram.com/reel/C__pe13OAp7/?utm_source=ig_embed&amp;utm_campaign=loading" 
+                  style={{ 
+                    background: '#C8C8C8', 
+                    display: 'block', 
+                    fontFamily: 'sans-serif', 
+                    fontWeight: 'normal', 
+                    lineHeight: '17px', 
+                    fontSize: '14px', 
+                    fontStyle: 'normal', 
+                    margin: '0 auto', 
+                    maxWidth: '540px', 
+                    padding: '8px 0', 
+                    textAlign: 'center', 
+                    width: '100%' 
+                  }} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                   <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                    <svg aria-label="Instagram" role="img" className="Instagram-Icon" style={{ fill: '#8e8e8e', color: '#8e8e8e', width: '14px', height: '14px', marginRight: '5px' }} viewBox="0 0 32 32">
+                    <svg 
+                      aria-label="Instagram" 
+                      role="img" 
+                      className="Instagram-Icon" 
+                      style={{ fill: '#8e8e8e', color: '#8e8e8e', width: '14px', height: '14px', marginRight: '5px' }} 
+                      viewBox="0 0 32 32"
+                    >
                       <path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM24.728 21.272c-.264.264-.615.408-.988.408h-13.48c-.372 0-.723-.144-.987-.408-.528-.528-.528-1.384 0-1.912l6.74-6.74c.264-.264.615-.408.988-.408s.723.144.987.408l6.74 6.74c.528.528.528 1.384 0 1.912z"></path>
                     </svg>
                     View this post on Instagram
@@ -139,40 +164,40 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
             </BodyM>
           </div>
 
-          {/* Partnership Benefits Grid - refined visual hierarchy */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-20 mb-20 max-w-5xl mx-auto">
-            <div className="text-center">
-              <div className="flex justify-center mb-8">
+          {/* Partnership Benefits Grid - Fixed visual hierarchy */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-20 max-w-6xl mx-auto">
+            <div className="text-center px-4">
+              <div className="flex justify-center mb-6">
                 <Eye className="w-12 h-12 text-dusty-rose" />
               </div>
-              <h3 className="font-montserrat text-lg font-semibold text-black mb-6 leading-tight">
+              <HeadingM className="text-black mb-4 font-medium">
                 Brand Visibility
-              </h3>
-              <BodyM className="text-black leading-relaxed opacity-80 text-sm">
+              </HeadingM>
+              <BodyM className="text-black leading-relaxed opacity-75">
                 Showcase your brand to fashion's most influential emerging designers, stylists, and industry tastemakers.
               </BodyM>
             </div>
             
-            <div className="text-center">
-              <div className="flex justify-center mb-8">
+            <div className="text-center px-4">
+              <div className="flex justify-center mb-6">
                 <Zap className="w-12 h-12 text-dusty-rose" />
               </div>
-              <h3 className="font-montserrat text-lg font-semibold text-black mb-6 leading-tight">
+              <HeadingM className="text-black mb-4 font-medium">
                 Custom Activations
-              </h3>
-              <BodyM className="text-black leading-relaxed opacity-80 text-sm">
+              </HeadingM>
+              <BodyM className="text-black leading-relaxed opacity-75">
                 Create bespoke experiences that align with your brand values and connect authentically with our community.
               </BodyM>
             </div>
             
-            <div className="text-center">
-              <div className="flex justify-center mb-8">
+            <div className="text-center px-4">
+              <div className="flex justify-center mb-6">
                 <TrendingUp className="w-12 h-12 text-dusty-rose" />
               </div>
-              <h3 className="font-montserrat text-lg font-semibold text-black mb-6 leading-tight">
+              <HeadingM className="text-black mb-4 font-medium">
                 Media Amplification
-              </h3>
-              <BodyM className="text-black leading-relaxed opacity-80 text-sm">
+              </HeadingM>
+              <BodyM className="text-black leading-relaxed opacity-75">
                 Leverage our content creation and social media reach to amplify your partnership across multiple platforms.
               </BodyM>
             </div>
