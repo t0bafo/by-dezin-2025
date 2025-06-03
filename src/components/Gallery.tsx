@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { HeadingXL, BodyM, BodyS } from '@/components/Typography';
+import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 import { cn } from '@/lib/utils';
 
 const Gallery: React.FC = () => {
@@ -74,9 +74,9 @@ const Gallery: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Content */}
         <div className="text-center mb-12">
-          <HeadingXL className="text-black mb-4">
+          <HeadingL className="text-black mb-4">
             2024 Showcase Rewind
-          </HeadingXL>
+          </HeadingL>
           
           <div className="max-w-[600px] mx-auto mb-6">
             <BodyM className="text-black">

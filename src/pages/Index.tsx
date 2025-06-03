@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { RSVPModal } from '@/components/RSVPModal';
 import Gallery from '@/components/Gallery';
+import { HeadingL, BodyM } from '@/components/Typography';
 
 const Index = () => {
   const [showRSVPModal, setShowRSVPModal] = useState(false);
@@ -28,22 +29,22 @@ const Index = () => {
         {/* Placeholder sections for navigation anchors */}
         <section id="alumni" className="min-h-screen flex items-center justify-center bg-bone">
           <div className="text-center">
-            <h2 className="font-playfair text-4xl font-bold text-black mb-4">Alumni</h2>
-            <p className="font-montserrat text-lg text-black">Coming soon...</p>
+            <HeadingL className="text-black mb-4">Alumni</HeadingL>
+            <BodyM className="text-black">Coming soon...</BodyM>
           </div>
         </section>
         
         <section id="vision" className="min-h-screen flex items-center justify-center bg-cream">
           <div className="text-center">
-            <h2 className="font-playfair text-4xl font-bold text-black mb-4">Vision</h2>
-            <p className="font-montserrat text-lg text-black">Coming soon...</p>
+            <HeadingL className="text-black mb-4">Vision</HeadingL>
+            <BodyM className="text-black">Coming soon...</BodyM>
           </div>
         </section>
         
         <section id="collaborate" className="min-h-screen flex items-center justify-center bg-bone">
           <div className="text-center">
-            <h2 className="font-playfair text-4xl font-bold text-black mb-4">Collaborate</h2>
-            <p className="font-montserrat text-lg text-black">Coming soon...</p>
+            <HeadingL className="text-black mb-4">Collaborate</HeadingL>
+            <BodyM className="text-black">Coming soon...</BodyM>
           </div>
         </section>
       </main>

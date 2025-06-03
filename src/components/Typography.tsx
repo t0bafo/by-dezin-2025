@@ -38,6 +38,21 @@ export const HeadingL: React.FC<TypographyProps> = ({
   );
 };
 
+export const HeadingM: React.FC<TypographyProps> = ({ 
+  children, 
+  className, 
+  as: Component = 'h3' 
+}) => {
+  return (
+    <Component className={cn(
+      "font-playfair text-2xl mobile:text-3xl tablet:text-4xl font-medium leading-tight tracking-tight text-black",
+      className
+    )}>
+      {children}
+    </Component>
+  );
+};
+
 export const BodyM: React.FC<TypographyProps> = ({ 
   children, 
   className, 
@@ -72,6 +87,7 @@ export const BodyS: React.FC<TypographyProps> = ({
 export const Typography = {
   HeadingXL,
   HeadingL,
+  HeadingM,
   BodyM,
   BodyS,
 };
