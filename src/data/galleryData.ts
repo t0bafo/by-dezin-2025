@@ -129,4 +129,11 @@ export const galleryImages: GalleryImage[] = [
     designer: 'Luxury Showcase',
     objectPosition: 'center'
   },
+  // New image added
+  { 
+    id: 21, 
+    src: '/lovable-uploads/742c5282-9c15-4002-9126-000d240d0233.png', 
+    designer: 'Fashion Studio Experience',
+    objectPosition: 'center'
+  },
 ];
