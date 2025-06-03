@@ -5,6 +5,7 @@ import { HeroSection } from '@/components/HeroSection';
 import { RSVPModal } from '@/components/RSVPModal';
 import { FeaturedAlumni } from '@/components/FeaturedAlumni';
 import { PartnerModal } from '@/components/PartnerModal';
+import { Vision2025 } from '@/components/Vision2025';
 import Gallery from '@/components/Gallery';
 import ExperienceHighlights from '@/components/ExperienceHighlights';
 import { HeadingL, BodyM } from '@/components/Typography';
@@ -40,14 +41,10 @@ const Index = () => {
         {/* Featured Alumni Section */}
         <FeaturedAlumni onApplyClick={handleApplyClick} />
         
-        {/* Placeholder sections for navigation anchors */}
-        <section id="vision" className="min-h-screen flex items-center justify-center bg-cream">
-          <div className="text-center">
-            <HeadingL className="text-black mb-4">Vision</HeadingL>
-            <BodyM className="text-black">Coming soon...</BodyM>
-          </div>
-        </section>
+        {/* Vision 2025 Section */}
+        <Vision2025 onRSVPClick={handleRSVPClick} />
         
+        {/* Placeholder section for navigation anchor */}
         <section id="collaborate" className="min-h-screen flex items-center justify-center bg-bone">
           <div className="text-center">
             <HeadingL className="text-black mb-4">Collaborate</HeadingL>
