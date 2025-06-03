@@ -19,18 +19,9 @@ const Gallery: React.FC = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       // Calculate scroll amount based on screen size
-      const isLargeScreen = window.innerWidth >= 1024;
-      const isMediumScreen = window.innerWidth >= 768;
+      const isMobile = window.innerWidth < 640;
       
-      let cardWidth;
-      if (isMediumScreen && !isLargeScreen) {
-        cardWidth = 300; // md:w-[300px]
-      } else if (isLargeScreen) {
-        cardWidth = 400; // lg:w-[400px]
-      } else {
-        cardWidth = container.clientWidth; // Mobile: full width
-      }
-      
+      const cardWidth = isMobile ? 350 : 400; // Card width
       const gap = 24; // Gap between images
       const scrollAmount = cardWidth + gap;
       
@@ -71,21 +62,18 @@ const Gallery: React.FC = () => {
             setShowArrows(false);
           }}
         >
-          {/* Scroll Container with snap scroll */}
+          {/* Scroll Container */}
           <div
             ref={scrollContainerRef}
             className={cn(
               "flex gap-6 overflow-x-auto pb-4",
-              "mobile:gap-6 mobile:pb-0",
               // Scroll snap
-              "scroll-smooth",
-              "mobile:snap-x mobile:snap-mandatory",
+              "scroll-smooth snap-x snap-mandatory",
               // Hide scrollbar
               "[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             )}
             style={{
-              WebkitOverflowScrolling: 'touch',
-              scrollSnapType: 'x mandatory'
+              WebkitOverflowScrolling: 'touch'
             }}
           >
             {galleryImages.map((image) => (

@@ -11,15 +11,17 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image }) => {
   return (
     <div
       className={cn(
-        "relative group cursor-pointer overflow-hidden rounded-lg",
-        // Mobile: full width with 450px height
-        "h-[450px] w-full",
-        // Desktop: responsive width (300px to 400px) with 500px height, prevent flex shrinking
-        "md:w-[300px] lg:w-[400px] md:h-[500px] md:flex-none",
-        // Scroll snap alignment
-        "snap-start mobile:snap-center",
+        "relative group cursor-pointer overflow-hidden flex-none",
+        // Desktop: 400px width, 300px height (4:3 aspect ratio)
+        "w-[400px] h-[300px]",
+        // Mobile: 350px width, 233px height (3:2 aspect ratio)
+        "mobile:w-[350px] mobile:h-[233px]",
+        // Styling
+        "rounded border-radius shadow-[0_4px_12px_rgba(0,0,0,0.15)]",
         // Hover effect
-        "hover:scale-105 transition-transform duration-700"
+        "hover:scale-105 transition-transform duration-300 ease-out",
+        // Scroll snap alignment
+        "snap-start"
       )}
     >
       <img
@@ -28,17 +30,14 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image }) => {
         className="w-full h-full object-cover"
       />
       
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
-      
       {/* Hover Text Overlay */}
       <div className={cn(
         "absolute inset-0 bg-black bg-opacity-0 transition-all duration-300",
-        "group-hover:bg-opacity-30",
-        "flex items-end p-4"
+        "group-hover:bg-opacity-40",
+        "flex items-center justify-center"
       )}>
         <div className={cn(
-          "text-white font-montserrat font-medium opacity-0 transition-opacity duration-300",
+          "text-white font-montserrat font-medium text-lg opacity-0 transition-opacity duration-300",
           "group-hover:opacity-100"
         )}>
           {image.designer}
