@@ -90,7 +90,7 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
   ];
 
   return (
-    <section id="alumni" className="bg-bone py-10">
+    <section id="alumni" className="bg-bone py-10 pb-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-12">

@@ -10,8 +10,17 @@ interface Vision2025Props {
 export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
   return (
     <section id="vision" className="bg-bone">
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center animate-fade-in">
+          {/* Designer celebration image - moved to top */}
+          <div className="w-full mb-12">
+            <img 
+              src="/lovable-uploads/4e38946a-c9a2-4c2d-a980-c68f45d73b73.png"
+              alt="Designer celebration with flowers and clothing rack"
+              className="w-full h-auto max-w-4xl mx-auto rounded-lg shadow-lg"
+            />
+          </div>
+          
           {/* Elegant Badge */}
           <div className="inline-flex items-center justify-center mb-6">
             <BodyS className="text-black uppercase tracking-wide px-4 py-2 border border-black border-opacity-20 rounded-full bg-cream bg-opacity-50 font-medium text-xs">
@@ -29,15 +38,6 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
             <BodyM className="text-black">
               For NYFW S/S 2026, ByDezin moves beyond the pop up. We're presenting an experiential showcase blending established luxury with fashion's emerging voices. From collection reveals to interactive installations and invite-only networking suites for designers and stylists, it's curated for those redefining the fashion landscape.
             </BodyM>
-          </div>
-          
-          {/* Designer celebration image */}
-          <div className="w-full mb-8">
-            <img 
-              src="/lovable-uploads/4e38946a-c9a2-4c2d-a980-c68f45d73b73.png"
-              alt="Designer celebration with flowers and clothing rack"
-              className="w-full h-auto max-w-4xl mx-auto rounded-lg shadow-lg"
-            />
           </div>
           
           {/* CTA Button */}
