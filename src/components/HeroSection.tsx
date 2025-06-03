@@ -16,7 +16,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  videoSrc = "/placeholder-video.mp4",
+  videoSrc = "/hero-video.mp4", // Updated to point to your uploaded video
   subtitle = "APOLLO WRLDX × ARNELL STEWART PRESENT",
   headline = "An Immersive Fashion Showroom Experience",
   subHeadline = "ByDezin NYFW S/S 2026", 
@@ -25,6 +25,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   secondaryCta = "Partner with Us"
 }) => {
   const [showPartnerModal, setShowPartnerModal] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const handleRSVPClick = () => {
     // Scroll to top to trigger header RSVP
@@ -52,11 +53,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         loop
         muted
         playsInline
+        preload="metadata"
+        onLoadedData={() => setVideoLoaded(true)}
+        poster="/hero-poster.jpg" // Optional: add a poster image for better loading
       >
         <source src={videoSrc} type="video/mp4" />
         {/* Fallback for browsers that don't support video */}
         <div className="absolute inset-0 bg-black" />
       </video>
+
+      {/* Loading state while video loads */}
+      {!videoLoaded && (
+        <div className="absolute inset-0 bg-black animate-pulse" />
+      )}
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
