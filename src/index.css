@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,69 +36,54 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-bone text-black font-montserrat;
+  }
+}
+
+@layer components {
+  /* 12-column grid system with 24px gutters */
+  .grid-container {
+    @apply w-full max-w-7xl mx-auto px-gutter;
+  }
+  
+  .grid-12 {
+    @apply grid grid-cols-12 gap-gutter;
+  }
+  
+  /* Responsive grid helpers */
+  .col-1 { @apply col-span-1; }
+  .col-2 { @apply col-span-2; }
+  .col-3 { @apply col-span-3; }
+  .col-4 { @apply col-span-4; }
+  .col-5 { @apply col-span-5; }
+  .col-6 { @apply col-span-6; }
+  .col-7 { @apply col-span-7; }
+  .col-8 { @apply col-span-8; }
+  .col-9 { @apply col-span-9; }
+  .col-10 { @apply col-span-10; }
+  .col-11 { @apply col-span-11; }
+  .col-12 { @apply col-span-12; }
+  
+  /* Mobile responsive columns */
+  @media (max-width: 639px) {
+    .mobile\:col-1 { @apply col-span-1; }
+    .mobile\:col-2 { @apply col-span-2; }
+    .mobile\:col-3 { @apply col-span-3; }
+    .mobile\:col-4 { @apply col-span-4; }
+    .mobile\:col-5 { @apply col-span-5; }
+    .mobile\:col-6 { @apply col-span-6; }
+    .mobile\:col-7 { @apply col-span-7; }
+    .mobile\:col-8 { @apply col-span-8; }
+    .mobile\:col-9 { @apply col-span-9; }
+    .mobile\:col-10 { @apply col-span-10; }
+    .mobile\:col-11 { @apply col-span-11; }
+    .mobile\:col-12 { @apply col-span-12; }
   }
 }

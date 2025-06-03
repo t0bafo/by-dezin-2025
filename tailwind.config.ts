@@ -17,8 +17,21 @@ export default {
 				'2xl': '1400px'
 			}
 		},
+		screens: {
+			'mobile': '640px',
+			'tablet': '1024px',
+			'desktop': '1025px',
+		},
 		extend: {
 			colors: {
+				// Design system colors
+				bone: '#F5F1EA',
+				cream: '#EAE3DA',
+				black: '#000000',
+				gold: '#C5A880',
+				'moody-red': '#7B2C2C',
+				
+				// Keep existing shadcn colors for compatibility
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -62,6 +75,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'montserrat': ['Montserrat', 'sans-serif'],
+			},
+			spacing: {
+				'gutter': '24px',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
