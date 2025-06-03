@@ -23,10 +23,19 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
           </HeadingL>
           
           {/* Body copy */}
-          <div className="max-w-[600px] mx-auto mb-6">
+          <div className="max-w-[600px] mx-auto mb-8">
             <BodyM className="text-black">
               For NYFW S/S 2026, ByDezin moves beyond the pop up. We're presenting an experiential showcase blending established luxury with fashion's emerging voices. From collection reveals to interactive installations and invite-only networking suites for designers and stylists, it's curated for those redefining the fashion landscape.
             </BodyM>
+          </div>
+          
+          {/* Designer celebration image */}
+          <div className="w-full mb-8">
+            <img 
+              src="/lovable-uploads/4e38946a-c9a2-4c2d-a980-c68f45d73b73.png"
+              alt="Designer celebration with flowers and clothing rack"
+              className="w-full h-auto max-w-4xl mx-auto rounded-lg shadow-lg"
+            />
           </div>
           
           {/* CTA Button */}
@@ -34,19 +43,10 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
             variant="primary"
             size="lg"
             onClick={onRSVPClick}
-            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-200 mb-12"
+            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-200"
           >
             Get Early Access
           </Button>
-          
-          {/* Designer celebration image as content */}
-          <div className="w-full">
-            <img 
-              src="/lovable-uploads/4e38946a-c9a2-4c2d-a980-c68f45d73b73.png"
-              alt="Designer celebration with flowers and clothing rack"
-              className="w-full h-auto max-w-4xl mx-auto rounded-lg shadow-lg"
-            />
-          </div>
         </div>
       </div>
     </section>
