@@ -151,9 +151,10 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
               </BodyM>
             </div>
 
-            {/* Partnership Benefits Grid - Fixed visual hierarchy */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-20 max-w-6xl mx-auto">
-              <div className="text-center px-4">
+            {/* Partnership Benefits Grid - Card containers */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-20 max-w-6xl mx-auto">
+              {/* Brand Visibility Card */}
+              <div className="bg-cream bg-opacity-50 border border-black border-opacity-10 rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="flex justify-center mb-6">
                   <Eye className="w-12 h-12 text-dusty-rose" />
                 </div>
@@ -165,7 +166,8 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
                 </BodyM>
               </div>
               
-              <div className="text-center px-4">
+              {/* Custom Activations Card */}
+              <div className="bg-cream bg-opacity-50 border border-black border-opacity-10 rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="flex justify-center mb-6">
                   <Zap className="w-12 h-12 text-dusty-rose" />
                 </div>
@@ -177,7 +179,8 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
                 </BodyM>
               </div>
               
-              <div className="text-center px-4">
+              {/* Media Amplification Card */}
+              <div className="bg-cream bg-opacity-50 border border-black border-opacity-10 rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="flex justify-center mb-6">
                   <TrendingUp className="w-12 h-12 text-dusty-rose" />
                 </div>
