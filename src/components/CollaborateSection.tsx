@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { HeadingL, BodyM } from '@/components/Typography';
+import React, { useEffect } from 'react';
+import { HeadingL, HeadingM, BodyM, BodyS } from '@/components/Typography';
 import { Button } from '@/components/Button';
 import { Eye, Zap, TrendingUp } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
@@ -10,6 +9,17 @@ interface CollaborateSectionProps {
 }
 
 export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartnerClick }) => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://www.instagram.com/reel/C__pe13OAp7/embed';
+    script.frameBorder = '0';
+    script.scrolling = 'no';
+    script.allowTransparency = true;
+    script.loading = 'lazy';
+    script.title = 'Cheurlin Partnership Reel';
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <section id="collaborate" className="bg-cream py-20">
       <div className="max-w-7xl mx-auto px-6">
@@ -73,47 +83,53 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
 
         {/* Spacer/Divider */}
         <div className="my-20">
-          <Separator className="bg-black bg-opacity-20" />
+          <Separator className="bg-dusty-rose bg-opacity-30" />
         </div>
 
         {/* Partner With Us Section */}
         <div className="text-center">
+          <div className="mb-3">
+            <BodyS className="text-dusty-rose uppercase tracking-[0.15em] font-medium">
+              Collaborate
+            </BodyS>
+          </div>
+          
           <HeadingL className="text-black mb-6">Partner With ByDezin</HeadingL>
           
-          <div className="max-w-[600px] mx-auto mb-16">
-            <BodyM className="text-black">
+          <div className="max-w-[500px] mx-auto mb-20">
+            <BodyM className="text-black leading-relaxed">
               Join Cheurlin, Apollo Wrldx, and other visionary brands backing the next wave of fashion talent.
             </BodyM>
           </div>
 
-          {/* Partnership Benefits Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-            <div className="text-center">
-              <div className="flex justify-center mb-6">
-                <Eye className="w-12 h-12 text-black" />
+          {/* Partnership Benefits Grid - improved hierarchy and spacing */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 lg:gap-20 mb-20">
+            <div className="text-center max-w-sm mx-auto">
+              <div className="flex justify-center mb-8">
+                <Eye className="w-12 h-12 text-dusty-rose" />
               </div>
-              <HeadingL className="text-black text-2xl mb-4" as="h3">Brand Visibility</HeadingL>
-              <BodyM className="text-black">
+              <HeadingM className="text-black mb-6 text-lg font-medium">Brand Visibility</HeadingM>
+              <BodyM className="text-black leading-relaxed text-sm opacity-80">
                 Showcase your brand to fashion's most influential emerging designers, stylists, and industry tastemakers.
               </BodyM>
             </div>
             
-            <div className="text-center">
-              <div className="flex justify-center mb-6">
-                <Zap className="w-12 h-12 text-black" />
+            <div className="text-center max-w-sm mx-auto">
+              <div className="flex justify-center mb-8">
+                <Zap className="w-12 h-12 text-dusty-rose" />
               </div>
-              <HeadingL className="text-black text-2xl mb-4" as="h3">Custom Activations</HeadingL>
-              <BodyM className="text-black">
+              <HeadingM className="text-black mb-6 text-lg font-medium">Custom Activations</HeadingM>
+              <BodyM className="text-black leading-relaxed text-sm opacity-80">
                 Create bespoke experiences that align with your brand values and connect authentically with our community.
               </BodyM>
             </div>
             
-            <div className="text-center">
-              <div className="flex justify-center mb-6">
-                <TrendingUp className="w-12 h-12 text-black" />
+            <div className="text-center max-w-sm mx-auto">
+              <div className="flex justify-center mb-8">
+                <TrendingUp className="w-12 h-12 text-dusty-rose" />
               </div>
-              <HeadingL className="text-black text-2xl mb-4" as="h3">Media Amplification</HeadingL>
-              <BodyM className="text-black">
+              <HeadingM className="text-black mb-6 text-lg font-medium">Media Amplification</HeadingM>
+              <BodyM className="text-black leading-relaxed text-sm opacity-80">
                 Leverage our content creation and social media reach to amplify your partnership across multiple platforms.
               </BodyM>
             </div>
@@ -124,7 +140,7 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
             variant="primary"
             size="lg"
             onClick={onPartnerClick}
-            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-200"
+            className="bg-black text-bone hover:bg-dusty-rose hover:text-black transition-all duration-300 px-8 py-3 text-base font-medium"
           >
             Partner with Us
           </Button>
