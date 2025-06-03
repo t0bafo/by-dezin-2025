@@ -42,18 +42,19 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
         </div>
       </div>
       
-      {/* Background image with gradient overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-[150px] z-0">
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/lovable-uploads/59fa3a4e-d619-4379-bb13-4c11b98f3e72.png')"
-          }}
-        />
-        {/* Cream gradient overlay */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-t from-cream to-transparent opacity-30"
-        />
+      {/* Full background image with responsive design */}
+      <div className="absolute bottom-0 left-0 right-0 h-[300px] mobile:h-[400px] tablet:h-[500px] z-0">
+        <div className="w-full h-full relative">
+          <img 
+            src="/lovable-uploads/4e38946a-c9a2-4c2d-a980-c68f45d73b73.png"
+            alt="Designer celebration with flowers and clothing rack"
+            className="w-full h-full object-contain object-bottom"
+          />
+          {/* Cream gradient overlay for text legibility */}
+          <div 
+            className="absolute inset-0 bg-gradient-to-t from-cream via-cream/20 to-transparent opacity-40"
+          />
+        </div>
       </div>
     </section>
   );
