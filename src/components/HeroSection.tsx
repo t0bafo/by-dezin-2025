@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -106,39 +107,39 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-      {/* Hero Content - Improved mobile centering */}
-      <div className="relative z-10 h-full flex items-center justify-center px-4 py-safe">
+      {/* Hero Content - Improved mobile positioning and sizing */}
+      <div className="relative z-10 h-full flex items-center justify-center px-4 pt-16 pb-20 mobile:pt-12 mobile:pb-16">
         <GridContainer className="w-full">
           <Grid>
             <Col span={12} tabletSpan={10} className="tablet:col-start-2">
               <div className="text-center text-white animate-fade-in">
                 {/* Subtitle */}
-                <BodyM className="text-gold mb-3 mobile:mb-4 tablet:mb-6 uppercase tracking-widest font-medium text-sm mobile:text-base">
+                <BodyM className="text-gold mb-4 mobile:mb-6 tablet:mb-6 uppercase tracking-widest font-medium text-xs mobile:text-sm tablet:text-base">
                   {subtitle}
                 </BodyM>
 
-                {/* Main Headline - Responsive text sizing */}
-                <HeadingXL className="text-white mb-3 mobile:mb-4 tablet:mb-6 text-2xl mobile:text-4xl tablet:text-6xl desktop:text-7xl leading-tight">
+                {/* Main Headline - Significantly larger on mobile */}
+                <HeadingXL className="text-white mb-4 mobile:mb-6 tablet:mb-6 text-3xl mobile:text-5xl tablet:text-6xl desktop:text-7xl leading-tight font-bold">
                   {headline}
                 </HeadingXL>
 
-                {/* Sub-headline - Responsive text sizing */}
-                <HeadingL className="text-bone mb-4 mobile:mb-6 tablet:mb-8 desktop:mb-12 text-lg mobile:text-xl tablet:text-2xl desktop:text-3xl font-normal opacity-90">
+                {/* Sub-headline - Better mobile sizing */}
+                <HeadingL className="text-bone mb-6 mobile:mb-8 tablet:mb-8 desktop:mb-12 text-xl mobile:text-2xl tablet:text-3xl desktop:text-4xl font-normal opacity-90">
                   {subHeadline}
                 </HeadingL>
 
-                {/* Event Details - Responsive text sizing */}
-                <BodyM className="text-cream mb-6 mobile:mb-8 tablet:mb-12 desktop:mb-16 text-sm mobile:text-base tablet:text-lg opacity-80">
+                {/* Event Details - Enhanced mobile readability */}
+                <BodyM className="text-cream mb-8 mobile:mb-10 tablet:mb-12 desktop:mb-16 text-base mobile:text-lg tablet:text-xl opacity-80">
                   {eventDetails}
                 </BodyM>
 
-                {/* Call-to-Action Buttons - Better responsive layout */}
-                <div className="flex flex-col mobile:flex-row gap-3 mobile:gap-4 tablet:gap-6 justify-center items-center">
+                {/* Call-to-Action Buttons - Optimized mobile touch targets */}
+                <div className="flex flex-col mobile:flex-row gap-4 mobile:gap-6 tablet:gap-6 justify-center items-center">
                   <Button 
                     variant="primary" 
                     size="lg"
                     onClick={handleRSVPClick}
-                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
+                    className="w-full mobile:w-auto min-h-[52px] mobile:min-h-[56px] px-8 mobile:px-10 py-4 mobile:py-5 text-lg mobile:text-xl font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg"
                   >
                     {primaryCta}
                   </Button>
@@ -146,7 +147,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     variant="secondary" 
                     size="lg"
                     onClick={handlePartnerClick}
-                    className="text-gold hover:text-gold text-base mobile:text-lg underline underline-offset-4 decoration-1 hover:decoration-2"
+                    className="text-gold hover:text-gold text-lg mobile:text-xl underline underline-offset-4 decoration-1 hover:decoration-2 min-h-[52px] mobile:min-h-[56px] px-4 py-3"
                   >
                     {secondaryCta}
                   </Button>
