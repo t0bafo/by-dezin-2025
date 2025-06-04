@@ -152,14 +152,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   >
                     {primaryCta}
                   </Button>
-                  <Button 
-                    variant="secondary" 
-                    size="lg"
+                  
+                  {/* Partner CTA as subtle text link */}
+                  <button 
                     onClick={handlePartnerClick}
-                    className="text-gold hover:text-gold text-lg mobile:text-xl underline underline-offset-4 decoration-1 hover:decoration-2 min-h-[52px] mobile:min-h-[56px] px-4 py-3"
+                    className="text-cream hover:text-gold text-lg mobile:text-xl underline underline-offset-4 decoration-1 hover:decoration-2 transition-all duration-200 min-h-[52px] mobile:min-h-[56px] px-4 py-3 bg-transparent border-none cursor-pointer"
                   >
                     {secondaryCta}
-                  </Button>
+                  </button>
                 </div>
               </div>
             </Col>
