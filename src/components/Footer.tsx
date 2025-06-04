@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
             </a>
             {' & '}
             <a 
-              href="https://www.instagram.com/arnell___?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+              href="https://www.instagram.com/arnell___/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-white transition-colors duration-300 underline"
