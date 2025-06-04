@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -44,16 +45,33 @@
   body {
     @apply bg-bone text-black font-montserrat;
   }
+
+  /* Ensure proper touch scrolling on mobile */
+  html {
+    touch-action: manipulation;
+  }
 }
 
 @layer components {
-  /* 12-column grid system with 24px gutters */
+  /* Responsive 12-column grid system */
   .grid-container {
-    @apply w-full max-w-7xl mx-auto px-gutter;
+    @apply w-full max-w-7xl mx-auto px-4;
+  }
+  
+  @screen mobile {
+    .grid-container {
+      @apply px-6;
+    }
   }
   
   .grid-12 {
-    @apply grid grid-cols-12 gap-gutter;
+    @apply grid grid-cols-12 gap-4;
+  }
+  
+  @screen mobile {
+    .grid-12 {
+      @apply gap-6;
+    }
   }
   
   /* Responsive grid helpers */
@@ -100,5 +118,29 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Responsive utilities */
+  .container-padding {
+    @apply px-4 mobile:px-6 tablet:px-8;
+  }
+  
+  .section-padding {
+    @apply py-12 mobile:py-16 tablet:py-20 desktop:py-24;
+  }
+}
+
+/* Ensure smooth scrolling on all devices */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 640px) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
   }
 }

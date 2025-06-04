@@ -85,7 +85,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Show error message if video fails to load */}
       {videoError && (
         <div className="absolute inset-0 bg-black flex items-center justify-center">
-          <p className="text-white text-center">
+          <p className="text-white text-center px-4">
             Video failed to load: {videoSrc}
             <br />
             <small>Check browser console for details</small>
@@ -103,39 +103,39 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-      {/* Hero Content */}
-      <div className="relative z-10 h-full flex items-center">
+      {/* Hero Content - Fixed mobile positioning */}
+      <div className="relative z-10 h-full flex items-center justify-center px-4 py-8">
         <GridContainer className="w-full">
           <Grid>
             <Col span={12} tabletSpan={10} className="tablet:col-start-2">
               <div className="text-center text-white animate-fade-in">
                 {/* Subtitle */}
-                <BodyM className="text-gold mb-4 mobile:mb-6 uppercase tracking-widest font-medium">
+                <BodyM className="text-gold mb-3 mobile:mb-4 tablet:mb-6 uppercase tracking-widest font-medium text-sm mobile:text-base">
                   {subtitle}
                 </BodyM>
 
-                {/* Main Headline */}
-                <HeadingXL className="text-white mb-4 mobile:mb-6 text-4xl mobile:text-6xl tablet:text-7xl leading-tight">
+                {/* Main Headline - Responsive text sizing */}
+                <HeadingXL className="text-white mb-3 mobile:mb-4 tablet:mb-6 text-2xl mobile:text-4xl tablet:text-6xl desktop:text-7xl leading-tight">
                   {headline}
                 </HeadingXL>
 
-                {/* Sub-headline */}
-                <HeadingL className="text-bone mb-6 mobile:mb-8 tablet:mb-12 text-xl mobile:text-2xl tablet:text-3xl font-normal opacity-90">
+                {/* Sub-headline - Responsive text sizing */}
+                <HeadingL className="text-bone mb-4 mobile:mb-6 tablet:mb-8 desktop:mb-12 text-lg mobile:text-xl tablet:text-2xl desktop:text-3xl font-normal opacity-90">
                   {subHeadline}
                 </HeadingL>
 
-                {/* Event Details */}
-                <BodyM className="text-cream mb-8 mobile:mb-12 tablet:mb-16 text-base mobile:text-lg opacity-80">
+                {/* Event Details - Responsive text sizing */}
+                <BodyM className="text-cream mb-6 mobile:mb-8 tablet:mb-12 desktop:mb-16 text-sm mobile:text-base tablet:text-lg opacity-80">
                   {eventDetails}
                 </BodyM>
 
-                {/* Call-to-Action Buttons */}
-                <div className="flex flex-col mobile:flex-row gap-4 mobile:gap-6 justify-center items-center">
+                {/* Call-to-Action Buttons - Better responsive layout */}
+                <div className="flex flex-col mobile:flex-row gap-3 mobile:gap-4 tablet:gap-6 justify-center items-center">
                   <Button 
                     variant="primary" 
                     size="lg"
                     onClick={handleRSVPClick}
-                    className="w-full mobile:w-auto px-8 py-4 text-lg font-semibold bg-gold text-black hover:bg-opacity-90"
+                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-semibold bg-gold text-black hover:bg-opacity-90"
                   >
                     {primaryCta}
                   </Button>
@@ -143,7 +143,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     variant="secondary" 
                     size="lg"
                     onClick={handlePartnerClick}
-                    className="text-moody-red hover:text-moody-red text-lg underline underline-offset-4 decoration-1 hover:decoration-2"
+                    className="text-gold hover:text-gold text-base mobile:text-lg underline underline-offset-4 decoration-1 hover:decoration-2"
                   >
                     {secondaryCta}
                   </Button>

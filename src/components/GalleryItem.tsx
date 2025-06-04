@@ -12,14 +12,12 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image }) => {
     <div
       className={cn(
         "relative group cursor-pointer overflow-hidden flex-none",
-        // Desktop: 400px width, 300px height (4:3 aspect ratio)
-        "w-[400px] h-[300px]",
-        // Mobile: 350px width, 233px height (3:2 aspect ratio)
-        "mobile:w-[350px] mobile:h-[233px]",
+        // Responsive sizing: Mobile (280px), Tablet (350px), Desktop (400px)
+        "w-[280px] h-[200px] mobile:w-[350px] mobile:h-[250px] tablet:w-[400px] tablet:h-[300px]",
         // Styling
-        "rounded border-radius shadow-[0_4px_12px_rgba(0,0,0,0.15)]",
-        // Hover effect
-        "hover:scale-105 transition-transform duration-300 ease-out",
+        "rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.15)]",
+        // Hover effect - only on non-touch devices
+        "tablet:hover:scale-105 transition-transform duration-300 ease-out",
         // Scroll snap alignment
         "snap-start"
       )}
@@ -28,17 +26,20 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image }) => {
         src={image.src}
         alt={image.designer}
         className="w-full h-full object-cover"
+        loading="lazy"
       />
       
-      {/* Hover Text Overlay */}
+      {/* Hover Text Overlay - Adjusted for mobile */}
       <div className={cn(
         "absolute inset-0 bg-black bg-opacity-0 transition-all duration-300",
-        "group-hover:bg-opacity-40",
+        "tablet:group-hover:bg-opacity-40",
         "flex items-center justify-center"
       )}>
         <div className={cn(
-          "text-white font-montserrat font-medium text-lg opacity-0 transition-opacity duration-300",
-          "group-hover:opacity-100"
+          "text-white font-montserrat font-medium opacity-0 transition-opacity duration-300",
+          "tablet:group-hover:opacity-100",
+          "text-sm mobile:text-base tablet:text-lg",
+          "px-4 text-center"
         )}>
           {image.designer}
         </div>

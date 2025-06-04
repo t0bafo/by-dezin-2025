@@ -20,8 +20,15 @@ const Gallery: React.FC = () => {
       const container = scrollContainerRef.current;
       // Calculate scroll amount based on screen size
       const isMobile = window.innerWidth < 640;
+      const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
       
-      const cardWidth = isMobile ? 350 : 400; // Card width
+      let cardWidth = 400; // Desktop default
+      if (isMobile) {
+        cardWidth = 280; // Mobile card width
+      } else if (isTablet) {
+        cardWidth = 350; // Tablet card width
+      }
+      
       const gap = 24; // Gap between images
       const scrollAmount = cardWidth + gap;
       
@@ -31,21 +38,21 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <section id="highlights" className="bg-bone py-16 mobile:py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="highlights" className="bg-bone py-12 mobile:py-16 tablet:py-20 desktop:py-24">
+      <div className="max-w-7xl mx-auto px-4 mobile:px-6">
         {/* Header Content */}
-        <div className="text-center mb-12">
-          <HeadingL className="text-black mb-4">
+        <div className="text-center mb-8 mobile:mb-10 tablet:mb-12">
+          <HeadingL className="text-black mb-3 mobile:mb-4 text-2xl mobile:text-3xl tablet:text-4xl">
             2024 Showcase Rewind
           </HeadingL>
           
-          <div className="max-w-[600px] mx-auto mb-6">
-            <BodyM className="text-black">
+          <div className="max-w-[600px] mx-auto mb-4 mobile:mb-6">
+            <BodyM className="text-black text-sm mobile:text-base tablet:text-lg">
               From SoHo to Houston to Lagos, we celebrated bold new voices. And we're just getting started.
             </BodyM>
           </div>
           
-          <BodyS className="text-black uppercase tracking-wider mt-3">
+          <BodyS className="text-black uppercase tracking-wider mt-2 mobile:mt-3 text-xs mobile:text-sm">
             Scroll to experience it for yourself →
           </BodyS>
         </div>
@@ -62,18 +69,21 @@ const Gallery: React.FC = () => {
             setShowArrows(false);
           }}
         >
-          {/* Scroll Container */}
+          {/* Scroll Container - Enhanced mobile touch support */}
           <div
             ref={scrollContainerRef}
             className={cn(
-              "flex gap-6 overflow-x-auto pb-4",
-              // Scroll snap
+              "flex gap-4 mobile:gap-6 overflow-x-auto pb-4",
+              // Scroll snap for better mobile experience
               "scroll-smooth snap-x snap-mandatory",
-              // Hide scrollbar
-              "[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              // Hide scrollbar but ensure touch scrolling works
+              "[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]",
+              // Enhanced mobile touch scrolling
+              "overscroll-behavior-x-contain"
             )}
             style={{
-              WebkitOverflowScrolling: 'touch'
+              WebkitOverflowScrolling: 'touch',
+              scrollSnapType: 'x mandatory'
             }}
           >
             {galleryImages.map((image) => (
@@ -81,7 +91,7 @@ const Gallery: React.FC = () => {
             ))}
           </div>
 
-          {/* Navigation Arrows - Desktop Only */}
+          {/* Navigation Arrows - Desktop and Tablet Only */}
           <GalleryNavigation
             showArrows={showArrows}
             onScrollLeft={() => scroll('left')}

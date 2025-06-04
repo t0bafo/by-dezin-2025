@@ -26,7 +26,7 @@ export const GridContainer: React.FC<GridContainerProps> = ({
   className 
 }) => {
   return (
-    <div className={cn("grid-container", className)}>
+    <div className={cn("w-full max-w-7xl mx-auto px-4 mobile:px-6", className)}>
       {children}
     </div>
   );
@@ -38,7 +38,7 @@ export const Grid: React.FC<GridProps> = ({
   cols = 12 
 }) => {
   return (
-    <div className={cn(`grid grid-cols-${cols} gap-gutter`, className)}>
+    <div className={cn(`grid grid-cols-${cols} gap-4 mobile:gap-6`, className)}>
       {children}
     </div>
   );
