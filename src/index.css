@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -45,9 +46,10 @@
     @apply bg-bone text-black font-inter;
   }
 
-  /* Ensure proper touch scrolling on mobile */
+  /* Enhanced touch scrolling and hardware acceleration */
   html {
     touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -103,7 +105,7 @@
     .mobile\:col-12 { @apply col-span-12; }
   }
   
-  /* Animations */
+  /* Enhanced animations with hardware acceleration */
   .animate-fade-in {
     animation: fadeIn 1.2s ease-out forwards;
   }
@@ -111,11 +113,11 @@
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translate3d(0, 30px, 0);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0);
     }
   }
 
@@ -127,19 +129,56 @@
   .section-padding {
     @apply py-12 mobile:py-16 tablet:py-20 desktop:py-24;
   }
+
+  /* Gallery-specific optimizations */
+  .gallery-smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    transform: translate3d(0, 0, 0);
+    will-change: scroll-position;
+  }
+
+  /* Hardware acceleration utilities */
+  .transform-gpu {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+  }
 }
 
-/* Ensure smooth scrolling on all devices */
+/* Enhanced smooth scrolling with better easing */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
+  
+  /* Custom easing for gallery scrolling */
+  * {
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
 }
 
-/* Improve touch targets on mobile */
+/* Improved touch targets and performance on mobile */
 @media (max-width: 640px) {
   button, a, [role="button"] {
     min-height: 44px;
     min-width: 44px;
+  }
+  
+  /* Enhanced mobile gallery performance */
+  .gallery-container {
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Optimize scroll momentum on iOS */
+  .gallery-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
   }
 }

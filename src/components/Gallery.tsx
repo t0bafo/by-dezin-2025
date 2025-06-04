@@ -23,17 +23,24 @@ const Gallery: React.FC = () => {
       const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
       
       let cardWidth = 400; // Desktop default
+      let gap = 24; // Desktop gap
+      
       if (isMobile) {
         cardWidth = 280; // Mobile card width
+        gap = 16; // Mobile gap
       } else if (isTablet) {
         cardWidth = 350; // Tablet card width
+        gap = 20; // Tablet gap
       }
       
-      const gap = 24; // Gap between images
       const scrollAmount = cardWidth + gap;
-      
       const scrollValue = direction === 'left' ? -scrollAmount : scrollAmount;
-      container.scrollBy({ left: scrollValue, behavior: 'smooth' });
+      
+      // Hardware-accelerated smooth scrolling
+      container.scrollBy({ 
+        left: scrollValue, 
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -69,21 +76,27 @@ const Gallery: React.FC = () => {
             setShowArrows(false);
           }}
         >
-          {/* Scroll Container - Enhanced mobile touch support */}
+          {/* Scroll Container - Enhanced mobile performance */}
           <div
             ref={scrollContainerRef}
             className={cn(
-              "flex gap-4 mobile:gap-6 overflow-x-auto pb-4",
-              // Scroll snap for better mobile experience
+              "flex gap-4 mobile:gap-4 overflow-x-auto pb-4",
+              // Enhanced scroll performance and behavior
               "scroll-smooth snap-x snap-mandatory",
+              // Hardware acceleration and smooth scrolling
+              "transform-gpu will-change-scroll",
               // Hide scrollbar but ensure touch scrolling works
               "[&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]",
-              // Enhanced mobile touch scrolling
-              "overscroll-behavior-x-contain"
+              // Enhanced mobile touch scrolling with momentum
+              "overscroll-behavior-x-contain touch-pan-x"
             )}
             style={{
               WebkitOverflowScrolling: 'touch',
-              scrollSnapType: 'x mandatory'
+              scrollSnapType: 'x mandatory',
+              // Hardware acceleration
+              transform: 'translate3d(0, 0, 0)',
+              // Smooth momentum scrolling
+              scrollBehavior: 'smooth'
             }}
           >
             {galleryImages.map((image) => (

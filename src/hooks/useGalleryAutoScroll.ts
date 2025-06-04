@@ -18,20 +18,24 @@ export const useGalleryAutoScroll = ({ isHovered, scrollContainerRef }: UseGalle
           // Calculate scroll amount based on screen size
           const isMobile = window.innerWidth < 640;
           
-          const cardWidth = isMobile ? 350 : 400; // Card width
-          const gap = 24; // Gap between images
+          const cardWidth = isMobile ? 280 : 400; // Updated mobile card width
+          const gap = isMobile ? 16 : 24; // Responsive gap
           const scrollAmount = cardWidth + gap;
           
-          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          // Use hardware-accelerated smooth scrolling
+          container.scrollBy({ 
+            left: scrollAmount, 
+            behavior: 'smooth'
+          });
           
-          // Reset to beginning if at end
+          // Reset to beginning if at end with smooth transition
           if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
             setTimeout(() => {
               container.scrollTo({ left: 0, behavior: 'smooth' });
-            }, 1000);
+            }, 800); // Shorter delay for better responsiveness
           }
         }
-      }, 3000);
+      }, isMobile ? 2200 : 3000); // Faster on mobile: 2.2s vs 3s
     };
 
     startAutoScroll();
