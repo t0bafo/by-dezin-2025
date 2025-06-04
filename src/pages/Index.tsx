@@ -9,6 +9,8 @@ import { Vision2025 } from '@/components/Vision2025';
 import Gallery from '@/components/Gallery';
 import ExperienceHighlights from '@/components/ExperienceHighlights';
 import { CollaborateSection } from '@/components/CollaborateSection';
+import { FinalCTA } from '@/components/FinalCTA';
+import { Footer } from '@/components/Footer';
 
 const Index = () => {
   const [showRSVPModal, setShowRSVPModal] = useState(false);
@@ -46,7 +48,13 @@ const Index = () => {
         
         {/* Collaborate Section */}
         <CollaborateSection onPartnerClick={() => setShowPartnerModal(true)} />
+        
+        {/* Final Call to Action Section */}
+        <FinalCTA onRSVPClick={handleRSVPClick} />
       </main>
+
+      {/* Footer */}
+      <Footer />
 
       {/* Modals */}
       <RSVPModal 

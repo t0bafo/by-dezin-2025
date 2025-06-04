@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { HeadingL, HeadingM, BodyM, BodyS } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -193,12 +192,12 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
               </div>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button - Changed to gold */}
             <Button
               variant="primary"
               size="lg"
               onClick={onPartnerClick}
-              className="bg-black text-bone hover:bg-dusty-rose hover:text-black transition-all duration-300 px-8 py-3 text-base font-medium"
+              className="bg-gold text-black hover:bg-opacity-90 transition-all duration-300 px-8 py-3 text-base font-medium"
             >
               Partner with Us
             </Button>
