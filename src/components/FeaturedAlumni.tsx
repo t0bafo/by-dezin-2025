@@ -24,7 +24,7 @@ const AlumniItem: React.FC<AlumniItemProps> = ({
 }) => {
   const content = (
     <div className="flex flex-col items-center text-center group cursor-pointer">
-      {/* Logo Container - removed white background */}
+      {/* Logo Container */}
       <div className="w-32 h-32 mobile:w-36 mobile:h-36 flex items-center justify-center mb-4">
         <img 
           src={logoSrc} 
@@ -78,7 +78,7 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
     {
       name: "FMLIA",
       location: "New York",
-      logoSrc: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop", // Placeholder for FMLIA
+      logoSrc: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop",
       link: "https://fmilia.com/"
     },
     {
@@ -90,15 +90,15 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
   ];
 
   return (
-    <section id="alumni" className="bg-bone py-12 mobile:py-16 tablet:py-20 desktop:py-24">
+    <section id="alumni" className="bg-bone py-16 mobile:py-20 tablet:py-24 desktop:py-28">
       <div className="max-w-7xl mx-auto px-4 mobile:px-6">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <HeadingL className="text-black mb-6">
             Featured Alumni
           </HeadingL>
           
-          <div className="max-w-[600px] mx-auto mb-6">
+          <div className="max-w-[600px] mx-auto">
             <BodyM className="text-black">
               Last season, these fresh voices made their ByDezin debut, each one shaping the future of style in their city and beyond.
             </BodyM>
@@ -106,7 +106,7 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
         </div>
 
         {/* Alumni Grid */}
-        <div className="grid grid-cols-2 mobile:grid-cols-4 gap-8 mobile:gap-12 mb-12">
+        <div className="grid grid-cols-2 mobile:grid-cols-4 gap-8 mobile:gap-12 mb-16">
           {alumni.map((brand, index) => (
             <AlumniItem
               key={index}

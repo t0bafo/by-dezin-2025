@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { HeadingL, BodyM } from '@/components/Typography';
 
@@ -35,15 +34,15 @@ const ExperienceHighlights: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-cream py-16 mobile:py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-cream py-16 mobile:py-20 tablet:py-24 desktop:py-28">
+      <div className="max-w-7xl mx-auto px-4 mobile:px-6">
         {/* Header Content */}
         <div className="text-center mb-16">
-          <HeadingL className="text-black mb-4">
+          <HeadingL className="text-black mb-6">
             Inside the ByDezin Experience
           </HeadingL>
           
-          <div className="max-w-[600px] mx-auto mb-6">
+          <div className="max-w-[600px] mx-auto">
             <BodyM className="text-black">
               Your 60-second rewind. A flash of style, sound and community in just 60 seconds. This was ByDezin 2024.
             </BodyM>

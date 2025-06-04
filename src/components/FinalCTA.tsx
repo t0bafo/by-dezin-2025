@@ -9,7 +9,7 @@ interface FinalCTAProps {
 
 export const FinalCTA: React.FC<FinalCTAProps> = ({ onRSVPClick }) => {
   return (
-    <section id="rsvp" className="bg-black min-h-[50vh] flex items-center py-12 mobile:py-16 tablet:py-20 desktop:py-24">
+    <section id="rsvp" className="bg-black min-h-[50vh] flex items-center py-16 mobile:py-20 tablet:py-24 desktop:py-28">
       <div className="max-w-7xl mx-auto px-4 mobile:px-6 w-full">
         <div className="text-center animate-fade-in">
           {/* Main Headline */}

@@ -45,11 +45,11 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <section id="highlights" className="bg-bone py-12 mobile:py-16 tablet:py-20 desktop:py-24">
+    <section id="highlights" className="bg-bone py-16 mobile:py-20 tablet:py-24 desktop:py-28">
       <div className="max-w-7xl mx-auto px-4 mobile:px-6">
         {/* Header Content */}
-        <div className="text-center mb-8 mobile:mb-10 tablet:mb-12">
-          <HeadingL className="text-black mb-4">
+        <div className="text-center mb-16">
+          <HeadingL className="text-black mb-6">
             2024 Showcase Rewind
           </HeadingL>
           

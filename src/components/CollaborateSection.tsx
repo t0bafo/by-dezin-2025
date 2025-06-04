@@ -42,8 +42,8 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
   return (
     <section id="collaborate">
       {/* Past Sponsors Section - Bone Background */}
-      <div className="bg-bone py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="bg-bone py-16 mobile:py-20 tablet:py-24 desktop:py-28">
+        <div className="max-w-7xl mx-auto px-4 mobile:px-6">
           <div className="text-center">
             <HeadingL className="text-black mb-6">Past Sponsors</HeadingL>
             
@@ -96,7 +96,7 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
             </div>
 
             {/* Cheurlin Partnership Reel - Clean Instagram embed */}
-            <div className="w-full max-w-[540px] mx-auto mb-8">
+            <div className="w-full max-w-[540px] mx-auto">
               <blockquote 
                 className="instagram-media" 
                 data-instgrm-permalink="https://www.instagram.com/reel/C__pe13OAp7/?utm_source=ig_embed&utm_campaign=loading" 
@@ -154,19 +154,19 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
       </div>
 
       {/* Partner With ByDezin Section - Cream Background */}
-      <div className="bg-cream py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="bg-cream py-16 mobile:py-20 tablet:py-24 desktop:py-28">
+        <div className="max-w-7xl mx-auto px-4 mobile:px-6">
           <div className="text-center">
             <HeadingL className="text-black mb-6">Partner With ByDezin</HeadingL>
             
-            <div className="max-w-[500px] mx-auto mb-20">
+            <div className="max-w-[500px] mx-auto mb-16">
               <BodyM className="text-black leading-relaxed">
                 Join Cheurlin, Apollo Wrldx, and other visionary brands backing the next wave of fashion talent.
               </BodyM>
             </div>
 
             {/* Partnership Benefits Grid - Card containers */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-20 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-16 max-w-6xl mx-auto">
               {/* Brand Visibility Card */}
               <div className="bg-cream bg-opacity-50 border border-black border-opacity-10 rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="flex justify-center mb-6">
