@@ -31,7 +31,7 @@ const Index = () => {
       {/* Main content with top padding to account for sticky header */}
       <main className="pt-16">
         <section id="hero">
-          <HeroSection />
+          <HeroSection onRSVPClick={handleRSVPClick} />
         </section>
         
         {/* Gallery Section */}

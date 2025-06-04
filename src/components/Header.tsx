@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/Button';
@@ -113,14 +112,15 @@ export const Header: React.FC<HeaderProps> = ({ onRSVPClick }) => {
           ))}
         </div>
 
-        {/* Desktop RSVP Button */}
+        {/* Desktop Get Early Access Button */}
         <div className="hidden mobile:block">
           <Button 
             variant="primary" 
             size="sm"
             onClick={onRSVPClick}
+            className="bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
           >
-            RSVP
+            Get Early Access
           </Button>
         </div>
 
@@ -168,9 +168,9 @@ export const Header: React.FC<HeaderProps> = ({ onRSVPClick }) => {
                   onRSVPClick();
                   setIsMenuOpen(false);
                 }}
-                className="w-full"
+                className="w-full bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
               >
-                RSVP
+                Get Early Access
               </Button>
             </div>
           </div>

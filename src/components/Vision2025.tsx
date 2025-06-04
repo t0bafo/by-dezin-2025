@@ -36,7 +36,7 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
             variant="primary"
             size="lg"
             onClick={onRSVPClick}
-            className="bg-moody-red text-bone hover:bg-opacity-90 transition-all duration-200"
+            className="bg-moody-red text-bone hover:bg-opacity-90 transition-all duration-200 border-moody-red"
           >
             Get Early Access
           </Button>

@@ -13,7 +13,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onRSVPClick }) => {
       <div className="max-w-7xl mx-auto px-10 w-full">
         <div className="text-center animate-fade-in">
           {/* Main Headline */}
-          <HeadingXL className="font-playfair text-white mb-6 text-4xl mobile:text-6xl tablet:text-7xl font-bold leading-tight">
+          <HeadingXL className="font-cormorant text-white mb-6 text-4xl mobile:text-6xl tablet:text-7xl font-bold leading-tight">
             Join Us in New York
           </HeadingXL>
 
@@ -29,12 +29,12 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onRSVPClick }) => {
             </BodyM>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - Gold on black background for contrast */}
           <Button
             variant="primary"
             size="lg"
             onClick={onRSVPClick}
-            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-300 px-8 py-4 text-lg font-semibold"
+            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-300 px-8 py-4 text-lg font-semibold border-gold"
           >
             Get Early Access
           </Button>

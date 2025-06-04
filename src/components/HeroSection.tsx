@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -13,6 +12,7 @@ interface HeroSectionProps {
   eventDetails?: string;
   primaryCta?: string;
   secondaryCta?: string;
+  onRSVPClick?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
@@ -22,22 +22,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   subHeadline = "ByDezin NYFW S/S 2026", 
   eventDetails = "September 13, 2025 · New York City",
   primaryCta = "Get Early Access",
-  secondaryCta = "Partner with Us"
+  secondaryCta = "Partner with Us",
+  onRSVPClick
 }) => {
   const [showPartnerModal, setShowPartnerModal] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
 
   const handleRSVPClick = () => {
-    // Scroll to top to trigger header RSVP
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Small delay then trigger header RSVP
-    setTimeout(() => {
-      const headerRSVPButton = document.querySelector('header button');
-      if (headerRSVPButton) {
-        (headerRSVPButton as HTMLButtonElement).click();
-      }
-    }, 500);
+    if (onRSVPClick) {
+      onRSVPClick();
+    } else {
+      // Fallback to scroll to top to trigger header RSVP
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        const headerRSVPButton = document.querySelector('header button');
+        if (headerRSVPButton) {
+          (headerRSVPButton as HTMLButtonElement).click();
+        }
+      }, 500);
+    }
   };
 
   const handlePartnerClick = () => {
@@ -78,7 +82,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         poster="/hero-poster.jpg"
       >
         <source src={videoSrc} type="video/mp4" />
-        {/* Fallback for browsers that don't support video */}
         <div className="absolute inset-0 bg-black" />
       </video>
 
@@ -103,8 +106,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-      {/* Hero Content - Fixed mobile positioning */}
-      <div className="relative z-10 h-full flex items-center justify-center px-4 py-8">
+      {/* Hero Content - Improved mobile centering */}
+      <div className="relative z-10 h-full flex items-center justify-center px-4 py-safe">
         <GridContainer className="w-full">
           <Grid>
             <Col span={12} tabletSpan={10} className="tablet:col-start-2">
@@ -135,7 +138,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     variant="primary" 
                     size="lg"
                     onClick={handleRSVPClick}
-                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-semibold bg-gold text-black hover:bg-opacity-90"
+                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
                   >
                     {primaryCta}
                   </Button>
