@@ -31,6 +31,7 @@ export default {
 				black: '#000000',
 				gold: '#C5A880',
 				'moody-red': '#7B2C2C',
+				'dusty-rose': '#D4A5A5',
 				
 				// Keep existing shadcn colors for compatibility
 				border: 'hsl(var(--border))',

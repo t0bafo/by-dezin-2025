@@ -165,14 +165,19 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
               </BodyM>
             </div>
 
-            {/* Partnership Benefits Grid - Card containers */}
+            {/* Partnership Benefits Grid - Enhanced cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-16 max-w-6xl mx-auto">
               {/* Brand Visibility Card */}
-              <div className="bg-cream bg-opacity-50 border border-black border-opacity-10 rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="relative bg-cream border border-[#D4A5A5] border-opacity-20 rounded-lg p-8 shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group">
+                {/* Subtle decorative element */}
+                <div className="absolute top-0 left-0 w-12 h-1 bg-[#D4A5A5] bg-opacity-30 rounded-full"></div>
+                
                 <div className="flex justify-center mb-6">
-                  <Eye className="w-12 h-12 text-dusty-rose" />
+                  <div className="w-16 h-16 rounded-full bg-[#D4A5A5] bg-opacity-10 flex items-center justify-center group-hover:bg-opacity-20 transition-all duration-300">
+                    <Eye className="w-8 h-8 text-[#D4A5A5]" />
+                  </div>
                 </div>
-                <HeadingM className="text-black mb-4 font-medium">
+                <HeadingM className="text-black mb-4 font-semibold">
                   Brand Visibility
                 </HeadingM>
                 <BodyM className="text-black leading-relaxed opacity-75">
@@ -181,11 +186,16 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
               </div>
               
               {/* Custom Activations Card */}
-              <div className="bg-cream bg-opacity-50 border border-black border-opacity-10 rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="relative bg-cream border border-[#D4A5A5] border-opacity-20 rounded-lg p-8 shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group">
+                {/* Subtle decorative element */}
+                <div className="absolute top-0 left-0 w-12 h-1 bg-[#D4A5A5] bg-opacity-30 rounded-full"></div>
+                
                 <div className="flex justify-center mb-6">
-                  <Zap className="w-12 h-12 text-dusty-rose" />
+                  <div className="w-16 h-16 rounded-full bg-[#D4A5A5] bg-opacity-10 flex items-center justify-center group-hover:bg-opacity-20 transition-all duration-300">
+                    <Zap className="w-8 h-8 text-[#D4A5A5]" />
+                  </div>
                 </div>
-                <HeadingM className="text-black mb-4 font-medium">
+                <HeadingM className="text-black mb-4 font-semibold">
                   Custom Activations
                 </HeadingM>
                 <BodyM className="text-black leading-relaxed opacity-75">
@@ -194,11 +204,16 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
               </div>
               
               {/* Media Amplification Card */}
-              <div className="bg-cream bg-opacity-50 border border-black border-opacity-10 rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="relative bg-cream border border-[#D4A5A5] border-opacity-20 rounded-lg p-8 shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300 group">
+                {/* Subtle decorative element */}
+                <div className="absolute top-0 left-0 w-12 h-1 bg-[#D4A5A5] bg-opacity-30 rounded-full"></div>
+                
                 <div className="flex justify-center mb-6">
-                  <TrendingUp className="w-12 h-12 text-dusty-rose" />
+                  <div className="w-16 h-16 rounded-full bg-[#D4A5A5] bg-opacity-10 flex items-center justify-center group-hover:bg-opacity-20 transition-all duration-300">
+                    <TrendingUp className="w-8 h-8 text-[#D4A5A5]" />
+                  </div>
                 </div>
-                <HeadingM className="text-black mb-4 font-medium">
+                <HeadingM className="text-black mb-4 font-semibold">
                   Media Amplification
                 </HeadingM>
                 <BodyM className="text-black leading-relaxed opacity-75">
