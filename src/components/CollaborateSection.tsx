@@ -40,8 +40,8 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
 
   return (
     <section id="collaborate">
-      {/* Past Sponsors Section - Cream Background */}
-      <div className="bg-cream py-20">
+      {/* Past Sponsors Section - Bone Background */}
+      <div className="bg-bone py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             <HeadingL className="text-black mb-6">Past Sponsors</HeadingL>
@@ -138,8 +138,8 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
         </div>
       </div>
 
-      {/* Partner With ByDezin Section - Bone Background */}
-      <div className="bg-bone py-20">
+      {/* Partner With ByDezin Section - Cream Background */}
+      <div className="bg-cream py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             <HeadingL className="text-black mb-6">Partner With ByDezin</HeadingL>
