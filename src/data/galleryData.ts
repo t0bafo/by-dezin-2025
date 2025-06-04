@@ -67,67 +67,68 @@ export const galleryImages: GalleryImage[] = [
     designer: 'NYFW Style Stories',
     objectPosition: 'center'
   },
-  // Keep remaining original images - second batch continues from id 11
+  // Second batch - replacing images 11-20 with new ByDezin photos
   { 
     id: 11, 
-    src: '/lovable-uploads/bc6401cc-99d5-40c3-aba9-3314833ef583.png', 
-    designer: 'Street Style Squad',
+    src: '/lovable-uploads/ab0d227e-8b1d-4ee0-be31-206f8fb0c5b9.png', 
+    designer: 'Luxury Event Hospitality',
     objectPosition: 'center'
   },
   { 
     id: 12, 
-    src: '/lovable-uploads/73d21de6-b2e1-45b3-8504-2354e814c523.png', 
-    designer: 'Designer Showcase Moment',
+    src: '/lovable-uploads/3d3b0b51-989e-4f67-9658-6ac0db12437b.png', 
+    designer: 'NYFW Street Style Icon',
     objectPosition: 'center'
   },
   { 
     id: 13, 
-    src: '/lovable-uploads/0d034a87-8d09-49d2-9aee-b6f317a8c804.png', 
-    designer: 'Community Connections',
+    src: '/lovable-uploads/ba5088d1-9247-4d83-8d22-6a1e13c84475.png', 
+    designer: 'Creative Connections',
     objectPosition: 'center'
   },
   { 
     id: 14, 
-    src: '/lovable-uploads/8d299c30-bbe0-41b1-8c2a-3b4765d49aa4.png', 
-    designer: 'SoHo Gallery Experience',
-    objectPosition: 'center'
-  },
-  { 
-    id: 15, 
-    src: '/lovable-uploads/1369d95e-71c9-4333-83c2-e1b9f5294667.png', 
-    designer: 'Shared Memories',
-    objectPosition: 'center'
-  },
-  { 
-    id: 16, 
-    src: '/lovable-uploads/cac5d4e9-02da-4782-b0a0-35dcc4d1a3b2.png', 
-    designer: 'Genuine Moments',
-    objectPosition: 'center'
-  },
-  { 
-    id: 17, 
-    src: '/lovable-uploads/a7e0d2d0-d7cf-4b16-88ff-c9aea44f57d2.png', 
-    designer: 'Victory Celebration',
-    objectPosition: 'center'
-  },
-  { 
-    id: 18, 
-    src: '/lovable-uploads/f1f85aea-d843-463a-a720-5950c7284db3.png', 
-    designer: 'Rising Talent Spotlight',
-    objectPosition: 'center'
-  },
-  { 
-    id: 19, 
-    src: '/lovable-uploads/d8f449e1-1a90-469f-a206-a1ba0c867d04.png', 
+    src: '/lovable-uploads/e3cdeee2-ad70-4f44-b8b6-0e165ba8237c.png', 
     designer: 'Music & Atmosphere',
     objectPosition: 'center'
   },
   { 
-    id: 20, 
-    src: '/lovable-uploads/6cf4c1fe-079a-4bb3-9d10-6e25b8f1cc67.png', 
-    designer: 'Luxury Showcase',
+    id: 15, 
+    src: '/lovable-uploads/7293fc0b-1575-4314-80c1-a2a1ec775bdc.png', 
+    designer: 'ByDezin Storefront Experience',
     objectPosition: 'center'
   },
+  { 
+    id: 16, 
+    src: '/lovable-uploads/21db3a80-18ff-4c99-99da-2299f9cf2c00.png', 
+    designer: 'Fashion Forward Expression',
+    objectPosition: 'center'
+  },
+  { 
+    id: 17, 
+    src: '/lovable-uploads/84b90142-048a-4c69-8a7f-81ce6b40b72f.png', 
+    designer: 'Street Style Communication',
+    objectPosition: 'center'
+  },
+  { 
+    id: 18, 
+    src: '/lovable-uploads/ed3b1436-1222-40bb-922f-2acd5b6bfca7.png', 
+    designer: 'Fashion Week Celebration',
+    objectPosition: 'center'
+  },
+  { 
+    id: 19, 
+    src: '/lovable-uploads/25f8b750-d81a-4566-9fc5-518fb41f8797.png', 
+    designer: 'Sonder Gallery Showcase',
+    objectPosition: 'center'
+  },
+  { 
+    id: 20, 
+    src: '/lovable-uploads/781889d5-ddec-4bfe-ab4b-24ab1f2c844c.png', 
+    designer: 'Designer Achievement Moment',
+    objectPosition: 'center'
+  },
+  // Keep remaining original image
   { 
     id: 21, 
     src: '/lovable-uploads/742c5282-9c15-4002-9126-000d240d0233.png', 
