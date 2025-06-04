@@ -86,7 +86,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
           <div>
             <HeadingL className="text-black mb-2">Partner with ByDezin</HeadingL>
             <BodyM className="text-black opacity-70 text-sm">
-              Collaborate with us on an editorial NYFW showcase designed to spotlight fresh perspectives in fashion.
+              Join us in creating an unforgettable NYFW experience that amplifies emerging fashion voices.
             </BodyM>
           </div>
           <button
