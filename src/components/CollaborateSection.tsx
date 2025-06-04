@@ -47,38 +47,52 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
           <div className="text-center">
             <HeadingL className="text-black mb-6">Past Sponsors</HeadingL>
             
-            <div className="max-w-[500px] mx-auto mb-12">
+            <div className="max-w-[500px] mx-auto mb-16">
               <BodyM className="text-black leading-relaxed">
                 ByDezin started as an idea and became an experience—made possible by the sponsors who helped bring it to life.
               </BodyM>
             </div>
 
-            {/* Sponsor Logos */}
-            <div className="flex justify-center items-center gap-20 mb-16 flex-wrap">
-              <a 
-                href="https://cheurlin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-70"
-              >
-                <img 
-                  src="/lovable-uploads/c3ef9153-4231-4bd1-8f1a-029a666256ea.png"
-                  alt="Cheurlin"
-                  className="h-[100px] w-auto object-contain"
-                />
-              </a>
-              <a 
-                href="https://apollowrldx.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-all duration-300 hover:opacity-70"
-              >
-                <img 
-                  src="/lovable-uploads/97f552a7-f347-452a-a42f-b25d6cec81f7.png"
-                  alt="Apollo Wrldx"
-                  className="h-[100px] w-auto object-contain"
-                />
-              </a>
+            {/* Sponsor Logos with Descriptions */}
+            <div className="flex flex-col mobile:flex-row justify-center items-center gap-12 mobile:gap-20 mb-16">
+              {/* Cheurlin Sponsor */}
+              <div className="flex flex-col items-center text-center max-w-[280px]">
+                <a 
+                  href="https://cheurlin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="transition-all duration-300 hover:opacity-70 mb-4"
+                >
+                  <img 
+                    src="/lovable-uploads/c3ef9153-4231-4bd1-8f1a-029a666256ea.png"
+                    alt="Cheurlin"
+                    className="h-[120px] mobile:h-[100px] w-auto object-contain filter brightness-0 contrast-100"
+                    style={{ filter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(0%) contrast(100%)' }}
+                  />
+                </a>
+                <BodyS className="text-black opacity-75 leading-relaxed">
+                  Set the tone with elevated hospitality, refined taste, and a touch of culture and celebration
+                </BodyS>
+              </div>
+              
+              {/* Apollo Wrldx Sponsor */}
+              <div className="flex flex-col items-center text-center max-w-[280px]">
+                <a 
+                  href="https://apollowrldx.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="transition-all duration-300 hover:opacity-70 mb-4"
+                >
+                  <img 
+                    src="/lovable-uploads/97f552a7-f347-452a-a42f-b25d6cec81f7.png"
+                    alt="Apollo Wrldx"
+                    className="h-[120px] mobile:h-[100px] w-auto object-contain"
+                  />
+                </a>
+                <BodyS className="text-black opacity-75 leading-relaxed">
+                  Production partner and creative driver behind the showroom
+                </BodyS>
+              </div>
             </div>
 
             {/* Cheurlin Partnership Reel - Clean Instagram embed */}
