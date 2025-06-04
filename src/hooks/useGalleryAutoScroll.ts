@@ -10,13 +10,13 @@ export const useGalleryAutoScroll = ({ isHovered, scrollContainerRef }: UseGalle
   const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    // Calculate mobile state once per effect cycle
+    const isMobile = window.innerWidth < 640;
+    
     const startAutoScroll = () => {
       autoScrollIntervalRef.current = setInterval(() => {
         if (!isHovered && scrollContainerRef.current) {
           const container = scrollContainerRef.current;
-          
-          // Calculate scroll amount based on screen size
-          const isMobile = window.innerWidth < 640;
           
           const cardWidth = isMobile ? 280 : 400; // Updated mobile card width
           const gap = isMobile ? 16 : 24; // Responsive gap
