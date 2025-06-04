@@ -8,14 +8,7 @@ export const Footer: React.FC = () => {
     {
       name: 'Apollo Wrldx Instagram',
       url: 'https://www.instagram.com/apollowrldx/',
-      icon: Instagram,
-      label: 'Apollo'
-    },
-    {
-      name: 'Arnell Stewart Instagram',
-      url: 'https://www.instagram.com/arnell___?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
-      icon: Instagram,
-      label: 'Arnell'
+      icon: Instagram
     },
     {
       name: 'TikTok',
@@ -51,9 +44,26 @@ export const Footer: React.FC = () => {
             ByDezin Showroom
           </HeadingM>
 
-          {/* Tagline */}
+          {/* Tagline with hyperlinks */}
           <BodyS className="text-cream mb-8 opacity-80 font-inter">
-            Powered by Apollo Wrldx & Arnell Stewart
+            Powered by{' '}
+            <a 
+              href="https://apollowrldx.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors duration-300 underline"
+            >
+              Apollo Wrldx
+            </a>
+            {' & '}
+            <a 
+              href="https://www.instagram.com/arnell___?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors duration-300 underline"
+            >
+              Arnell Stewart
+            </a>
           </BodyS>
 
           {/* Social Links */}
@@ -61,22 +71,16 @@ export const Footer: React.FC = () => {
             {socialLinks.map((social) => {
               const IconComponent = social.icon;
               return (
-                <div key={social.name} className="flex flex-col items-center gap-1">
-                  <a
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-moody-red hover:text-cream transition-colors duration-300"
-                    aria-label={social.name}
-                  >
-                    <IconComponent />
-                  </a>
-                  {social.label && (
-                    <span className="text-xs text-cream opacity-60 font-inter">
-                      {social.label}
-                    </span>
-                  )}
-                </div>
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-moody-red hover:text-cream transition-colors duration-300"
+                  aria-label={social.name}
+                >
+                  <IconComponent />
+                </a>
               );
             })}
           </div>
