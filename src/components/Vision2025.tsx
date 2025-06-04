@@ -9,8 +9,8 @@ interface Vision2025Props {
 
 export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
   return (
-    <section id="vision" className="bg-cream">
-      <div className="max-w-7xl mx-auto px-6 py-24">
+    <section id="vision" className="bg-cream py-12 mobile:py-16 tablet:py-20 desktop:py-24">
+      <div className="max-w-7xl mx-auto px-4 mobile:px-6">
         <div className="text-center animate-fade-in">
           {/* Elegant Badge */}
           <div className="inline-flex items-center justify-center mb-6">
@@ -20,7 +20,7 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
           </div>
           
           {/* Headline */}
-          <HeadingL className="text-black mb-4">
+          <HeadingL className="text-black mb-6">
             The Next Chapter Begins
           </HeadingL>
           

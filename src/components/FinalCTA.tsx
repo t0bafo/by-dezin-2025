@@ -9,16 +9,16 @@ interface FinalCTAProps {
 
 export const FinalCTA: React.FC<FinalCTAProps> = ({ onRSVPClick }) => {
   return (
-    <section id="rsvp" className="bg-black min-h-[50vh] flex items-center">
-      <div className="max-w-7xl mx-auto px-10 w-full">
+    <section id="rsvp" className="bg-black min-h-[50vh] flex items-center py-12 mobile:py-16 tablet:py-20 desktop:py-24">
+      <div className="max-w-7xl mx-auto px-4 mobile:px-6 w-full">
         <div className="text-center animate-fade-in">
           {/* Main Headline */}
-          <HeadingXL className="font-cormorant text-white mb-6 text-4xl mobile:text-6xl tablet:text-7xl font-bold leading-tight">
+          <HeadingXL className="text-white mb-6 font-semibold leading-tight">
             Join Us in New York
           </HeadingXL>
 
           {/* Event Details */}
-          <BodyM className="text-cream mb-8 text-base mobile:text-lg opacity-90">
+          <BodyM className="text-cream mb-8 opacity-90">
             September 13, 2025 · New York City
           </BodyM>
 
@@ -34,7 +34,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onRSVPClick }) => {
             variant="primary"
             size="lg"
             onClick={onRSVPClick}
-            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-300 px-8 py-4 text-lg font-semibold border-gold"
+            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-300 border-gold"
           >
             Get Early Access
           </Button>

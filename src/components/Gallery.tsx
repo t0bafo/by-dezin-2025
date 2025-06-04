@@ -42,17 +42,17 @@ const Gallery: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 mobile:px-6">
         {/* Header Content */}
         <div className="text-center mb-8 mobile:mb-10 tablet:mb-12">
-          <HeadingL className="text-black mb-3 mobile:mb-4 text-2xl mobile:text-3xl tablet:text-4xl">
+          <HeadingL className="text-black mb-4">
             2024 Showcase Rewind
           </HeadingL>
           
-          <div className="max-w-[600px] mx-auto mb-4 mobile:mb-6">
-            <BodyM className="text-black text-sm mobile:text-base tablet:text-lg">
+          <div className="max-w-[600px] mx-auto mb-6">
+            <BodyM className="text-black">
               From SoHo to Houston to Lagos, we celebrated bold new voices. And we're just getting started.
             </BodyM>
           </div>
           
-          <BodyS className="text-black uppercase tracking-wider mt-2 mobile:mt-3 text-xs mobile:text-sm">
+          <BodyS className="text-black uppercase tracking-wider opacity-70">
             Scroll to experience it for yourself →
           </BodyS>
         </div>

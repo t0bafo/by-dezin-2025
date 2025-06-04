@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -14,7 +15,7 @@ export const HeadingXL: React.FC<TypographyProps> = ({
 }) => {
   return (
     <Component className={cn(
-      "font-eb-garamond text-6xl mobile:text-7xl tablet:text-8xl font-semibold leading-tight tracking-tight text-black",
+      "font-eb-garamond text-5xl mobile:text-6xl tablet:text-7xl desktop:text-8xl font-semibold leading-tight tracking-tight text-black",
       className
     )}>
       {children}
@@ -29,7 +30,7 @@ export const HeadingL: React.FC<TypographyProps> = ({
 }) => {
   return (
     <Component className={cn(
-      "font-eb-garamond text-4xl mobile:text-5xl tablet:text-6xl font-semibold leading-tight tracking-tight text-black",
+      "font-eb-garamond text-3xl mobile:text-4xl tablet:text-5xl font-semibold leading-tight tracking-tight text-black",
       className
     )}>
       {children}
@@ -44,7 +45,7 @@ export const HeadingM: React.FC<TypographyProps> = ({
 }) => {
   return (
     <Component className={cn(
-      "font-eb-garamond text-2xl mobile:text-3xl tablet:text-4xl font-medium leading-tight tracking-tight text-black",
+      "font-eb-garamond text-xl mobile:text-2xl tablet:text-3xl font-medium leading-tight tracking-tight text-black",
       className
     )}>
       {children}

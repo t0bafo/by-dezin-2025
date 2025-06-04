@@ -35,10 +35,10 @@ const AlumniItem: React.FC<AlumniItemProps> = ({
       
       {/* Brand Info */}
       <div className="space-y-1">
-        <h3 className="font-montserrat font-semibold text-lg text-black group-hover:underline group-hover:text-gray-800 transition-all duration-200">
+        <h3 className="font-eb-garamond font-semibold text-lg text-black group-hover:underline group-hover:text-gray-800 transition-all duration-200">
           {name}
         </h3>
-        <p className="font-montserrat text-sm text-black group-hover:text-gray-800 transition-colors duration-200">
+        <p className="font-inter text-sm text-black group-hover:text-gray-800 transition-colors duration-200">
           {location}
         </p>
       </div>
@@ -90,8 +90,8 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
   ];
 
   return (
-    <section id="alumni" className="bg-bone py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="alumni" className="bg-bone py-12 mobile:py-16 tablet:py-20 desktop:py-24">
+      <div className="max-w-7xl mx-auto px-4 mobile:px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
           <HeadingL className="text-black mb-6">
