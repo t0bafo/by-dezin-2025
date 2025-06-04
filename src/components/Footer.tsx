@@ -90,10 +90,9 @@ export const Footer: React.FC = () => {
             })}
           </div>
 
-          {/* Date and Copyright */}
-          <div className="text-xs text-cream space-y-1">
-            <div>September 13, 2025</div>
-            <div>© 2025 ByDezin. All rights reserved.</div>
+          {/* Copyright only */}
+          <div className="text-xs text-cream">
+            © 2025 ByDezin. All rights reserved.
           </div>
         </div>
       </div>

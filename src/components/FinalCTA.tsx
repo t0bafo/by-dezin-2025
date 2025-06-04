@@ -19,7 +19,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onRSVPClick }) => {
 
           {/* Event Details */}
           <BodyM className="text-cream mb-8 opacity-90">
-            September 13, 2025 · New York City
+            September 13, 2025
           </BodyM>
 
           {/* Body Copy */}
