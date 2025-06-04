@@ -6,9 +6,16 @@ import { Instagram, Youtube } from 'lucide-react';
 export const Footer: React.FC = () => {
   const socialLinks = [
     {
-      name: 'Instagram',
+      name: 'Apollo Wrldx Instagram',
       url: 'https://www.instagram.com/apollowrldx/',
-      icon: Instagram
+      icon: Instagram,
+      label: 'Apollo'
+    },
+    {
+      name: 'Arnell Stewart Instagram',
+      url: 'https://www.instagram.com/arnell___?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+      icon: Instagram,
+      label: 'Arnell'
     },
     {
       name: 'TikTok',
@@ -40,7 +47,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center">
           {/* Logo */}
-          <HeadingM className="font-cormorant text-white mb-4 text-2xl mobile:text-3xl font-semibold">
+          <HeadingM className="font-eb-garamond text-white mb-4 text-2xl mobile:text-3xl font-semibold">
             ByDezin Showroom
           </HeadingM>
 
@@ -54,16 +61,22 @@ export const Footer: React.FC = () => {
             {socialLinks.map((social) => {
               const IconComponent = social.icon;
               return (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-moody-red hover:text-cream transition-colors duration-300"
-                  aria-label={social.name}
-                >
-                  <IconComponent />
-                </a>
+                <div key={social.name} className="flex flex-col items-center gap-1">
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-moody-red hover:text-cream transition-colors duration-300"
+                    aria-label={social.name}
+                  >
+                    <IconComponent />
+                  </a>
+                  {social.label && (
+                    <span className="text-xs text-cream opacity-60 font-inter">
+                      {social.label}
+                    </span>
+                  )}
+                </div>
               );
             })}
           </div>

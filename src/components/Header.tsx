@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/Button';
@@ -80,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ onRSVPClick }) => {
               e.preventDefault();
               handleMenuClick('#hero');
             }}
-            className="font-cormorant text-2xl font-semibold text-black hover:text-gold transition-colors duration-200"
+            className="font-eb-garamond text-2xl font-semibold text-black hover:text-gold transition-colors duration-200"
           >
             ByDezin
           </a>

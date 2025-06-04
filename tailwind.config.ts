@@ -78,7 +78,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				'cormorant': ['Cormorant Garamond', 'serif'],
+				'eb-garamond': ['EB Garamond', 'serif'],
 				'inter': ['Inter', 'sans-serif'],
 			},
 			spacing: {
