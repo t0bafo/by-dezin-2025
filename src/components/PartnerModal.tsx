@@ -15,12 +15,10 @@ interface PartnerModalProps {
 
 export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
-    companyName: '',
-    contactName: '',
+    fullName: '',
     email: '',
-    phone: '',
-    partnershipType: 'sponsorship',
-    message: ''
+    organization: '',
+    partnershipIdea: ''
   });
   const { toast } = useToast();
 
@@ -42,7 +40,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
       document.body.style.overflow = 'hidden';
       // Focus first input when modal opens
       setTimeout(() => {
-        const firstInput = document.querySelector('#partner-companyName') as HTMLInputElement;
+        const firstInput = document.querySelector('#partner-fullName') as HTMLInputElement;
         firstInput?.focus();
       }, 100);
     } else {
@@ -54,7 +52,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
     };
   }, [isOpen]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -71,23 +69,26 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
     onClose();
     // Reset form
     setFormData({
-      companyName: '',
-      contactName: '',
+      fullName: '',
       email: '',
-      phone: '',
-      partnershipType: 'sponsorship',
-      message: ''
+      organization: '',
+      partnershipIdea: ''
     });
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4">
       <div className="bg-bone rounded-lg w-full max-w-md mobile:w-4/5 tablet:w-2/5 max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-cream">
-          <HeadingL className="text-black">Partnership Inquiry</HeadingL>
+          <div>
+            <HeadingL className="text-black mb-2">Partner with ByDezin</HeadingL>
+            <BodyM className="text-black opacity-70 text-sm">
+              Collaborate with us on an editorial NYFW showcase designed to spotlight fresh perspectives in fashion.
+            </BodyM>
+          </div>
           <button
             onClick={onClose}
             className="p-1 hover:bg-cream rounded-full transition-colors"
@@ -98,33 +99,19 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="p-6 space-y-6">
           <div>
-            <Label htmlFor="partner-companyName" className="text-black mb-2 block">
-              Company Name *
+            <Label htmlFor="partner-fullName" className="text-black mb-2 block">
+              Full Name *
             </Label>
             <Input
-              id="partner-companyName"
-              name="companyName"
+              id="partner-fullName"
+              name="fullName"
               type="text"
               required
-              value={formData.companyName}
+              value={formData.fullName}
               onChange={handleInputChange}
-              className="w-full"
-            />
-          </div>
-
-          <div>
-            <Label htmlFor="partner-contactName" className="text-black mb-2 block">
-              Contact Name *
-            </Label>
-            <Input
-              id="partner-contactName"
-              name="contactName"
-              type="text"
-              required
-              value={formData.contactName}
-              onChange={handleInputChange}
+              placeholder="e.g. Jordan Smith"
               className="w-full"
             />
           </div>
@@ -140,61 +127,45 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               required
               value={formData.email}
               onChange={handleInputChange}
+              placeholder="you@brand.com"
               className="w-full"
             />
           </div>
 
           <div>
-            <Label htmlFor="partner-phone" className="text-black mb-2 block">
-              Phone Number
+            <Label htmlFor="partner-organization" className="text-black mb-2 block">
+              Organization / Brand *
             </Label>
             <Input
-              id="partner-phone"
-              name="phone"
-              type="tel"
-              value={formData.phone}
+              id="partner-organization"
+              name="organization"
+              type="text"
+              required
+              value={formData.organization}
               onChange={handleInputChange}
+              placeholder="e.g. Aurora Drinks"
               className="w-full"
             />
           </div>
 
           <div>
-            <Label htmlFor="partner-type" className="text-black mb-2 block">
-              Partnership Type *
-            </Label>
-            <select
-              id="partner-type"
-              name="partnershipType"
-              value={formData.partnershipType}
-              onChange={handleInputChange}
-              className="w-full h-10 px-3 py-2 border border-input bg-background rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              required
-            >
-              <option value="sponsorship">Event Sponsorship</option>
-              <option value="vendor">Vendor Partnership</option>
-              <option value="media">Media Partnership</option>
-              <option value="strategic">Strategic Partnership</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div>
-            <Label htmlFor="partner-message" className="text-black mb-2 block">
-              Message
+            <Label htmlFor="partner-idea" className="text-black mb-2 block">
+              How would you like to partner? *
             </Label>
             <Textarea
-              id="partner-message"
-              name="message"
-              value={formData.message}
+              id="partner-idea"
+              name="partnershipIdea"
+              required
+              value={formData.partnershipIdea}
               onChange={handleInputChange}
-              placeholder="Tell us about your partnership interests and goals..."
+              placeholder="Briefly describe your idea or sponsorship goals"
               className="w-full min-h-[100px]"
             />
           </div>
 
           <div className="flex flex-col mobile:flex-row gap-3 pt-4">
             <Button type="submit" variant="primary" size="lg" className="flex-1">
-              Send Inquiry
+              Let's Collaborate
             </Button>
             <Button
               type="button"

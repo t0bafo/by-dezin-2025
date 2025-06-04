@@ -4,6 +4,8 @@ import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
 import { GridContainer, Grid, Col } from '@/components/Grid';
 import { PartnerModal } from '@/components/PartnerModal';
+import { RSVPModal } from '@/components/RSVPModal';
+import { useAutoLoadRSVP } from '@/hooks/useAutoLoadRSVP';
 
 interface HeroSectionProps {
   videoSrc?: string;
@@ -27,22 +29,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onRSVPClick
 }) => {
   const [showPartnerModal, setShowPartnerModal] = useState(false);
+  const [showRSVPModal, setShowRSVPModal] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const { shouldShowRSVP, hideAutoRSVP } = useAutoLoadRSVP();
+
+  // Auto-show RSVP modal
+  React.useEffect(() => {
+    if (shouldShowRSVP) {
+      setShowRSVPModal(true);
+    }
+  }, [shouldShowRSVP]);
 
   const handleRSVPClick = () => {
     if (onRSVPClick) {
       onRSVPClick();
     } else {
-      // Fallback to scroll to top to trigger header RSVP
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setTimeout(() => {
-        const headerRSVPButton = document.querySelector('header button');
-        if (headerRSVPButton) {
-          (headerRSVPButton as HTMLButtonElement).click();
-        }
-      }, 500);
+      setShowRSVPModal(true);
     }
+  };
+
+  const handleRSVPClose = () => {
+    setShowRSVPModal(false);
+    hideAutoRSVP();
   };
 
   const handlePartnerClick = () => {
@@ -157,6 +166,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </Grid>
         </GridContainer>
       </div>
+
+      {/* RSVP Modal */}
+      <RSVPModal 
+        isOpen={showRSVPModal} 
+        onClose={handleRSVPClose} 
+      />
 
       {/* Partner Modal */}
       <PartnerModal 
