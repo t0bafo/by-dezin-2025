@@ -30,7 +30,8 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image }) => {
       17: 'Stylish young woman with locs talking on phone while standing next to car, wearing black crop top and olive green textured skirt',
       18: 'Fashionable young Black man with blonde hair in metallic blue jacket holding colorful flower bouquet on NYC street',
       19: 'ByDezin Apollo storefront window display at Sonder New York gallery featuring "Set the Label" branding and designer showcase',
-      20: 'Excited Black woman designer holding large bouquet of flowers next to clothing rack displaying colorful garments at fashion showcase'
+      20: 'Excited Black woman designer holding large bouquet of flowers next to clothing rack displaying colorful garments at fashion showcase',
+      21: 'Black male designer in pastel tie-dye sweater smiling in bright fashion studio with colorful clothing rack and artwork backdrop'
     };
     return altTexts[image.id] || `${image.designer} at ByDezin fashion showcase event`;
   };

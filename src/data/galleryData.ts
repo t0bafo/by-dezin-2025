@@ -1,3 +1,4 @@
+
 export interface GalleryImage {
   id: number;
   src: string;
@@ -128,11 +129,11 @@ export const galleryImages: GalleryImage[] = [
     designer: 'Designer Achievement Moment',
     objectPosition: 'center'
   },
-  // Keep remaining original image
+  // Updated final image
   { 
     id: 21, 
-    src: '/lovable-uploads/742c5282-9c15-4002-9126-000d240d0233.png', 
-    designer: 'Fashion Studio Experience',
+    src: '/lovable-uploads/c098e1e7-517c-418a-908b-bc34b3ed555a.png', 
+    designer: 'Designer Studio Moment',
     objectPosition: 'center'
   },
 ];
