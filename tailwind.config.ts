@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -77,8 +78,8 @@ export default {
 				}
 			},
 			fontFamily: {
-				'playfair': ['Playfair Display', 'serif'],
-				'montserrat': ['Montserrat', 'sans-serif'],
+				'cormorant': ['Cormorant Garamond', 'serif'],
+				'inter': ['Inter', 'sans-serif'],
 			},
 			spacing: {
 				'gutter': '24px',

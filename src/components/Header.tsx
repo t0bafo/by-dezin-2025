@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ onRSVPClick }) => {
               e.preventDefault();
               handleMenuClick('#hero');
             }}
-            className="font-playfair text-2xl font-bold text-black hover:text-gold transition-colors duration-200"
+            className="font-cormorant text-2xl font-semibold text-black hover:text-gold transition-colors duration-200"
           >
             ByDezin
           </a>
@@ -98,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({ onRSVPClick }) => {
                 handleMenuClick(item.href);
               }}
               className={cn(
-                "font-montserrat font-medium transition-all duration-200 relative",
+                "font-inter font-medium transition-all duration-200 relative",
                 "hover:text-gold",
                 "after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0",
                 "after:bg-gold after:transform after:scale-x-0 after:origin-right after:transition-transform after:duration-300",
@@ -151,7 +151,7 @@ export const Header: React.FC<HeaderProps> = ({ onRSVPClick }) => {
                   handleMenuClick(item.href);
                 }}
                 className={cn(
-                  "block font-montserrat font-medium py-2 transition-colors duration-200",
+                  "block font-inter font-medium py-2 transition-colors duration-200",
                   activeSection === item.href.replace('#', '') 
                     ? "text-gold" 
                     : "text-black hover:text-gold"

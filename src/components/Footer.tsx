@@ -40,12 +40,12 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center">
           {/* Logo */}
-          <HeadingM className="font-playfair text-white mb-4 text-2xl mobile:text-3xl font-medium">
+          <HeadingM className="font-cormorant text-white mb-4 text-2xl mobile:text-3xl font-semibold">
             ByDezin Showroom
           </HeadingM>
 
           {/* Tagline */}
-          <BodyS className="text-cream mb-8 opacity-80">
+          <BodyS className="text-cream mb-8 opacity-80 font-inter">
             Powered by Apollo Wrldx & Arnell Stewart
           </BodyS>
 
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
           <div className="text-xs mobile:text-sm">
             <a 
               href="mailto:bydezin@apollowrldx.com"
-              className="text-cream hover:text-white transition-colors duration-300"
+              className="text-cream hover:text-white transition-colors duration-300 font-inter"
             >
               bydezin@apollowrldx.com
             </a>
