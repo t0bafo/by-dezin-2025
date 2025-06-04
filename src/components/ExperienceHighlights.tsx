@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { HeadingL, BodyM, BodyS } from '@/components/Typography';
+import { HeadingL, BodyM } from '@/components/Typography';
 
 const ExperienceHighlights: React.FC = () => {
   useEffect(() => {
@@ -142,13 +142,6 @@ const ExperienceHighlights: React.FC = () => {
                   </p>
                 </div>
               </blockquote>
-            </div>
-            
-            {/* Video Caption */}
-            <div className="text-center mt-6">
-              <BodyS className="text-gray-600 uppercase tracking-wider">
-                Tap for sound on • View on Instagram
-              </BodyS>
             </div>
           </div>
         </div>
