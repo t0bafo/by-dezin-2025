@@ -1,4 +1,3 @@
-
 export interface GalleryImage {
   id: number;
   src: string;
@@ -7,68 +6,68 @@ export interface GalleryImage {
 }
 
 export const galleryImages: GalleryImage[] = [
-  // Opening sequence - first 10 images
+  // New ByDezin showcase images - replacing first 11 images
   { 
     id: 1, 
-    src: '/lovable-uploads/6aae11e4-7f30-4c14-be66-3b2186c4025b.png', 
-    designer: 'Event Opening',
+    src: '/lovable-uploads/5531a0d5-f1f8-431d-9cb7-bcddda4cb4f0.png', 
+    designer: 'Luxury Jewelry Showcase',
     objectPosition: 'center'
   },
   { 
     id: 2, 
-    src: '/lovable-uploads/115274a3-ab51-4251-9b7f-e8a786bd3a86.png', 
-    designer: 'Venue Atmosphere',
+    src: '/lovable-uploads/a66a9fc7-9db5-455a-b023-9852a89a3682.png', 
+    designer: 'Street Style Squad',
     objectPosition: 'center'
   },
   { 
     id: 3, 
-    src: '/lovable-uploads/957511f9-df48-4b10-b90a-ac8a58a2c0c2.png', 
-    designer: 'Designer Connections',
-    objectPosition: 'center top'
-  },
-  { 
-    id: 4, 
-    src: '/lovable-uploads/35bc2f25-909d-4752-a16d-069f30434f4c.png', 
-    designer: 'Bold Statement Pieces',
+    src: '/lovable-uploads/ec3fdca3-a11d-4c6f-8cf4-bf9961efc7e1.png', 
+    designer: 'Bold Statement Style',
     objectPosition: 'center'
   },
   { 
-    id: 5, 
-    src: '/lovable-uploads/15114ed3-237e-4c42-abb6-fe342e2540c3.png', 
+    id: 4, 
+    src: '/lovable-uploads/cad6d9e9-8760-4435-b96c-b2c54fc273b7.png', 
     designer: 'Creative Collaborations',
     objectPosition: 'center'
   },
   { 
+    id: 5, 
+    src: '/lovable-uploads/d72ded48-09c1-4968-8ef1-06fc27048811.png', 
+    designer: 'Genuine Connections',
+    objectPosition: 'center'
+  },
+  { 
     id: 6, 
-    src: '/lovable-uploads/4c4c3460-eaeb-4354-813e-6226aaa30e78.png', 
-    designer: 'Floral Expressions',
-    objectPosition: 'center top'
+    src: '/lovable-uploads/139503b7-6cd3-4c9b-9192-038d833e86db.png', 
+    designer: 'Community Moments',
+    objectPosition: 'center'
   },
   { 
     id: 7, 
-    src: '/lovable-uploads/9f4a671e-c453-4f7c-b527-2499d014b249.png', 
-    designer: 'Street Style Moments',
-    objectPosition: 'center top'
+    src: '/lovable-uploads/bcd6c44d-eedf-4d5b-9916-d1f2d2a1209a.png', 
+    designer: 'Fashion Studio Experience',
+    objectPosition: 'center'
   },
   { 
     id: 8, 
-    src: '/lovable-uploads/3ac51bfd-6a64-460f-b671-e9a8cfd3bb80.png', 
-    designer: 'Authentic Self-Expression',
+    src: '/lovable-uploads/025a02c5-23c7-459a-a0b8-8327327704be.png', 
+    designer: 'Event Energy & Atmosphere',
     objectPosition: 'center'
   },
   { 
     id: 9, 
-    src: '/lovable-uploads/a5b33daf-b158-4ac7-a1af-b59aa615e777.png', 
-    designer: 'Unique Style Stories',
+    src: '/lovable-uploads/ed509ac4-0644-46fe-b132-205765927639.png', 
+    designer: 'Designer Spotlight',
     objectPosition: 'center'
   },
   { 
     id: 10, 
-    src: '/lovable-uploads/153e400a-6458-4a57-ba85-6ad22df79343.png', 
-    designer: 'Avant-Garde Vision',
-    objectPosition: 'center top'
+    src: '/lovable-uploads/14d6121b-c16e-4674-96c9-c62f00389ff8.png', 
+    designer: 'NYFW Style Stories',
+    objectPosition: 'center'
   },
-  // Peak moments and highlights - second batch of 10 images
+  // Keep remaining original images - second batch continues from id 11
   { 
     id: 11, 
     src: '/lovable-uploads/bc6401cc-99d5-40c3-aba9-3314833ef583.png', 
@@ -129,7 +128,6 @@ export const galleryImages: GalleryImage[] = [
     designer: 'Luxury Showcase',
     objectPosition: 'center'
   },
-  // New image added
   { 
     id: 21, 
     src: '/lovable-uploads/742c5282-9c15-4002-9126-000d240d0233.png', 
