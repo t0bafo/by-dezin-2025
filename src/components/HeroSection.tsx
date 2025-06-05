@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -106,8 +107,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-      {/* Hero Content - Improved mobile positioning and sizing */}
-      <div className="relative z-10 h-full flex items-center justify-center px-4 pt-16 pb-20 mobile:pt-12 mobile:pb-16">
+      {/* Hero Content - Moved higher on mobile */}
+      <div className="relative z-10 h-full flex items-center justify-center px-4 pt-8 pb-32 mobile:pt-16 mobile:pb-20 tablet:pt-12 tablet:pb-16">
         <GridContainer className="w-full">
           <Grid>
             <Col span={12} tabletSpan={10} className="tablet:col-start-2">
