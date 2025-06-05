@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { HeadingL, BodyM } from '@/components/Typography';
-import { Button } from '@/components/Button';
+import { ChevronDown } from 'lucide-react';
 
 interface FeaturedAlumniProps {
   onApplyClick: () => void;
@@ -89,6 +89,13 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
     }
   ];
 
+  const handleScrollToNext = () => {
+    const nextSection = document.querySelector('#alumni')?.nextElementSibling;
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="alumni" className="bg-bone py-16 mobile:py-20 tablet:py-24 desktop:py-28">
       <div className="max-w-7xl mx-auto px-4 mobile:px-6">
@@ -118,19 +125,27 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
           ))}
         </div>
 
-        {/* Call to Action */}
+        {/* Updated Call to Action with Scroll Functionality */}
         <div className="text-center">
           <BodyM className="text-black mb-6">
-            Think your label belongs in the mix? Join the ByDezin community and showcase your vision.{' '}
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={onApplyClick}
-              className="inline-block"
+            Think your label belongs in the mix?{' '}
+            <button
+              onClick={handleScrollToNext}
+              className="text-gold hover:text-moody-red underline underline-offset-4 decoration-1 hover:decoration-2 transition-all duration-200 cursor-pointer"
             >
-              Apply to Be Featured
-            </Button>
+              Scroll below
+            </button>
+            {' '}to learn more, join the ByDezin community and showcase your vision.
           </BodyM>
+          
+          {/* Animated Down Arrow */}
+          <button
+            onClick={handleScrollToNext}
+            className="mt-4 text-gold hover:text-moody-red transition-colors duration-200 animate-bounce"
+            aria-label="Scroll to next section"
+          >
+            <ChevronDown size={24} />
+          </button>
         </div>
       </div>
     </section>
