@@ -53,7 +53,7 @@ const Index = () => {
           <CollaborateSection onPartnerClick={() => setShowPartnerModal(true)} />
           
           {/* Final Call to Action Section */}
-          <FinalCTA />
+          <FinalCTA onBrandApplicationClick={handleBrandApplicationClick} />
         </main>
 
         {/* Footer */}
