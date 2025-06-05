@@ -29,12 +29,12 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onBrandApplicationClick }) =
             </BodyM>
           </div>
 
-          {/* CTA Button - Premium styling */}
+          {/* CTA Button - Updated to moody-red */}
           <Button
             variant="primary"
             size="lg"
             onClick={onBrandApplicationClick}
-            className="bg-gold text-black hover:bg-opacity-90 transition-all duration-300 border-gold font-semibold tracking-[0.01em]"
+            className="bg-moody-red text-bone hover:bg-opacity-90 transition-all duration-300 border-moody-red font-semibold tracking-[0.01em]"
           >
             Apply to Be Featured
           </Button>
