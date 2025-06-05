@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
               e.preventDefault();
               handleMenuClick('#hero');
             }}
-            className="font-eb-garamond text-2xl font-semibold text-black hover:text-gold transition-colors duration-200"
+            className="font-eb-garamond text-2xl font-semibold text-black hover:text-moody-red transition-colors duration-200"
           >
             ByDezin
           </a>
@@ -99,12 +99,12 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
               }}
               className={cn(
                 "font-inter font-medium transition-all duration-200 relative",
-                "hover:text-gold",
+                "hover:text-moody-red",
                 "after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0",
-                "after:bg-gold after:transform after:scale-x-0 after:origin-right after:transition-transform after:duration-300",
+                "after:bg-moody-red after:transform after:scale-x-0 after:origin-right after:transition-transform after:duration-300",
                 "hover:after:scale-x-100 hover:after:origin-left",
                 activeSection === item.href.replace('#', '') 
-                  ? "text-gold after:scale-x-100" 
+                  ? "text-moody-red after:scale-x-100" 
                   : "text-black"
               )}
             >
@@ -127,7 +127,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
 
         {/* Mobile Menu Button */}
         <button
-          className="mobile:hidden p-2 text-black hover:text-gold transition-colors"
+          className="mobile:hidden p-2 text-black hover:text-moody-red transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -154,8 +154,8 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
                 className={cn(
                   "block font-inter font-medium py-2 transition-colors duration-200",
                   activeSection === item.href.replace('#', '') 
-                    ? "text-gold" 
-                    : "text-black hover:text-gold"
+                    ? "text-moody-red" 
+                    : "text-black hover:text-moody-red"
                 )}
               >
                 {item.label}
