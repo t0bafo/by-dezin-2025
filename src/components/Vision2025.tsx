@@ -4,10 +4,10 @@ import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 import { Button } from '@/components/Button';
 
 interface Vision2025Props {
-  onRSVPClick: () => void;
+  onBrandApplicationClick: () => void;
 }
 
-export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
+export const Vision2025: React.FC<Vision2025Props> = ({ onBrandApplicationClick }) => {
   return (
     <section id="vision" className="bg-cream py-16 mobile:py-20 tablet:py-24 desktop:py-28">
       <div className="max-w-7xl mx-auto px-4 mobile:px-6">
@@ -35,10 +35,10 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onRSVPClick }) => {
           <Button
             variant="primary"
             size="lg"
-            onClick={onRSVPClick}
+            onClick={onBrandApplicationClick}
             className="bg-moody-red text-bone hover:bg-opacity-90 transition-all duration-200 border-moody-red"
           >
-            Get Early Access
+            Apply to Be Featured
           </Button>
         </div>
       </div>
