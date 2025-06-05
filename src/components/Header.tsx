@@ -5,10 +5,10 @@ import { Button } from '@/components/Button';
 import { cn } from '@/lib/utils';
 
 interface HeaderProps {
-  onRSVPClick: () => void;
+  onBrandApplicationClick: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onRSVPClick }) => {
+export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -113,15 +113,15 @@ export const Header: React.FC<HeaderProps> = ({ onRSVPClick }) => {
           ))}
         </div>
 
-        {/* Desktop Get Early Access Button */}
+        {/* Desktop Apply to Be Featured Button */}
         <div className="hidden mobile:block">
           <Button 
             variant="primary" 
             size="sm"
-            onClick={onRSVPClick}
+            onClick={onBrandApplicationClick}
             className="bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
           >
-            Get Early Access
+            Apply to Be Featured
           </Button>
         </div>
 
@@ -166,12 +166,12 @@ export const Header: React.FC<HeaderProps> = ({ onRSVPClick }) => {
                 variant="primary" 
                 size="sm"
                 onClick={() => {
-                  onRSVPClick();
+                  onBrandApplicationClick();
                   setIsMenuOpen(false);
                 }}
                 className="w-full bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
               >
-                Get Early Access
+                Apply to Be Featured
               </Button>
             </div>
           </div>

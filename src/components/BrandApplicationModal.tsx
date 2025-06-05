@@ -6,20 +6,22 @@ import { Button } from '@/components/Button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 
-interface PartnerModalProps {
+interface BrandApplicationModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) => {
+export const BrandApplicationModal: React.FC<BrandApplicationModalProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
-    organization: '',
+    brandName: '',
     website: '',
-    partnershipIdea: ''
+    collectionSnapshot: '',
+    signUpForUpdates: false
   });
   const { toast } = useToast();
 
@@ -41,7 +43,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
       document.body.style.overflow = 'hidden';
       // Focus first input when modal opens
       setTimeout(() => {
-        const firstInput = document.querySelector('#partner-fullName') as HTMLInputElement;
+        const firstInput = document.querySelector('#brand-fullName') as HTMLInputElement;
         firstInput?.focus();
       }, 100);
     } else {
@@ -60,21 +62,29 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
     });
   };
 
+  const handleCheckboxChange = (checked: boolean) => {
+    setFormData({
+      ...formData,
+      signUpForUpdates: checked
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Partnership inquiry submitted:', formData);
+    console.log('Brand application submitted:', formData);
     toast({
-      title: "Partnership Inquiry Sent",
-      description: "Thank you for your interest! Our partnership team will contact you within 24 hours.",
+      title: "Application Submitted!",
+      description: "Thank you for your interest. Our team will review your application and be in touch soon.",
     });
     onClose();
     // Reset form
     setFormData({
       fullName: '',
       email: '',
-      organization: '',
+      brandName: '',
       website: '',
-      partnershipIdea: ''
+      collectionSnapshot: '',
+      signUpForUpdates: false
     });
   };
 
@@ -86,9 +96,9 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-cream">
           <div>
-            <HeadingL className="text-black mb-2">Partner with ByDezin</HeadingL>
+            <HeadingL className="text-black mb-2">Be seen at ByDezin</HeadingL>
             <BodyM className="text-black opacity-70 text-sm">
-              Collaborate with us at a NYFW showcase designed to spotlight fresh perspectives in fashion. Collaborate with us to bring new energy to ByDezin NYFW S/S 2026.
+              Put your brand in the spotlight and join the story unfolding at ByDezin NYFW S/S 2026.
             </BodyM>
           </div>
           <button
@@ -103,85 +113,97 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
           <div>
-            <Label htmlFor="partner-fullName" className="text-black mb-2 block">
+            <Label htmlFor="brand-fullName" className="text-black mb-2 block">
               Full Name *
             </Label>
             <Input
-              id="partner-fullName"
+              id="brand-fullName"
               name="fullName"
               type="text"
               required
               value={formData.fullName}
               onChange={handleInputChange}
-              placeholder="e.g. Jordan Smith"
+              placeholder="e.g. Alexis Johnson"
               className="w-full"
             />
           </div>
 
           <div>
-            <Label htmlFor="partner-email" className="text-black mb-2 block">
+            <Label htmlFor="brand-email" className="text-black mb-2 block">
               Email Address *
             </Label>
             <Input
-              id="partner-email"
+              id="brand-email"
               name="email"
               type="email"
               required
               value={formData.email}
               onChange={handleInputChange}
-              placeholder="you@brand.com"
+              placeholder="you@example.com"
               className="w-full"
             />
           </div>
 
           <div>
-            <Label htmlFor="partner-organization" className="text-black mb-2 block">
-              Organization / Brand *
+            <Label htmlFor="brand-brandName" className="text-black mb-2 block">
+              Brand Name *
             </Label>
             <Input
-              id="partner-organization"
-              name="organization"
+              id="brand-brandName"
+              name="brandName"
               type="text"
               required
-              value={formData.organization}
+              value={formData.brandName}
               onChange={handleInputChange}
-              placeholder="e.g. Aurora Drinks"
+              placeholder="e.g. Aurora Collective"
               className="w-full"
             />
           </div>
 
           <div>
-            <Label htmlFor="partner-website" className="text-black mb-2 block">
-              Website (optional)
+            <Label htmlFor="brand-website" className="text-black mb-2 block">
+              Website / Instagram *
             </Label>
             <Input
-              id="partner-website"
+              id="brand-website"
               name="website"
               type="text"
+              required
               value={formData.website}
               onChange={handleInputChange}
+              placeholder="e.g. www.auroracollective.com"
               className="w-full"
             />
           </div>
 
           <div>
-            <Label htmlFor="partner-idea" className="text-black mb-2 block">
-              How do you see us working together? *
+            <Label htmlFor="brand-snapshot" className="text-black mb-2 block">
+              Give us a snapshot of your S/S 2026 collection and what you'd showcase at ByDezin. Five sentences is perfect. *
             </Label>
             <Textarea
-              id="partner-idea"
-              name="partnershipIdea"
+              id="brand-snapshot"
+              name="collectionSnapshot"
               required
-              value={formData.partnershipIdea}
+              value={formData.collectionSnapshot}
               onChange={handleInputChange}
-              placeholder="We'd love to hear your partnership idea and any goals you may have"
-              className="w-full min-h-[100px]"
+              className="w-full min-h-[120px]"
             />
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <Checkbox
+              id="brand-updates"
+              checked={formData.signUpForUpdates}
+              onCheckedChange={handleCheckboxChange}
+            />
+            <Label htmlFor="brand-updates" className="text-black text-sm">
+              Keep me in the loop with ByDezin updates and reminders
+            </Label>
           </div>
 
           <div className="flex flex-col mobile:flex-row gap-3 pt-4">
             <Button type="submit" variant="primary" size="lg" className="flex-1">
-              Let's Collaborate
+              Send
             </Button>
             <Button
               type="button"

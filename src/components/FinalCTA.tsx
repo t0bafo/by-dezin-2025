@@ -4,10 +4,10 @@ import { HeadingXL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
 
 interface FinalCTAProps {
-  onRSVPClick: () => void;
+  onBrandApplicationClick: () => void;
 }
 
-export const FinalCTA: React.FC<FinalCTAProps> = ({ onRSVPClick }) => {
+export const FinalCTA: React.FC<FinalCTAProps> = ({ onBrandApplicationClick }) => {
   return (
     <section id="rsvp" className="bg-black min-h-[50vh] flex items-center py-16 mobile:py-20 tablet:py-24 desktop:py-28">
       <div className="max-w-7xl mx-auto px-4 mobile:px-6 w-full">
@@ -33,10 +33,10 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onRSVPClick }) => {
           <Button
             variant="primary"
             size="lg"
-            onClick={onRSVPClick}
+            onClick={onBrandApplicationClick}
             className="bg-gold text-black hover:bg-opacity-90 transition-all duration-300 border-gold"
           >
-            Get Early Access
+            Apply to Be Featured
           </Button>
         </div>
       </div>

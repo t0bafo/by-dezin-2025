@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
 import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
 import { GridContainer, Grid, Col } from '@/components/Grid';
-import { PartnerModal } from '@/components/PartnerModal';
-import { RSVPModal } from '@/components/RSVPModal';
+import { BrandApplicationModal } from '@/components/BrandApplicationModal';
 import { useAutoLoadRSVP } from '@/hooks/useAutoLoadRSVP';
 
 interface HeroSectionProps {
@@ -14,8 +12,7 @@ interface HeroSectionProps {
   subHeadline?: string;
   eventDetails?: string;
   primaryCta?: string;
-  secondaryCta?: string;
-  onRSVPClick?: () => void;
+  onBrandApplicationClick?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
@@ -24,39 +21,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   headline = "An Immersive Fashion Showroom Experience",
   subHeadline = "ByDezin NYFW S/S 2026", 
   eventDetails = "September 13, 2025 · New York City",
-  primaryCta = "Get Early Access",
-  secondaryCta = "Partner with Us",
-  onRSVPClick
+  primaryCta = "Apply to Be Featured",
+  onBrandApplicationClick
 }) => {
-  const [showPartnerModal, setShowPartnerModal] = useState(false);
-  const [showRSVPModal, setShowRSVPModal] = useState(false);
+  const [showBrandApplicationModal, setShowBrandApplicationModal] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const { shouldShowRSVP, hideAutoRSVP } = useAutoLoadRSVP();
 
-  // Auto-show RSVP modal
+  // Auto-show Brand Application modal
   React.useEffect(() => {
     if (shouldShowRSVP) {
-      setShowRSVPModal(true);
+      setShowBrandApplicationModal(true);
     }
   }, [shouldShowRSVP]);
 
-  const handleRSVPClick = () => {
-    if (onRSVPClick) {
-      onRSVPClick();
+  const handleBrandApplicationClick = () => {
+    if (onBrandApplicationClick) {
+      onBrandApplicationClick();
     } else {
-      setShowRSVPModal(true);
+      setShowBrandApplicationModal(true);
     }
   };
 
-  const handleRSVPClose = () => {
-    setShowRSVPModal(false);
+  const handleBrandApplicationClose = () => {
+    setShowBrandApplicationModal(false);
     hideAutoRSVP();
-  };
-
-  const handlePartnerClick = () => {
-    console.log('Partner modal triggered');
-    setShowPartnerModal(true);
   };
 
   const handleVideoLoad = () => {
@@ -142,24 +132,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   {eventDetails}
                 </BodyM>
 
-                {/* Call-to-Action Buttons - Optimized mobile touch targets */}
-                <div className="flex flex-col mobile:flex-row gap-4 mobile:gap-6 tablet:gap-6 justify-center items-center">
+                {/* Call-to-Action Button - Single button now */}
+                <div className="flex justify-center">
                   <Button 
                     variant="primary" 
                     size="lg"
-                    onClick={handleRSVPClick}
+                    onClick={handleBrandApplicationClick}
                     className="w-full mobile:w-auto min-h-[52px] mobile:min-h-[56px] px-8 mobile:px-10 py-4 mobile:py-5 text-lg mobile:text-xl font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg"
                   >
                     {primaryCta}
                   </Button>
-                  
-                  {/* Partner CTA as subtle text link */}
-                  <button 
-                    onClick={handlePartnerClick}
-                    className="text-cream hover:text-gold text-lg mobile:text-xl underline underline-offset-4 decoration-1 hover:decoration-2 transition-all duration-200 min-h-[52px] mobile:min-h-[56px] px-4 py-3 bg-transparent border-none cursor-pointer"
-                  >
-                    {secondaryCta}
-                  </button>
                 </div>
               </div>
             </Col>
@@ -167,16 +149,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </GridContainer>
       </div>
 
-      {/* RSVP Modal */}
-      <RSVPModal 
-        isOpen={showRSVPModal} 
-        onClose={handleRSVPClose} 
-      />
-
-      {/* Partner Modal */}
-      <PartnerModal 
-        isOpen={showPartnerModal} 
-        onClose={() => setShowPartnerModal(false)} 
+      {/* Brand Application Modal */}
+      <BrandApplicationModal 
+        isOpen={showBrandApplicationModal} 
+        onClose={handleBrandApplicationClose} 
       />
     </section>
   );
