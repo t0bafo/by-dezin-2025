@@ -66,7 +66,7 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
                   <img 
                     src="/lovable-uploads/c3ef9153-4231-4bd1-8f1a-029a666256ea.png"
                     alt="Cheurlin"
-                    className="h-[120px] mobile:h-[100px] w-auto object-contain filter brightness-0 contrast-100"
+                    className="h-[60px] mobile:h-[80px] w-auto object-contain filter brightness-0 contrast-100"
                     style={{ filter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(0deg) brightness(0%) contrast(100%)' }}
                   />
                 </a>
@@ -86,7 +86,7 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
                   <img 
                     src="/lovable-uploads/97f552a7-f347-452a-a42f-b25d6cec81f7.png"
                     alt="Apollo Wrldx"
-                    className="h-[120px] mobile:h-[100px] w-auto object-contain"
+                    className="h-[60px] mobile:h-[80px] w-auto object-contain"
                   />
                 </a>
                 <BodyS className="text-black opacity-75 leading-relaxed">
