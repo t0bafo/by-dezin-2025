@@ -6,6 +6,7 @@ import { BrandApplicationModal } from '@/components/BrandApplicationModal';
 import { FeaturedAlumni } from '@/components/FeaturedAlumni';
 import { PartnerModal } from '@/components/PartnerModal';
 import { Vision2025 } from '@/components/Vision2025';
+import { FAQ } from '@/components/FAQ';
 import Gallery from '@/components/Gallery';
 import ExperienceHighlights from '@/components/ExperienceHighlights';
 import { CollaborateSection } from '@/components/CollaborateSection';
@@ -48,6 +49,9 @@ const Index = () => {
           
           {/* Vision 2025 Section */}
           <Vision2025 onBrandApplicationClick={handleBrandApplicationClick} />
+          
+          {/* FAQ Section */}
+          <FAQ />
           
           {/* Collaborate Section */}
           <CollaborateSection onPartnerClick={() => setShowPartnerModal(true)} />
