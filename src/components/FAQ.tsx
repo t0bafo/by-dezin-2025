@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 import {
@@ -52,10 +51,19 @@ export const FAQ: React.FC = () => {
             Frequently Asked Questions
           </HeadingL>
           
-          <div className="max-w-[600px] mx-auto">
+          <div className="max-w-[600px] mx-auto mb-6">
             <BodyM className="text-black leading-relaxed">
               Everything you need to know about showcasing at ByDezin NYFW S/S 2026
             </BodyM>
+          </div>
+
+          {/* Notice */}
+          <div className="max-w-[500px] mx-auto">
+            <div className="bg-cream bg-opacity-30 border border-[#D4A5A5] border-opacity-40 rounded-lg px-4 py-3">
+              <BodyS className="text-[#D4A5A5] italic text-center">
+                Content to be updated - placeholder questions for marketing review
+              </BodyS>
+            </div>
           </div>
         </div>
 
