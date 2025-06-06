@@ -10,6 +10,10 @@ import {
 export const FAQ: React.FC = () => {
   const faqItems = [
     {
+      question: "What is ByDezin?",
+      answer: "[Placeholder - Arnell to provide answer about ByDezin's mission, vision, and what makes it unique]"
+    },
+    {
       question: "What is the application process for ByDezin NYFW 2025?",
       answer: "The application process involves submitting your brand information, portfolio, and specific collection details through our application form. Our curation team reviews submissions based on creativity, brand story, and alignment with our vision for emerging fashion talent."
     },
