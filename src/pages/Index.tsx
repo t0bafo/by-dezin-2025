@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
@@ -37,9 +36,6 @@ const Index = () => {
           <section id="hero">
             <HeroSection onBrandApplicationClick={handleBrandApplicationClick} />
           </section>
-          
-          {/* Introduction Section */}
-          <Introduction />
           
           {/* Gallery Section */}
           <Gallery />

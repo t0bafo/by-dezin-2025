@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
+import { HeadingXL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
 import { GridContainer, Grid, Col } from '@/components/Grid';
 import { BrandApplicationModal } from '@/components/BrandApplicationModal';
@@ -7,9 +8,8 @@ import { useAutoLoadRSVP } from '@/hooks/useAutoLoadRSVP';
 
 interface HeroSectionProps {
   videoSrc?: string;
-  subtitle?: string;
   headline?: string;
-  subHeadline?: string;
+  description?: string;
   eventDetails?: string;
   primaryCta?: string;
   onBrandApplicationClick?: () => void;
@@ -17,9 +17,8 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   videoSrc = "/hero-video.mp4",
-  subtitle = "APOLLO WRLDX × ARNELL STEWART PRESENT",
-  headline = "An Immersive Fashion Showroom Experience",
-  subHeadline = "ByDezin at New York Fashion Week", 
+  headline = "ByDezin at New York Fashion Week (NYFW)",
+  description = "An invite-only showroom experience, back in the city where it started. Step inside, connect with the next generation of fashion voices and be part of the moment.",
   eventDetails = "September 13, 2025",
   primaryCta = "Apply to Be Featured",
   onBrandApplicationClick
@@ -106,33 +105,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-      {/* Hero Content - Moved higher on mobile */}
+      {/* Hero Content - Simplified */}
       <div className="relative z-10 h-full flex items-center justify-center px-4 pt-8 pb-32 mobile:pt-16 mobile:pb-20 tablet:pt-12 tablet:pb-16">
         <GridContainer className="w-full">
           <Grid>
             <Col span={12} tabletSpan={10} className="tablet:col-start-2">
               <div className="text-center text-white animate-fade-in">
-                {/* Subtitle */}
-                <BodyM className="text-gold mb-4 mobile:mb-6 tablet:mb-6 uppercase tracking-widest font-medium text-xs mobile:text-sm tablet:text-base">
-                  {subtitle}
-                </BodyM>
-
-                {/* Main Headline - Significantly larger on mobile */}
-                <HeadingXL className="text-white mb-4 mobile:mb-6 tablet:mb-6 text-3xl mobile:text-5xl tablet:text-6xl desktop:text-7xl leading-tight font-bold">
+                {/* Main Headline */}
+                <HeadingXL className="text-white mb-6 mobile:mb-8 tablet:mb-8 desktop:mb-10 text-3xl mobile:text-5xl tablet:text-6xl desktop:text-7xl leading-tight font-bold">
                   {headline}
                 </HeadingXL>
 
-                {/* Sub-headline - Updated to include NYFW */}
-                <HeadingL className="text-bone mb-6 mobile:mb-8 tablet:mb-8 desktop:mb-12 text-xl mobile:text-2xl tablet:text-3xl desktop:text-4xl font-normal opacity-90">
-                  ByDezin at New York Fashion Week (NYFW)
-                </HeadingL>
+                {/* Description */}
+                <div className="max-w-[640px] mx-auto mb-8 mobile:mb-10 tablet:mb-12 desktop:mb-14">
+                  <BodyM className="text-cream leading-relaxed opacity-90 text-base mobile:text-lg tablet:text-xl">
+                    {description}
+                  </BodyM>
+                </div>
 
-                {/* Event Details - Enhanced mobile readability */}
+                {/* Event Details */}
                 <BodyM className="text-cream mb-8 mobile:mb-10 tablet:mb-12 desktop:mb-16 text-base mobile:text-lg tablet:text-xl opacity-80">
                   {eventDetails}
                 </BodyM>
 
-                {/* Call-to-Action Button - Single button now */}
+                {/* Call-to-Action Button */}
                 <div className="flex justify-center">
                   <Button 
                     variant="primary" 
