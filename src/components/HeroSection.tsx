@@ -19,8 +19,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   videoSrc = "/hero-video.mp4",
   subtitle = "APOLLO WRLDX × ARNELL STEWART PRESENT",
   headline = "An Immersive Fashion Showroom Experience",
-  subHeadline = "ByDezin at NYFW S/S 2026", 
-  eventDetails = "September 13, 2025 · New York City",
+  subHeadline = "ByDezin at New York Fashion Week", 
+  eventDetails = "September 13, 2025",
   primaryCta = "Apply to Be Featured",
   onBrandApplicationClick
 }) => {
@@ -122,9 +122,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   {headline}
                 </HeadingXL>
 
-                {/* Sub-headline - Better mobile sizing */}
+                {/* Sub-headline - Better mobile sizing with colored ByDezin */}
                 <HeadingL className="text-bone mb-6 mobile:mb-8 tablet:mb-8 desktop:mb-12 text-xl mobile:text-2xl tablet:text-3xl desktop:text-4xl font-normal opacity-90">
-                  {subHeadline}
+                  <span className="text-gold">ByDezin</span> at New York Fashion Week
                 </HeadingL>
 
                 {/* Event Details - Enhanced mobile readability */}
