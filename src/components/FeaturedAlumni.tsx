@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HeadingL, BodyM } from '@/components/Typography';
 import { ChevronDown } from 'lucide-react';
@@ -64,9 +63,9 @@ const AlumniItem: React.FC<AlumniItemProps> = ({
 export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) => {
   const alumni = [
     {
-      name: "NADI",
+      name: "NADI by Dani",
       location: "Houston",
-      logoSrc: "/lovable-uploads/2e934736-7e00-442e-b910-43ebe5aa6984.png",
+      logoSrc: "/lovable-uploads/8898d3b0-aaff-41c7-b912-18c7dc376eb7.png",
       link: "https://nadibydani.com/"
     },
     {
