@@ -10,12 +10,12 @@ import {
 export const FAQ: React.FC = () => {
   const faqItems = [
     {
-      question: "What is the application process for ByDezin NYFW S/S 2026?",
+      question: "What is the application process for ByDezin NYFW 2025?",
       answer: "The application process involves submitting your brand information, portfolio, and specific collection details through our application form. Our curation team reviews submissions based on creativity, brand story, and alignment with our vision for emerging fashion talent."
     },
     {
       question: "When is the application deadline and event dates?",
-      answer: "Applications are reviewed on a rolling basis with priority given to early submissions. The ByDezin showcase will take place during New York Fashion Week Spring/Summer 2026. Specific dates will be announced as we approach the event."
+      answer: "Applications are reviewed on a rolling basis with priority given to early submissions. The ByDezin showcase will take place during New York Fashion Week 2025. Specific dates will be announced as we approach the event."
     },
     {
       question: "What are the requirements for participating brands?",
@@ -53,7 +53,7 @@ export const FAQ: React.FC = () => {
           
           <div className="max-w-[600px] mx-auto mb-6">
             <BodyM className="text-black leading-relaxed">
-              Everything you need to know about showcasing at ByDezin NYFW S/S 2026
+              Everything you need to know about showcasing at ByDezin NYFW 2025
             </BodyM>
           </div>
 

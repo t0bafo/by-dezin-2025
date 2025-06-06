@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 
 export const MetaTags = () => {
@@ -25,7 +24,7 @@ export const MetaTags = () => {
     };
 
     // Social media optimized content
-    const title = 'ByDezin NYFW S/S 2026 - Apply to Showcase Your Brand';
+    const title = 'ByDezin NYFW 2025 - Apply to Showcase Your Brand';
     const description = 'Put your brand in the spotlight at an exclusive fashion showcase featuring emerging talent. Applications now open for September 13, 2025 in New York City.';
     const imageUrl = '/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png';
     const siteUrl = window.location.href;
@@ -53,7 +52,7 @@ export const MetaTags = () => {
 
     // Standard meta tags
     updateMetaTagName('description', description);
-    updateMetaTagName('keywords', 'ByDezin, NYFW, New York Fashion Week, emerging designers, fashion showcase, brand application, S/S 2026, sustainable fashion, fashion talent');
+    updateMetaTagName('keywords', 'ByDezin, NYFW, New York Fashion Week, emerging designers, fashion showcase, brand application, 2025, sustainable fashion, fashion talent');
     updateMetaTagName('author', 'ByDezin');
     updateMetaTagName('robots', 'index, follow');
 

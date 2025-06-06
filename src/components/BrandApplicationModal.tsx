@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { HeadingL, BodyM } from '@/components/Typography';
@@ -97,7 +98,7 @@ export const BrandApplicationModal: React.FC<BrandApplicationModalProps> = ({ is
           <div className="flex-1 pr-4">
             <HeadingL className="text-black mb-3 tracking-[-0.01em]">Be seen at ByDezin</HeadingL>
             <BodyM className="text-black opacity-70 text-sm leading-relaxed tracking-[0.005em]">
-              Put your brand in the spotlight and join the story unfolding at ByDezin NYFW S/S 2026.
+              Put your brand in the spotlight and join the story unfolding at ByDezin NYFW 2025.
             </BodyM>
           </div>
           <button
@@ -177,7 +178,7 @@ export const BrandApplicationModal: React.FC<BrandApplicationModalProps> = ({ is
 
           <div className="space-y-3">
             <Label htmlFor="brand-snapshot" className="text-black font-medium tracking-[0.005em]">
-              Give us a snapshot of your S/S 2026 collection and what you'd showcase at ByDezin. Five sentences is perfect. *
+              Give us a snapshot of your 2025 collection and what you'd showcase at ByDezin. Five sentences is perfect. *
             </Label>
             <Textarea
               id="brand-snapshot"
