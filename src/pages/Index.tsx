@@ -10,7 +10,6 @@ import { FAQ } from '@/components/FAQ';
 import Gallery from '@/components/Gallery';
 import ExperienceHighlights from '@/components/ExperienceHighlights';
 import { CollaborateSection } from '@/components/CollaborateSection';
-import { FinalCTA } from '@/components/FinalCTA';
 import { Footer } from '@/components/Footer';
 import { MetaTags } from '@/components/MetaTags';
 
@@ -55,13 +54,10 @@ const Index = () => {
           
           {/* Collaborate Section */}
           <CollaborateSection onPartnerClick={() => setShowPartnerModal(true)} />
-          
-          {/* Final Call to Action Section */}
-          <FinalCTA onBrandApplicationClick={handleBrandApplicationClick} />
         </main>
 
-        {/* Footer */}
-        <Footer />
+        {/* Footer with Final CTA */}
+        <Footer onBrandApplicationClick={handleBrandApplicationClick} />
 
         {/* Modals */}
         <BrandApplicationModal 

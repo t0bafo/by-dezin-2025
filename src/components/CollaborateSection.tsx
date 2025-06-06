@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { HeadingL, HeadingM, BodyM, BodyS } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -41,8 +40,8 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
 
   return (
     <section id="collaborate">
-      {/* Past Sponsors Section - Bone Background */}
-      <div className="bg-bone py-16 mobile:py-20 tablet:py-24 desktop:py-28">
+      {/* Past Sponsors Section - Cream Background */}
+      <div className="bg-cream py-16 mobile:py-20 tablet:py-24 desktop:py-28">
         <div className="max-w-7xl mx-auto px-4 mobile:px-6">
           <div className="text-center">
             <HeadingL className="text-black mb-6">Past Sponsors</HeadingL>
@@ -153,8 +152,8 @@ export const CollaborateSection: React.FC<CollaborateSectionProps> = ({ onPartne
         </div>
       </div>
 
-      {/* Partner With ByDezin Section - Cream Background */}
-      <div className="bg-cream py-16 mobile:py-20 tablet:py-24 desktop:py-28">
+      {/* Partner With ByDezin Section - Bone Background */}
+      <div className="bg-bone py-16 mobile:py-20 tablet:py-24 desktop:py-28">
         <div className="max-w-7xl mx-auto px-4 mobile:px-6">
           <div className="text-center">
             <HeadingL className="text-black mb-6">Partner With ByDezin</HeadingL>
