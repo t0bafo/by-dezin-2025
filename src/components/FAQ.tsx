@@ -39,7 +39,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: "Can international designers apply?",
-      answer: "Yes, we welcome applications from designers worldwide. However, selected participants will need to arrange travel to New York for the showcase. We provide guidance on logistics and can connect you with other participating international designers."
+      answer: "Yes, we welcome applications from brands worldwide. While we love having designers present at the showcase, physical presence isn't required. We offer flexible participation options including product showcasing, where you can send pieces for display and we handle the presentation. We work with each selected brand to find the best way to showcase their vision at ByDezin."
     },
     {
       question: "What support is provided for first-time NYFW participants?",
