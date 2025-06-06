@@ -24,21 +24,50 @@ export const MetaTags = () => {
       metaTag.setAttribute('content', content);
     };
 
-    // Open Graph tags
-    updateMetaTag('og:title', 'ByDezin NYFW S/S 2026 - An Immersive Fashion Showroom Experience');
-    updateMetaTag('og:description', 'September 13, 2025 · An invite-only showroom experience in New York. Step inside, connect with the next generation of fashion voices and be part of the moment.');
-    updateMetaTag('og:image', '/lovable-uploads/f53eaf65-2ac6-46b7-8bd0-4eafaeb09712.png');
-    updateMetaTag('og:type', 'website');
-    updateMetaTag('og:url', window.location.href);
+    // Social media optimized content
+    const title = 'ByDezin NYFW S/S 2026 - Apply to Showcase Your Brand';
+    const description = 'Put your brand in the spotlight at an exclusive fashion showcase featuring emerging talent. Applications now open for September 13, 2025 in New York City.';
+    const imageUrl = '/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png';
+    const siteUrl = window.location.href;
 
-    // Twitter tags
+    // Open Graph tags
+    updateMetaTag('og:title', title);
+    updateMetaTag('og:description', description);
+    updateMetaTag('og:image', imageUrl);
+    updateMetaTag('og:image:width', '1200');
+    updateMetaTag('og:image:height', '630');
+    updateMetaTag('og:image:alt', 'ByDezin brand ambassadors at SoHo New York storefront - Apply to showcase your brand at NYFW S/S 2026');
+    updateMetaTag('og:type', 'website');
+    updateMetaTag('og:url', siteUrl);
+    updateMetaTag('og:site_name', 'ByDezin');
+    updateMetaTag('og:locale', 'en_US');
+
+    // Twitter Card tags
     updateMetaTagName('twitter:card', 'summary_large_image');
-    updateMetaTagName('twitter:title', 'ByDezin NYFW S/S 2026 - An Immersive Fashion Showroom Experience');
-    updateMetaTagName('twitter:description', 'September 13, 2025 · An invite-only showroom experience in New York. Step inside, connect with the next generation of fashion voices and be part of the moment.');
-    updateMetaTagName('twitter:image', '/lovable-uploads/f53eaf65-2ac6-46b7-8bd0-4eafaeb09712.png');
+    updateMetaTagName('twitter:title', title);
+    updateMetaTagName('twitter:description', description);
+    updateMetaTagName('twitter:image', imageUrl);
+    updateMetaTagName('twitter:image:alt', 'ByDezin brand ambassadors at SoHo New York storefront - Apply to showcase your brand at NYFW S/S 2026');
+    updateMetaTagName('twitter:site', '@ByDezin');
+    updateMetaTagName('twitter:creator', '@ByDezin');
+
+    // Standard meta tags
+    updateMetaTagName('description', description);
+    updateMetaTagName('keywords', 'ByDezin, NYFW, New York Fashion Week, emerging designers, fashion showcase, brand application, S/S 2026, sustainable fashion, fashion talent');
+    updateMetaTagName('author', 'ByDezin');
+    updateMetaTagName('robots', 'index, follow');
 
     // Update page title
-    document.title = 'ByDezin NYFW S/S 2026 - An Immersive Fashion Showroom Experience';
+    document.title = title;
+
+    // Add canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', siteUrl);
   }, []);
 
   return null;
