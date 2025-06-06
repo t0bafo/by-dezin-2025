@@ -88,42 +88,45 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
           </a>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation and CTA - Right Side */}
         <div className="hidden mobile:flex items-center space-x-8">
-          {menuItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleMenuClick(item.href);
-              }}
-              className={cn(
-                "font-inter font-medium transition-all duration-200 relative",
-                "hover:text-moody-red",
-                "after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0",
-                "after:bg-moody-red after:transform after:scale-x-0 after:origin-right after:transition-transform after:duration-300",
-                "hover:after:scale-x-100 hover:after:origin-left",
-                activeSection === item.href.replace('#', '') 
-                  ? "text-moody-red after:scale-x-100" 
-                  : "text-black"
-              )}
+          {/* Navigation Menu */}
+          <div className="flex items-center space-x-8">
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleMenuClick(item.href);
+                }}
+                className={cn(
+                  "font-inter font-medium transition-all duration-200 relative",
+                  "hover:text-moody-red",
+                  "after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0",
+                  "after:bg-moody-red after:transform after:scale-x-0 after:origin-right after:transition-transform after:duration-300",
+                  "hover:after:scale-x-100 hover:after:origin-left",
+                  activeSection === item.href.replace('#', '') 
+                    ? "text-moody-red after:scale-x-100" 
+                    : "text-black"
+                )}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+          
+          {/* CTA Button with proper spacing */}
+          <div className="ml-6">
+            <Button 
+              variant="primary" 
+              size="sm"
+              onClick={onBrandApplicationClick}
+              className="bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
             >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        {/* Desktop Apply to Be Featured Button */}
-        <div className="hidden mobile:block">
-          <Button 
-            variant="primary" 
-            size="sm"
-            onClick={onBrandApplicationClick}
-            className="bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
-          >
-            Apply to Be Featured
-          </Button>
+              Apply to Be Featured
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
