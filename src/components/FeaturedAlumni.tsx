@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HeadingL, BodyM } from '@/components/Typography';
 import { ChevronDown, ExternalLink } from 'lucide-react';
@@ -73,7 +72,7 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
       name: "NADI by Dani",
       location: "Houston",
       logoSrc: "/lovable-uploads/8898d3b0-aaff-41c7-b912-18c7dc376eb7.png",
-      link: "https://nadibydani.com/"
+      link: "https://www.instagram.com/nadibydani/?hl=en"
     },
     {
       name: "SONDER",
