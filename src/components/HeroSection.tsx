@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -122,9 +123,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   {headline}
                 </HeadingXL>
 
-                {/* Sub-headline - Better mobile sizing with colored ByDezin */}
+                {/* Sub-headline - ByDezin back to white to match rest of text */}
                 <HeadingL className="text-bone mb-6 mobile:mb-8 tablet:mb-8 desktop:mb-12 text-xl mobile:text-2xl tablet:text-3xl desktop:text-4xl font-normal opacity-90">
-                  <span className="text-gold">ByDezin</span> at New York Fashion Week
+                  ByDezin at New York Fashion Week
                 </HeadingL>
 
                 {/* Event Details - Enhanced mobile readability */}
