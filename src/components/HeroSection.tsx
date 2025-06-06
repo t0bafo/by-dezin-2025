@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { HeadingXL, HeadingL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -20,7 +19,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   videoSrc = "/hero-video.mp4",
   subtitle = "APOLLO WRLDX × ARNELL STEWART PRESENT",
   headline = "An Immersive Fashion Showroom Experience",
-  subHeadline = "ByDezin NYFW S/S 2026", 
+  subHeadline = "ByDezin at NYFW S/S 2026", 
   eventDetails = "September 13, 2025 · New York City",
   primaryCta = "Apply to Be Featured",
   onBrandApplicationClick
