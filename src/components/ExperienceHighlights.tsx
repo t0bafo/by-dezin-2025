@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { HeadingL, BodyM } from '@/components/Typography';
 
@@ -44,7 +45,7 @@ const ExperienceHighlights: React.FC = () => {
           
           <div className="max-w-[600px] mx-auto">
             <BodyM className="text-black">
-              Your 60-second rewind. A flash of style, sound and community in just 60 seconds. This was ByDezin 2024.
+              The energy, the talent, the connections – see what happens when emerging designers take center stage. This is ByDezin 2024 in motion.
             </BodyM>
           </div>
         </div>
