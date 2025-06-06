@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { HeadingL, BodyM } from '@/components/Typography';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 
 interface FeaturedAlumniProps {
   onApplyClick: () => void;
@@ -23,20 +24,26 @@ const AlumniItem: React.FC<AlumniItemProps> = ({
 }) => {
   const content = (
     <div className="flex flex-col items-center text-center group cursor-pointer">
-      {/* Logo Container */}
-      <div className="w-32 h-32 mobile:w-36 mobile:h-36 flex items-center justify-center mb-4">
+      {/* Logo Container with hover effects */}
+      <div className="w-32 h-32 mobile:w-36 mobile:h-36 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-lg">
         <img 
           src={logoSrc} 
           alt={`${name} logo`}
-          className="max-w-full max-h-full object-contain"
+          className="max-w-full max-h-full object-contain transition-all duration-300"
         />
       </div>
       
-      {/* Brand Info */}
+      {/* Brand Info with enhanced styling */}
       <div className="space-y-1">
-        <h3 className="font-eb-garamond font-semibold text-lg text-black group-hover:underline group-hover:text-gray-800 transition-all duration-200">
-          {name}
-        </h3>
+        <div className="flex items-center justify-center gap-1">
+          <h3 className="font-eb-garamond font-semibold text-lg text-black group-hover:text-moody-red group-hover:underline underline-offset-4 decoration-2 transition-all duration-200 cursor-pointer">
+            {name}
+          </h3>
+          <ExternalLink 
+            size={14} 
+            className="text-black group-hover:text-moody-red transition-colors duration-200 opacity-60 group-hover:opacity-100" 
+          />
+        </div>
         <p className="font-inter text-sm text-black group-hover:text-gray-800 transition-colors duration-200">
           {location}
         </p>
@@ -50,7 +57,7 @@ const AlumniItem: React.FC<AlumniItemProps> = ({
         href={link} 
         target="_blank" 
         rel="noopener noreferrer"
-        className="block"
+        className="block transition-transform duration-200 hover:scale-[1.02]"
       >
         {content}
       </a>
