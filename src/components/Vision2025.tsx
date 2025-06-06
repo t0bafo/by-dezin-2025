@@ -27,7 +27,7 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onBrandApplicationClick 
           {/* Body copy */}
           <div className="max-w-[640px] mx-auto mb-16">
             <BodyM className="text-black leading-relaxed tracking-[0.005em] text-lg">
-              For NYFW S/S 2026, ByDezin moves beyond the pop up. We're presenting an experiential showcase blending established luxury with fashion's emerging voices. From collection reveals to interactive installations and invite-only networking suites for designers and stylists, it's curated for those redefining the fashion landscape.
+              For NYFW S/S 2026, ByDezin moves beyond the pop-up. We're presenting an experiential showcase blending established luxury with fashion's emerging voices. From collection reveals to interactive installations and invite-only networking suites for designers and stylists, it's curated for those redefining the fashion landscape.
             </BodyM>
           </div>
           
