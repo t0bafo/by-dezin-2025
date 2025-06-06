@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/Button';
@@ -13,7 +12,6 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: 'Highlights', href: '#highlights' },
     { label: 'Alumni', href: '#alumni' },
     { label: 'Vision', href: '#vision' },
     { label: 'FAQ', href: '#faq' },
@@ -23,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
   // Handle active section highlighting
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'highlights', 'alumni', 'vision', 'faq', 'collaborate'];
+      const sections = ['hero', 'alumni', 'vision', 'faq', 'collaborate'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
