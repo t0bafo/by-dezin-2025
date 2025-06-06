@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { HeadingXL, HeadingM, BodyM, BodyS } from '@/components/Typography';
 import { Instagram, Youtube, Mail } from 'lucide-react';
-import { Button } from '@/components/Button';
 
 interface FooterProps {
   onBrandApplicationClick: () => void;
@@ -47,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
 
   return (
     <footer className="bg-black">
-      {/* Final CTA Section */}
+      {/* Final CTA Section - Simplified */}
       <div className="py-20 mobile:py-24 tablet:py-28 desktop:py-32 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-6 mobile:px-8">
           <div className="text-center animate-fade-in">
@@ -57,26 +55,9 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
             </HeadingXL>
 
             {/* Event Details */}
-            <BodyM className="text-cream mb-12 opacity-90 tracking-[0.01em]">
+            <BodyM className="text-cream opacity-90 tracking-[0.01em]">
               September 13, 2025
             </BodyM>
-
-            {/* Body Copy */}
-            <div className="max-w-[640px] mx-auto mb-16">
-              <BodyM className="text-cream leading-relaxed opacity-90 tracking-[0.005em] text-lg">
-                An invite-only showroom experience, back in the city where it started. Step inside, connect with the next generation of fashion voices and be part of the moment.
-              </BodyM>
-            </div>
-
-            {/* CTA Button */}
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={onBrandApplicationClick}
-              className="bg-moody-red text-bone hover:bg-opacity-90 transition-all duration-300 border-moody-red font-semibold tracking-[0.01em]"
-            >
-              Apply to Be Featured
-            </Button>
           </div>
         </div>
       </div>
