@@ -39,7 +39,6 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
   React.useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      // Focus first input when modal opens
       setTimeout(() => {
         const firstInput = document.querySelector('#partner-fullName') as HTMLInputElement;
         firstInput?.focus();
@@ -68,7 +67,6 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
       description: "Thank you for your interest! Our partnership team will contact you within 24 hours.",
     });
     onClose();
-    // Reset form
     setFormData({
       fullName: '',
       email: '',
@@ -78,22 +76,31 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
     });
   };
 
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4">
-      <div className="bg-bone rounded-xl w-3/4 max-w-2xl max-h-[90vh] overflow-y-auto shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+    <div 
+      className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-4"
+      onClick={handleBackdropClick}
+    >
+      <div className="bg-bone rounded-lg w-[90%] max-w-[500px] max-h-[90vh] overflow-y-auto shadow-lg">
         {/* Header */}
         <div className="flex justify-between items-start p-6 border-b border-cream">
           <div className="flex-1 pr-4">
-            <HeadingL className="text-black mb-3 tracking-[-0.01em] text-2xl">Partner with ByDezin</HeadingL>
-            <BodyM className="text-black opacity-70 text-sm leading-relaxed tracking-[0.005em]">
+            <HeadingL className="text-black mb-2 text-xl sm:text-2xl">Partner with ByDezin</HeadingL>
+            <BodyM className="text-black opacity-70 text-sm">
               Collaborate with us to bring new energy to ByDezin NYFW 2025.
             </BodyM>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-cream rounded-lg transition-colors duration-200 flex-shrink-0"
+            className="p-2 hover:bg-cream rounded-lg transition-colors flex-shrink-0"
             aria-label="Close modal"
           >
             <X className="w-5 h-5 text-black" />
@@ -101,9 +108,9 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-6">
-          <div className="space-y-3">
-            <Label htmlFor="partner-fullName" className="text-black font-medium tracking-[0.005em] text-base">
+        <form onSubmit={handleSubmit} className="p-6 space-y-5">
+          <div className="space-y-2">
+            <Label htmlFor="partner-fullName" className="text-black font-medium text-sm">
               Full Name *
             </Label>
             <Input
@@ -114,12 +121,12 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               value={formData.fullName}
               onChange={handleInputChange}
               placeholder="e.g. Jordan Smith"
-              className="w-full h-12 px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200 text-base"
+              className="w-full h-10 px-3 py-2 rounded-md border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200"
             />
           </div>
 
-          <div className="space-y-3">
-            <Label htmlFor="partner-email" className="text-black font-medium tracking-[0.005em] text-base">
+          <div className="space-y-2">
+            <Label htmlFor="partner-email" className="text-black font-medium text-sm">
               Email Address *
             </Label>
             <Input
@@ -130,12 +137,12 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               value={formData.email}
               onChange={handleInputChange}
               placeholder="you@brand.com"
-              className="w-full h-12 px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200 text-base"
+              className="w-full h-10 px-3 py-2 rounded-md border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200"
             />
           </div>
 
-          <div className="space-y-3">
-            <Label htmlFor="partner-organization" className="text-black font-medium tracking-[0.005em] text-base">
+          <div className="space-y-2">
+            <Label htmlFor="partner-organization" className="text-black font-medium text-sm">
               Organization / Brand *
             </Label>
             <Input
@@ -146,12 +153,12 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               value={formData.organization}
               onChange={handleInputChange}
               placeholder="e.g. Aurora Drinks"
-              className="w-full h-12 px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200 text-base"
+              className="w-full h-10 px-3 py-2 rounded-md border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200"
             />
           </div>
 
-          <div className="space-y-3">
-            <Label htmlFor="partner-website" className="text-black font-medium tracking-[0.005em] text-base">
+          <div className="space-y-2">
+            <Label htmlFor="partner-website" className="text-black font-medium text-sm">
               Website (optional)
             </Label>
             <Input
@@ -160,12 +167,12 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               type="text"
               value={formData.website}
               onChange={handleInputChange}
-              className="w-full h-12 px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200 text-base"
+              className="w-full h-10 px-3 py-2 rounded-md border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200"
             />
           </div>
 
-          <div className="space-y-3">
-            <Label htmlFor="partner-idea" className="text-black font-medium tracking-[0.005em] text-base">
+          <div className="space-y-2">
+            <Label htmlFor="partner-idea" className="text-black font-medium text-sm">
               How do you see us working together? *
             </Label>
             <Textarea
@@ -175,12 +182,12 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               value={formData.partnershipIdea}
               onChange={handleInputChange}
               placeholder="We'd love to hear your partnership idea and any goals you may have"
-              className="w-full min-h-[120px] px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200 resize-none text-base"
+              className="w-full min-h-[100px] px-3 py-2 rounded-md border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 transition-all duration-200 resize-none"
             />
           </div>
 
-          <div className="flex flex-col gap-4 pt-6">
-            <Button type="submit" variant="primary" size="lg" className="w-full font-semibold text-base py-4">
+          <div className="flex flex-col gap-3 pt-4">
+            <Button type="submit" variant="primary" size="lg" className="w-full font-semibold">
               Let's Collaborate
             </Button>
             <Button
@@ -188,7 +195,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               variant="secondary"
               size="lg"
               onClick={onClose}
-              className="w-full font-medium text-base py-4"
+              className="w-full font-medium"
             >
               Cancel
             </Button>
