@@ -1,19 +1,9 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 import { HeadingM, BodyS } from '@/components/Typography';
 import { Instagram, Youtube, Mail } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/Button';
 
 export const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
-
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle email signup logic here
-    console.log('Email signup:', email);
-    setEmail('');
-  };
-
   const socialLinks = [
     {
       name: 'Apollo Wrldx Instagram',
@@ -52,43 +42,6 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-black">
-      {/* Email Signup Section */}
-      <div className="py-16 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-lg mx-auto">
-            {/* Title */}
-            <HeadingM className="font-eb-garamond text-white mb-4 text-2xl mobile:text-3xl font-semibold">
-              Get Early Access
-            </HeadingM>
-
-            {/* Subtitle */}
-            <BodyS className="text-cream mb-8 opacity-80 font-inter">
-              Be among the first to experience ByDezin NYFW 2025
-            </BodyS>
-
-            {/* Email Form */}
-            <form onSubmit={handleEmailSubmit} className="flex flex-col mobile:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 bg-white text-black border-gray-300 focus:border-gold focus:ring-gold"
-              />
-              <Button
-                type="submit"
-                variant="primary"
-                className="bg-gold text-black hover:bg-opacity-90 transition-all duration-200 font-semibold whitespace-nowrap"
-              >
-                Get Updates
-              </Button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      {/* Existing Footer Content */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
