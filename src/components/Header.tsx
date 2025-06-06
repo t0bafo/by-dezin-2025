@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/Button';
+import { CountdownTimer } from '@/components/CountdownTimer';
 import { cn } from '@/lib/utils';
 
 interface HeaderProps {
@@ -86,8 +88,8 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
           </a>
         </div>
 
-        {/* Desktop Navigation and CTA - Right Side */}
-        <div className="hidden mobile:flex items-center space-x-8">
+        {/* Desktop Layout: Navigation, Countdown, CTA */}
+        <div className="hidden mobile:flex items-center justify-between flex-1 ml-8">
           {/* Navigation Menu */}
           <div className="flex items-center space-x-8">
             {menuItems.map((item) => (
@@ -114,8 +116,13 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
             ))}
           </div>
           
-          {/* CTA Button with proper spacing */}
-          <div className="ml-6">
+          {/* Countdown Timer - Center */}
+          <div className="flex-shrink-0 mx-8">
+            <CountdownTimer />
+          </div>
+          
+          {/* CTA Button */}
+          <div className="flex-shrink-0">
             <Button 
               variant="primary" 
               size="sm"
@@ -145,6 +152,11 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
       {isMenuOpen && (
         <div className="mobile:hidden bg-bone border-t border-cream">
           <div className="px-6 py-4 space-y-4">
+            {/* Mobile Countdown Timer */}
+            <div className="flex justify-center py-2 border-b border-cream">
+              <CountdownTimer />
+            </div>
+            
             {menuItems.map((item) => (
               <a
                 key={item.label}
