@@ -1,9 +1,19 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { HeadingM, BodyS } from '@/components/Typography';
 import { Instagram, Youtube, Mail } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/Button';
 
 export const Footer: React.FC = () => {
+  const [email, setEmail] = useState('');
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle email signup logic here
+    console.log('Email signup:', email);
+    setEmail('');
+  };
+
   const socialLinks = [
     {
       name: 'Apollo Wrldx Instagram',
@@ -41,58 +51,97 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-black py-16">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center">
-          {/* Logo */}
-          <HeadingM className="font-eb-garamond text-white mb-4 text-2xl mobile:text-3xl font-semibold">
-            ByDezin Showroom
-          </HeadingM>
+    <footer className="bg-black">
+      {/* Email Signup Section */}
+      <div className="py-16 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-lg mx-auto">
+            {/* Title */}
+            <HeadingM className="font-eb-garamond text-white mb-4 text-2xl mobile:text-3xl font-semibold">
+              Get Early Access
+            </HeadingM>
 
-          {/* Tagline with hyperlinks */}
-          <BodyS className="text-cream mb-8 opacity-80 font-inter">
-            Powered by{' '}
-            <a 
-              href="https://apollowrldx.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors duration-300 underline"
-            >
-              Apollo Wrldx
-            </a>
-            {' & '}
-            <a 
-              href="https://www.instagram.com/arnell___/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors duration-300 underline"
-            >
-              Arnell Stewart
-            </a>
-          </BodyS>
+            {/* Subtitle */}
+            <BodyS className="text-cream mb-8 opacity-80 font-inter">
+              Be among the first to experience ByDezin NYFW 2025
+            </BodyS>
 
-          {/* Social Links */}
-          <div className="flex justify-center items-center gap-6 mb-8">
-            {socialLinks.map((social) => {
-              const IconComponent = social.icon;
-              return (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-moody-red hover:text-cream transition-colors duration-300"
-                  aria-label={social.name}
-                >
-                  <IconComponent />
-                </a>
-              );
-            })}
+            {/* Email Form */}
+            <form onSubmit={handleEmailSubmit} className="flex flex-col mobile:flex-row gap-4 max-w-md mx-auto">
+              <Input
+                type="email"
+                placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="flex-1 bg-white text-black border-gray-300 focus:border-gold focus:ring-gold"
+              />
+              <Button
+                type="submit"
+                variant="primary"
+                className="bg-gold text-black hover:bg-opacity-90 transition-all duration-200 font-semibold whitespace-nowrap"
+              >
+                Get Updates
+              </Button>
+            </form>
           </div>
+        </div>
+      </div>
 
-          {/* Copyright only */}
-          <div className="text-xs text-cream">
-            © 2025 ByDezin. All rights reserved.
+      {/* Existing Footer Content */}
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center">
+            {/* Logo */}
+            <HeadingM className="font-eb-garamond text-white mb-4 text-2xl mobile:text-3xl font-semibold">
+              ByDezin Showroom
+            </HeadingM>
+
+            {/* Tagline with hyperlinks */}
+            <BodyS className="text-cream mb-8 opacity-80 font-inter">
+              Powered by{' '}
+              <a 
+                href="https://apollowrldx.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors duration-300 underline"
+              >
+                Apollo Wrldx
+              </a>
+              {' & '}
+              <a 
+                href="https://www.instagram.com/arnell___/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors duration-300 underline"
+              >
+                Arnell Stewart
+              </a>
+            </BodyS>
+
+            {/* Social Links */}
+            <div className="flex justify-center items-center gap-6 mb-8">
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-moody-red hover:text-cream transition-colors duration-300"
+                    aria-label={social.name}
+                  >
+                    <IconComponent />
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Copyright only */}
+            <div className="text-xs text-cream">
+              © 2025 ByDezin. All rights reserved.
+            </div>
           </div>
         </div>
       </div>
