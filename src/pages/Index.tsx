@@ -1,7 +1,7 @@
+
 import React, { useState } from 'react';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
-import { Introduction } from '@/components/Introduction';
 import { BrandApplicationModal } from '@/components/BrandApplicationModal';
 import { FeaturedAlumni } from '@/components/FeaturedAlumni';
 import { PartnerModal } from '@/components/PartnerModal';

@@ -1,12 +1,29 @@
-import React from 'react';
-import { HeadingXL, HeadingM, BodyM, BodyS } from '@/components/Typography';
+
+import React, { useState } from 'react';
+import { HeadingM, BodyM, BodyS } from '@/components/Typography';
 import { Instagram, Youtube, Mail } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/Button';
+import { useToast } from '@/hooks/use-toast';
 
 interface FooterProps {
   onBrandApplicationClick: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
+  const [email, setEmail] = useState('');
+  const { toast } = useToast();
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Email signup:', email);
+    toast({
+      title: "Subscribed!",
+      description: "You'll receive updates and invites from ByDezin.",
+    });
+    setEmail('');
+  };
+
   const socialLinks = [
     {
       name: 'Apollo Wrldx Instagram',
@@ -45,19 +62,38 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
 
   return (
     <footer className="bg-black">
-      {/* Final CTA Section - Simplified */}
+      {/* Email Signup Section */}
       <div className="py-20 mobile:py-24 tablet:py-28 desktop:py-32 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-6 mobile:px-8">
           <div className="text-center animate-fade-in">
             {/* Main Headline */}
-            <HeadingXL className="text-white mb-8 font-semibold leading-tight tracking-[-0.02em]">
-              Join Us in New York
-            </HeadingXL>
+            <HeadingM className="text-white mb-4 font-semibold leading-tight tracking-[-0.02em] text-2xl mobile:text-3xl">
+              Stay Up to Date
+            </HeadingM>
 
-            {/* Event Details */}
-            <BodyM className="text-cream opacity-90 tracking-[0.01em]">
-              September 13, 2025
+            {/* Subtitle */}
+            <BodyM className="text-cream opacity-90 tracking-[0.01em] mb-8">
+              Updates, invites, and insider details, straight from ByDezin.
             </BodyM>
+
+            {/* Email Signup Form */}
+            <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto flex flex-col mobile:flex-row gap-4">
+              <Input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email address"
+                required
+                className="flex-1 h-12 px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20"
+              />
+              <Button
+                type="submit"
+                variant="primary"
+                className="h-12 px-6 bg-gold text-black hover:bg-opacity-90 font-semibold rounded-lg"
+              >
+                Subscribe
+              </Button>
+            </form>
           </div>
         </div>
       </div>

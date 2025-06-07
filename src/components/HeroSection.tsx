@@ -17,7 +17,7 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   videoSrc = "/hero-video.mp4",
-  headline = "ByDezin at New York Fashion Week (NYFW)",
+  headline = "ByDezin Returns to NYFW",
   description = "An invite-only showroom experience, back in the city where it started. Step inside, connect with the next generation of fashion voices and be part of the moment.",
   eventDetails = "September 13, 2025",
   primaryCta = "Apply to Be Featured",
