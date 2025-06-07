@@ -25,9 +25,9 @@ export const Button: React.FC<ButtonProps> = ({
   };
   
   const sizeStyles = {
-    sm: variant === 'primary' ? "px-6 py-3 text-sm rounded-md letter-spacing-[0.02em]" : "text-sm",
-    md: variant === 'primary' ? "px-8 py-4 text-base rounded-lg letter-spacing-[0.01em]" : "text-base",
-    lg: variant === 'primary' ? "px-10 py-5 text-lg rounded-lg letter-spacing-[0.01em]" : "text-lg"
+    sm: variant === 'primary' ? "px-4 py-2 text-sm rounded-md letter-spacing-[0.02em]" : "text-sm",
+    md: variant === 'primary' ? "px-6 py-3 text-base rounded-lg letter-spacing-[0.01em]" : "text-base",
+    lg: variant === 'primary' ? "px-8 py-4 text-lg rounded-lg letter-spacing-[0.01em]" : "text-lg"
   };
 
   return (

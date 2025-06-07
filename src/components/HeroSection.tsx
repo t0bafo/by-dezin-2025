@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { HeadingXL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
 import { GridContainer, Grid, Col } from '@/components/Grid';
 import { BrandApplicationModal } from '@/components/BrandApplicationModal';
+import { RSVPModal } from '@/components/RSVPModal';
 import { useAutoLoadRSVP } from '@/hooks/useAutoLoadRSVP';
 
 interface HeroSectionProps {
@@ -24,6 +24,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onBrandApplicationClick
 }) => {
   const [showBrandApplicationModal, setShowBrandApplicationModal] = useState(false);
+  const [showRSVPModal, setShowRSVPModal] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const { shouldShowRSVP, hideAutoRSVP } = useAutoLoadRSVP();
@@ -46,6 +47,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const handleBrandApplicationClose = () => {
     setShowBrandApplicationModal(false);
     hideAutoRSVP();
+  };
+
+  const handleRSVPClick = () => {
+    setShowRSVPModal(true);
+  };
+
+  const handleRSVPClose = () => {
+    setShowRSVPModal(false);
   };
 
   const handleVideoLoad = () => {
@@ -130,15 +139,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   {eventDetails}
                 </BodyM>
 
-                {/* Call-to-Action Button */}
-                <div className="flex justify-center">
+                {/* Call-to-Action Buttons */}
+                <div className="flex flex-col items-center gap-4">
+                  {/* Primary CTA Button - Smaller size */}
                   <Button 
                     variant="primary" 
-                    size="lg"
+                    size="md"
                     onClick={handleBrandApplicationClick}
-                    className="w-full mobile:w-auto min-h-[52px] mobile:min-h-[56px] px-8 mobile:px-10 py-4 mobile:py-5 text-lg mobile:text-xl font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg"
+                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg"
                   >
                     {primaryCta}
+                  </Button>
+
+                  {/* Secondary CTA Button */}
+                  <Button 
+                    variant="secondary" 
+                    size="md"
+                    onClick={handleRSVPClick}
+                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-medium bg-transparent text-cream border border-cream hover:bg-cream hover:text-black transition-all duration-200 rounded-lg"
+                  >
+                    Get Early Access
                   </Button>
                 </div>
               </div>
@@ -151,6 +171,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <BrandApplicationModal 
         isOpen={showBrandApplicationModal} 
         onClose={handleBrandApplicationClose} 
+      />
+
+      {/* RSVP Modal */}
+      <RSVPModal 
+        isOpen={showRSVPModal} 
+        onClose={handleRSVPClose} 
       />
     </section>
   );
