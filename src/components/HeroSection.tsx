@@ -105,11 +105,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60" />
 
-      {/* Hero Content - Simplified */}
+      {/* Hero Content - Fixed centering for desktop */}
       <div className="relative z-10 h-full flex items-center justify-center px-4 pt-8 pb-32 mobile:pt-16 mobile:pb-20 tablet:pt-12 tablet:pb-16">
-        <GridContainer className="w-full">
-          <Grid>
-            <Col span={12} tabletSpan={10} className="tablet:col-start-2">
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="flex justify-center">
+            <div className="w-full max-w-4xl">
               <div className="text-center text-white animate-fade-in">
                 {/* Main Headline with colored text */}
                 <h1 className="mb-6 mobile:mb-8 tablet:mb-8 desktop:mb-10 text-3xl mobile:text-5xl tablet:text-6xl desktop:text-7xl leading-tight font-bold font-eb-garamond tracking-tight">
@@ -142,9 +142,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </Button>
                 </div>
               </div>
-            </Col>
-          </Grid>
-        </GridContainer>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Brand Application Modal */}
