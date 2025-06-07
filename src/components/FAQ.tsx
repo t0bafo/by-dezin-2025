@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 import {
@@ -14,36 +15,28 @@ export const FAQ: React.FC = () => {
       answer: "[Placeholder - Arnell to provide answer about ByDezin's mission, vision, and what makes it unique]"
     },
     {
-      question: "What is the application process for ByDezin NYFW 2025?",
-      answer: "The application process involves submitting your brand information, portfolio, and specific collection details through our application form. Our curation team reviews submissions based on creativity, brand story, and alignment with our vision for emerging fashion talent."
+      question: "Who can apply to ByDezin NYFW S/S 2026?",
+      answer: "We welcome emerging fashion brands, independent designers, and creative entrepreneurs ready to showcase their unique aesthetic. Whether you're launching your first collection or seeking to elevate your brand presence, ByDezin is for those who value authentic storytelling, innovative design, and meaningful connections within the fashion community."
     },
     {
-      question: "When is the application deadline and event dates?",
-      answer: "Applications are reviewed on a rolling basis with priority given to early submissions. The ByDezin showcase will take place during New York Fashion Week 2025. Specific dates will be announced as we approach the event."
+      question: "How does the application process work?",
+      answer: "Simply complete our application form with your brand story, collection details, and portfolio samples. Our curation team reviews submissions based on creativity, brand vision, and alignment with our community values. We'll reach out within 2-3 weeks of submission with next steps."
     },
     {
-      question: "What are the requirements for participating brands?",
-      answer: "We welcome emerging designers and brands with a unique aesthetic and story to tell. Participants should have a cohesive collection ready for presentation and align with our values of creativity, authenticity, and innovation in fashion."
+      question: "What's the deadline?",
+      answer: "Applications are accepted on a rolling basis, with priority given to early submissions. To ensure full consideration for NYFW S/S 2026, we recommend applying by [specific date to be confirmed]. Don't wait—spaces are limited and fill quickly."
     },
     {
-      question: "What does participation include?",
-      answer: "Selected brands receive showcase space, professional styling support, media coverage, networking opportunities with industry professionals, and access to our curated audience of buyers, press, and fashion influencers."
+      question: "What's included if I'm selected?",
+      answer: "Selected brands receive showcase space in our curated showroom, professional styling support, media coverage and PR opportunities, networking access to buyers and industry professionals, content creation for social amplification, and mentorship from our community of fashion veterans."
     },
     {
-      question: "Are there any costs associated with participation?",
-      answer: "ByDezin operates on a sponsored model to support emerging talent. While basic participation is supported, some premium services and extended showcase options may have associated costs. Details are provided upon selection."
+      question: "Are there participation costs?",
+      answer: "ByDezin operates on a sponsored model to support emerging talent. While core participation is covered, some premium add-on services may have associated costs. All fees are transparently communicated upon selection, with flexible payment options available."
     },
     {
-      question: "How are brands selected for the showcase?",
-      answer: "Our curation team evaluates submissions based on design quality, brand story, creative vision, and potential for growth. We seek diverse voices that represent the future of fashion and align with our mission to spotlight emerging talent."
-    },
-    {
-      question: "Can international designers apply?",
-      answer: "Yes, we welcome applications from brands worldwide. While we love having designers present at the showcase, physical presence isn't required. We offer flexible participation options including product showcasing, where you can send pieces for display and we handle the presentation. We work with each selected brand to find the best way to showcase their vision at ByDezin."
-    },
-    {
-      question: "What support is provided for first-time NYFW participants?",
-      answer: "We offer comprehensive support including mentorship from industry professionals, guidance on NYFW protocols, media training, and networking facilitation. Our goal is to ensure every participant has a successful and impactful experience."
+      question: "Do I need to be in New York to participate?",
+      answer: "Physical presence isn't required! We offer flexible participation options including product showcasing where you can send pieces for display while we handle the presentation. However, being present allows for direct networking and media opportunities that can significantly amplify your brand's impact."
     }
   ];
 
@@ -57,17 +50,8 @@ export const FAQ: React.FC = () => {
           
           <div className="max-w-[600px] mx-auto mb-6">
             <BodyM className="text-black leading-relaxed">
-              Everything you need to know about showcasing at ByDezin NYFW 2025
+              Everything you need to know about showcasing at ByDezin NYFW S/S 2026
             </BodyM>
-          </div>
-
-          {/* Notice */}
-          <div className="max-w-[500px] mx-auto">
-            <div className="bg-cream bg-opacity-30 border border-[#D4A5A5] border-opacity-40 rounded-lg px-4 py-3">
-              <BodyS className="text-[#D4A5A5] italic text-center">
-                Content to be updated - placeholder questions for marketing review
-              </BodyS>
-            </div>
           </div>
         </div>
 

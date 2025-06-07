@@ -49,11 +49,11 @@ const Index = () => {
           {/* Vision 2025 Section */}
           <Vision2025 onBrandApplicationClick={handleBrandApplicationClick} />
           
-          {/* FAQ Section */}
-          <FAQ />
-          
           {/* Collaborate Section */}
           <CollaborateSection onPartnerClick={() => setShowPartnerModal(true)} />
+          
+          {/* FAQ Section - moved after Collaborate */}
+          <FAQ />
         </main>
 
         {/* Footer with Final CTA */}

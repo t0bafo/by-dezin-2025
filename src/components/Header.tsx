@@ -15,14 +15,14 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
   const menuItems = [
     { label: 'Alumni', href: '#alumni' },
     { label: 'Vision', href: '#vision' },
-    { label: 'FAQ', href: '#faq' },
     { label: 'Collaborate', href: '#collaborate' },
+    { label: 'FAQ', href: '#faq' },
   ];
 
   // Handle active section highlighting
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'alumni', 'vision', 'faq', 'collaborate'];
+      const sections = ['hero', 'alumni', 'vision', 'collaborate', 'faq'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
