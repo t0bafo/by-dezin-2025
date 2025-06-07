@@ -113,8 +113,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="text-center text-white animate-fade-in">
                 {/* Main Headline with colored text */}
                 <h1 className="mb-6 mobile:mb-8 tablet:mb-8 desktop:mb-10 text-3xl mobile:text-5xl tablet:text-6xl desktop:text-7xl leading-tight font-bold font-eb-garamond tracking-tight">
-                  <span className="text-white">ByDezin</span>{' '}
-                  <span className="text-white">Returns to</span>{' '}
+                  <span className="text-gold">ByDezin</span>{' '}
+                  <span className="text-gold">Returns to</span>{' '}
                   <span className="text-gold">NYFW</span>
                 </h1>
 
