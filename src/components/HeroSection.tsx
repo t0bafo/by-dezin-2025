@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { HeadingXL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -156,7 +157,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     variant="secondary" 
                     size="md"
                     onClick={handleRSVPClick}
-                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-medium bg-transparent text-cream border border-cream hover:bg-cream hover:text-black transition-all duration-200 rounded-lg"
+                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-medium bg-transparent text-cream border border-cream hover:bg-cream hover:text-black transition-all duration-200 rounded-lg no-underline"
                   >
                     Get Early Access
                   </Button>
