@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 import {
@@ -12,7 +11,7 @@ export const FAQ: React.FC = () => {
   const faqItems = [
     {
       question: "What is ByDezin?",
-      answer: "[Placeholder - Arnell to provide answer about ByDezin's mission, vision, and what makes it unique]"
+      answer: "Born from a deep love for individuality and community, The Bydezin Experience is more than a platform. It's a launchpad. We are committed to elevating emerging brands by offering visibility and connection within a growing ecosystem of innovators. We are where creative freedom and commercial success go hand in hand. Our mission is to support the next generation of fashion leaders by creating opportunities for growth without compromising identity or integrity."
     },
     {
       question: "Who can apply to ByDezin NYFW S/S 2026?",
