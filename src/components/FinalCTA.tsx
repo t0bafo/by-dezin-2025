@@ -36,7 +36,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onBrandApplicationClick }) =
             onClick={onBrandApplicationClick}
             className="bg-moody-red text-bone hover:bg-opacity-90 transition-all duration-300 border-moody-red font-semibold tracking-[0.01em]"
           >
-            Apply to Be Featured
+            Showcase Your Brand
           </Button>
         </div>
       </div>

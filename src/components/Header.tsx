@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/Button';
@@ -123,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
               onClick={onBrandApplicationClick}
               className="bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
             >
-              Apply to Be Featured
+              Showcase Your Brand
             </Button>
           </div>
         </div>
@@ -174,7 +173,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
                 }}
                 className="w-full bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
               >
-                Apply to Be Featured
+                Showcase Your Brand
               </Button>
             </div>
           </div>

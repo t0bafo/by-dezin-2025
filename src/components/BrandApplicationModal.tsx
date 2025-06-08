@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { HeadingL, BodyM } from '@/components/Typography';
@@ -102,7 +103,7 @@ export const BrandApplicationModal: React.FC<BrandApplicationModalProps> = ({ is
         {/* Header */}
         <div className="flex justify-between items-start p-6 border-b border-cream">
           <div className="flex-1 pr-4">
-            <HeadingL className="text-black mb-2 text-xl sm:text-2xl">Be seen at ByDezin</HeadingL>
+            <HeadingL className="text-black mb-2 text-xl sm:text-2xl">Showcase Your Brand</HeadingL>
             <BodyM className="text-black opacity-70 text-sm">
               Put your brand in the spotlight and join the story unfolding at ByDezin NYFW 2025.
             </BodyM>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { HeadingXL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -21,7 +20,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   headline = "ByDezin Returns to NYFW",
   description = "An invite-only showroom experience, back in the city where it started. Step inside, connect with the next generation of fashion voices and be part of the moment.",
   eventDetails = "September 13, 2025 · New York City",
-  primaryCta = "Apply to Be Featured",
+  primaryCta = "Showcase Your Brand",
   onBrandApplicationClick
 }) => {
   const [showBrandApplicationModal, setShowBrandApplicationModal] = useState(false);
