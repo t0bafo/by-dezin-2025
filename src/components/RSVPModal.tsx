@@ -93,7 +93,7 @@ export const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose }) => {
           <div>
             <HeadingL className="text-black mb-2">Get Early Access</HeadingL>
             <BodyM className="text-black opacity-70 text-sm">
-              Be among the first to experience ByDezin NYFW S/S 2026.
+              Be among the first to experience ByDezin NYFW 2025.
             </BodyM>
           </div>
           <button
