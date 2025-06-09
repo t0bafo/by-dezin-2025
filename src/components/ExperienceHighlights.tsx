@@ -59,7 +59,7 @@ const ExperienceHighlights: React.FC = () => {
               style={{ minHeight: '400px' }} // Ensure space for the embed
             >
               {/* Sound On Text Overlay */}
-              <div className="absolute top-2 right-2 z-10 pointer-events-none">
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-10 pointer-events-none">
                 <BodyS className="text-cream bg-black bg-opacity-30 px-2 py-1 rounded text-xs opacity-80">
                   Tap for sound on
                 </BodyS>
