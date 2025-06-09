@@ -16,7 +16,7 @@ export const FAQ: React.FC = () => {
       answer: "Born from a deep love for individuality and community, The Bydezin Experience is more than a platform. It's a launchpad. We are committed to elevating emerging brands by offering visibility and connection within a growing ecosystem of innovators. We are where creative freedom and commercial success go hand in hand. Our mission is to support the next generation of fashion leaders by creating opportunities for growth without compromising identity or integrity."
     },
     {
-      question: "Who can participate to ByDezin NYFW 2025?",
+      question: "Who can participate in ByDezin NYFW 2025?",
       answer: "We welcome emerging designers and brands with a unique story and a cohesive collection ready to show. If you're bringing fresh energy to fashion, you're in the right place."
     },
     {
@@ -25,7 +25,11 @@ export const FAQ: React.FC = () => {
     },
     {
       question: "What's the latest I can express interest?",
-      answer: "We review entries as they come in, so early is always better. Final reviews will wrap by August 21, 2025."
+      answer: (
+        <>
+          We review entries as they come in, so early is always better. Final reviews will wrap by <strong>August 10, 2025</strong>.
+        </>
+      )
     },
     {
       question: "What's included if I'm selected?",
