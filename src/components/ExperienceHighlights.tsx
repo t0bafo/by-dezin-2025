@@ -53,18 +53,18 @@ const ExperienceHighlights: React.FC = () => {
         {/* Instagram Embed Container */}
         <div className="flex justify-center">
           <div className="w-full max-w-[600px]">
+            {/* Sound On Text - positioned above the embed */}
+            <div className="text-center mb-4">
+              <BodyS className="text-black opacity-60">
+                Tap for sound on
+              </BodyS>
+            </div>
+            
             {/* Instagram Blockquote Embed */}
             <div 
               className="flex justify-center relative"
               style={{ minHeight: '400px' }} // Ensure space for the embed
             >
-              {/* Sound On Text Overlay */}
-              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-10 pointer-events-none">
-                <BodyS className="text-cream bg-black bg-opacity-30 px-2 py-1 rounded text-xs opacity-80">
-                  Tap for sound on
-                </BodyS>
-              </div>
-              
               <blockquote 
                 className="instagram-media" 
                 data-instgrm-captioned
