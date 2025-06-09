@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { HeadingL, BodyM } from '@/components/Typography';
+import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 
 const ExperienceHighlights: React.FC = () => {
   useEffect(() => {
@@ -55,9 +55,16 @@ const ExperienceHighlights: React.FC = () => {
           <div className="w-full max-w-[600px]">
             {/* Instagram Blockquote Embed */}
             <div 
-              className="flex justify-center"
+              className="flex justify-center relative"
               style={{ minHeight: '400px' }} // Ensure space for the embed
             >
+              {/* Sound On Text Overlay */}
+              <div className="absolute top-2 right-2 z-10 pointer-events-none">
+                <BodyS className="text-cream bg-black bg-opacity-30 px-2 py-1 rounded text-xs opacity-80">
+                  Tap for sound on
+                </BodyS>
+              </div>
+              
               <blockquote 
                 className="instagram-media" 
                 data-instgrm-captioned
