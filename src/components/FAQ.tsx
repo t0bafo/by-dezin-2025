@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 import {
@@ -14,28 +15,28 @@ export const FAQ: React.FC = () => {
       answer: "Born from a deep love for individuality and community, The Bydezin Experience is more than a platform. It's a launchpad. We are committed to elevating emerging brands by offering visibility and connection within a growing ecosystem of innovators. We are where creative freedom and commercial success go hand in hand. Our mission is to support the next generation of fashion leaders by creating opportunities for growth without compromising identity or integrity."
     },
     {
-      question: "Who can apply to ByDezin NYFW S/S 2026?",
-      answer: "We welcome emerging fashion brands, independent designers, and creative entrepreneurs ready to showcase their unique aesthetic. Whether you're launching your first collection or seeking to elevate your brand presence, ByDezin is for those who value authentic storytelling, innovative design, and meaningful connections within the fashion community."
+      question: "Who can participate to ByDezin NYFW S/S 2026?",
+      answer: "We welcome emerging designers and brands with a unique story and a cohesive collection ready to show. If you're bringing fresh energy to fashion, you're in the right place."
     },
     {
-      question: "How does the application process work?",
-      answer: "Simply complete our application form with your brand story, collection details, and portfolio samples. Our curation team reviews submissions based on creativity, brand vision, and alignment with our community values. We'll reach out within 2-3 weeks of submission with next steps."
+      question: "What's the process to be considered?",
+      answer: "Start by filling out a short form with your brand details. From there, we'll follow up to learn more, reviewing your portfolio or collection overview. Our curation team selects based on originality, storytelling, a strong point of view, and alignment with ByDezin's 2025 vision."
     },
     {
-      question: "What's the deadline?",
-      answer: "Applications are accepted on a rolling basis, with priority given to early submissions. To ensure full consideration for NYFW S/S 2026, we recommend applying by [specific date to be confirmed]. Don't wait—spaces are limited and fill quickly."
+      question: "What's the latest I can express interest?",
+      answer: "We review entries as they come in, so early is always better. Final reviews will wrap by August 21, 2025."
     },
     {
       question: "What's included if I'm selected?",
-      answer: "Selected brands receive showcase space in our curated showroom, professional styling support, media coverage and PR opportunities, networking access to buyers and industry professionals, content creation for social amplification, and mentorship from our community of fashion veterans."
+      answer: "Selected brands receive showcase space, styling support, media coverage, and access to our network of buyers, stylists, editors, and creative collaborators."
     },
     {
       question: "Are there participation costs?",
-      answer: "ByDezin operates on a sponsored model to support emerging talent. While core participation is covered, some premium add-on services may have associated costs. All fees are transparently communicated upon selection, with flexible payment options available."
+      answer: "Our sponsor-backed model covers core participation for selected brands. Some premium services or expanded offerings may carry additional costs, we'll walk you through any details if needed."
     },
     {
       question: "Do I need to be in New York to participate?",
-      answer: "Physical presence isn't required! We offer flexible participation options including product showcasing where you can send pieces for display while we handle the presentation. However, being present allows for direct networking and media opportunities that can significantly amplify your brand's impact."
+      answer: "Not necessarily. We welcome international brands and offer flexible options, including remote showcasing, where we present your collection on your behalf."
     }
   ];
 
