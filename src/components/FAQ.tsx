@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { HeadingL, BodyM, BodyS } from '@/components/Typography';
 import {
@@ -55,7 +53,7 @@ export const FAQ: React.FC = () => {
           
           <div className="max-w-[600px] mx-auto mb-6">
             <BodyM className="text-black leading-relaxed">
-              Everything you need to know about showcasing at ByDezin NYFW S/S 2026
+              Everything you need to know about showcasing at ByDezin NYFW 2025
             </BodyM>
           </div>
         </div>
