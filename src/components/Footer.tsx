@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
         <div className="max-w-7xl mx-auto px-6 mobile:px-8">
           <div className="text-center animate-fade-in">
             {/* Email Signup Section */}
-            <div className="mb-10">
+            <div className="mb-6">
               {/* Main Headline */}
               <HeadingM className="text-white mb-4 font-semibold leading-tight tracking-[-0.02em] text-2xl mobile:text-3xl">
                 Stay Up to Date
@@ -99,16 +99,16 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
 
             {/* Main Footer Content */}
             <div>
-              {/* Logo */}
-              <div className="mb-3">
+              {/* Logo - Much larger */}
+              <div className="mb-2">
                 <img 
                   src="/lovable-uploads/f4048747-a829-4025-805c-7445cbcb2471.png" 
                   alt="ByDezin" 
-                  className="h-20 mobile:h-24 tablet:h-28 desktop:h-32 w-auto mx-auto"
+                  className="h-32 mobile:h-36 tablet:h-40 desktop:h-44 w-auto mx-auto"
                 />
               </div>
 
-              {/* Tagline with hyperlinks - moved closer to logo */}
+              {/* Tagline with hyperlinks - closer to logo */}
               <BodyS className="text-cream mb-8 opacity-80 font-montserrat">
                 Powered by{' '}
                 <a 
