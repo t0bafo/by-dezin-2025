@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 
 export const MetaTags = () => {
@@ -26,7 +27,7 @@ export const MetaTags = () => {
     // Social media optimized content
     const title = 'ByDezin NYFW 2025 - Apply to Showcase Your Brand';
     const description = 'Put your brand in the spotlight at an exclusive fashion showcase featuring emerging talent. Applications now open for September 13, 2025 in New York City.';
-    const imageUrl = '/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png';
+    const imageUrl = '/lovable-uploads/00c601a6-600f-4e6e-b883-aff7c6a3a889.png';
     const siteUrl = window.location.href;
 
     // Open Graph tags
@@ -35,7 +36,7 @@ export const MetaTags = () => {
     updateMetaTag('og:image', imageUrl);
     updateMetaTag('og:image:width', '1200');
     updateMetaTag('og:image:height', '630');
-    updateMetaTag('og:image:alt', 'ByDezin brand ambassadors at SoHo New York storefront - Apply to showcase your brand at NYFW S/S 2026');
+    updateMetaTag('og:image:alt', 'ByDezin logo - Apply to showcase your brand at NYFW S/S 2026');
     updateMetaTag('og:type', 'website');
     updateMetaTag('og:url', siteUrl);
     updateMetaTag('og:site_name', 'ByDezin');
@@ -46,7 +47,7 @@ export const MetaTags = () => {
     updateMetaTagName('twitter:title', title);
     updateMetaTagName('twitter:description', description);
     updateMetaTagName('twitter:image', imageUrl);
-    updateMetaTagName('twitter:image:alt', 'ByDezin brand ambassadors at SoHo New York storefront - Apply to showcase your brand at NYFW S/S 2026');
+    updateMetaTagName('twitter:image:alt', 'ByDezin logo - Apply to showcase your brand at NYFW S/S 2026');
     updateMetaTagName('twitter:site', '@ByDezin');
     updateMetaTagName('twitter:creator', '@ByDezin');
 
