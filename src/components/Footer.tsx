@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
         <div className="max-w-7xl mx-auto px-6 mobile:px-8">
           <div className="text-center animate-fade-in">
             {/* Email Signup Section */}
-            <div className="mb-16">
+            <div className="mb-10">
               {/* Main Headline */}
               <HeadingM className="text-white mb-4 font-semibold leading-tight tracking-[-0.02em] text-2xl mobile:text-3xl">
                 Stay Up to Date
@@ -100,7 +100,7 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
             {/* Main Footer Content */}
             <div>
               {/* Logo */}
-              <div className="mb-4">
+              <div className="mb-6">
                 <img 
                   src="/lovable-uploads/f4048747-a829-4025-805c-7445cbcb2471.png" 
                   alt="ByDezin" 
