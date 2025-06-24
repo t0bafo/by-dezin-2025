@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { HeadingXL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -16,7 +17,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  videoSrc = "/hero-video.mp4",
+  videoSrc = "/hero-video-latest.mov",
   headline = "ByDezin Returns to NYFW",
   description = "An invite-only showroom experience, back in the city where it started. Step inside, connect with the next generation of fashion voices and be part of the moment.",
   eventDetails = "September 13, 2025 · New York City",
@@ -76,26 +77,53 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        onLoadedData={handleVideoLoad}
-        onError={handleVideoError}
-        onCanPlay={handleVideoCanPlay}
-        poster="/hero-poster.jpg"
-      >
-        <source src={videoSrc} type="video/mp4" />
-        <div className="absolute inset-0 bg-black" />
-      </video>
+      {/* Video Background - Responsive handling for vertical video */}
+      <div className="absolute inset-0">
+        {/* Desktop: Blurred background extensions */}
+        <div className="hidden mobile:block absolute inset-0">
+          {/* Left side gradient overlay */}
+          <div className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
+          {/* Right side gradient overlay */}
+          <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-black via-black/80 to-transparent z-10" />
+          
+          {/* Blurred background video (desktop only) */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-30"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Main centered video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover mobile:object-contain mobile:max-w-none mobile:max-h-none mobile:w-auto mobile:h-full mobile:left-1/2 mobile:transform mobile:-translate-x-1/2"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          onLoadedData={handleVideoLoad}
+          onError={handleVideoError}
+          onCanPlay={handleVideoCanPlay}
+          controls={false}
+          style={{
+            // Ensure aspect ratio is maintained on desktop
+            aspectRatio: 'auto',
+          }}
+        >
+          <source src={videoSrc} type="video/mp4" />
+          <div className="absolute inset-0 bg-black" />
+        </video>
+      </div>
 
       {/* Show error message if video fails to load */}
       {videoError && (
-        <div className="absolute inset-0 bg-black flex items-center justify-center">
+        <div className="absolute inset-0 bg-black flex items-center justify-center z-20">
           <p className="text-white text-center px-4">
             Video failed to load: {videoSrc}
             <br />
@@ -106,47 +134,47 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       {/* Loading state while video loads */}
       {!videoLoaded && !videoError && (
-        <div className="absolute inset-0 bg-black animate-pulse flex items-center justify-center">
+        <div className="absolute inset-0 bg-black animate-pulse flex items-center justify-center z-20">
           <p className="text-white">Loading video...</p>
         </div>
       )}
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60" />
+      {/* Enhanced Dark Overlay for better text contrast */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 mobile:bg-opacity-50 z-10" />
 
-      {/* Hero Content - Fixed centering for desktop */}
-      <div className="relative z-10 h-full flex items-center justify-center px-4 pt-8 pb-32 mobile:pt-16 mobile:pb-20 tablet:pt-12 tablet:pb-16">
+      {/* Hero Content - Enhanced contrast and positioning */}
+      <div className="relative z-20 h-full flex items-center justify-center px-4 pt-8 pb-32 mobile:pt-16 mobile:pb-20 tablet:pt-12 tablet:pb-16">
         <div className="w-full max-w-7xl mx-auto">
           <div className="flex justify-center">
             <div className="w-full max-w-4xl">
               <div className="text-center text-white animate-fade-in">
-                {/* Main Headline with colored text - updated to Playfair Display */}
-                <h1 className="mb-6 mobile:mb-8 tablet:mb-8 desktop:mb-10 text-3xl mobile:text-5xl tablet:text-6xl desktop:text-7xl leading-tight font-bold font-playfair tracking-tight">
+                {/* Main Headline with enhanced contrast */}
+                <h1 className="mb-6 mobile:mb-8 tablet:mb-8 desktop:mb-10 text-3xl mobile:text-5xl tablet:text-6xl desktop:text-7xl leading-tight font-bold font-playfair tracking-tight drop-shadow-lg">
                   <span className="text-gold">ByDezin</span>{' '}
                   <span className="text-gold">Returns to</span>{' '}
                   <span className="text-gold">NYFW</span>
                 </h1>
 
-                {/* Description */}
+                {/* Description with enhanced readability */}
                 <div className="max-w-[640px] mx-auto mb-8 mobile:mb-10 tablet:mb-12 desktop:mb-14">
-                  <BodyM className="text-cream leading-relaxed opacity-90 text-base mobile:text-lg tablet:text-xl">
+                  <BodyM className="text-cream leading-relaxed opacity-95 text-base mobile:text-lg tablet:text-xl drop-shadow-md">
                     {description}
                   </BodyM>
                 </div>
 
-                {/* Event Details */}
-                <BodyM className="text-cream mb-8 mobile:mb-10 tablet:mb-12 desktop:mb-16 text-base mobile:text-lg tablet:text-xl opacity-80">
+                {/* Event Details with enhanced contrast */}
+                <BodyM className="text-cream mb-8 mobile:mb-10 tablet:mb-12 desktop:mb-16 text-base mobile:text-lg tablet:text-xl opacity-90 drop-shadow-md">
                   {eventDetails}
                 </BodyM>
 
-                {/* Call-to-Action Buttons */}
+                {/* Call-to-Action Buttons with enhanced visibility */}
                 <div className="flex flex-col items-center gap-4">
-                  {/* Primary CTA Button - Smaller size */}
+                  {/* Primary CTA Button */}
                   <Button 
                     variant="primary" 
                     size="md"
                     onClick={handleBrandApplicationClick}
-                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg"
+                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg shadow-lg"
                   >
                     {primaryCta}
                   </Button>
@@ -156,7 +184,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     variant="secondary" 
                     size="md"
                     onClick={handleRSVPClick}
-                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-medium bg-transparent text-cream border border-cream hover:bg-cream hover:text-black transition-all duration-200 rounded-lg no-underline"
+                    className="w-full mobile:w-auto px-6 mobile:px-8 py-3 mobile:py-4 text-base mobile:text-lg font-medium bg-transparent text-cream border border-cream hover:bg-cream hover:text-black transition-all duration-200 rounded-lg no-underline shadow-lg"
                   >
                     Get Early Access
                   </Button>
