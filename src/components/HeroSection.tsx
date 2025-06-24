@@ -155,10 +155,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   <span className="text-gold">NYFW</span>
                 </h1>
 
-                {/* Description with enhanced readability */}
+                {/* Description with enhanced readability and selective gold highlighting */}
                 <div className="max-w-[640px] mx-auto mb-8 mobile:mb-10 tablet:mb-12 desktop:mb-14">
                   <BodyM className="text-cream leading-relaxed opacity-95 text-base mobile:text-lg tablet:text-xl drop-shadow-md">
-                    {description}
+                    An <span className="text-gold">invite-only</span> <span className="text-gold">showroom experience</span>, back in the city where it started. Step inside, connect with the next generation of fashion voices and be part of the moment.
                   </BodyM>
                 </div>
 
