@@ -32,8 +32,8 @@ const Index = () => {
       <div className="min-h-screen bg-bone">
         <Header onBrandApplicationClick={handleBrandApplicationClick} />
         
-        {/* Main content with standard top padding for normal header */}
-        <main className="pt-24 mobile:pt-28 tablet:pt-28 desktop:pt-28">
+        {/* Main content with improved mobile spacing */}
+        <main className="pt-16 mobile:pt-20 tablet:pt-20 desktop:pt-20">
           <section id="hero">
             <HeroSection onBrandApplicationClick={handleBrandApplicationClick} />
           </section>

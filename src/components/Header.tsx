@@ -72,8 +72,8 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-bone shadow-sm">
-      <nav className="max-w-7xl mx-auto px-6 h-20 mobile:h-24 tablet:h-24 desktop:h-24 flex items-center justify-between">
-        {/* Logo - New designer logo properly sized */}
+      <nav className="max-w-7xl mx-auto px-4 mobile:px-6 h-16 mobile:h-20 tablet:h-20 desktop:h-20 flex items-center justify-between">
+        {/* Logo - Improved mobile sizing and touch target */}
         <div className="flex-shrink-0">
           <a 
             href="#hero"
@@ -81,20 +81,20 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
               e.preventDefault();
               handleMenuClick('#hero');
             }}
-            className="hover:opacity-80 transition-opacity duration-200"
+            className="hover:opacity-80 transition-opacity duration-200 block p-2 -m-2"
           >
             <img 
               src="/lovable-uploads/e5ef0beb-96ac-45b6-821e-b91b2b2065bd.png" 
               alt="ByDezin" 
-              className="h-12 mobile:h-14 tablet:h-16 desktop:h-16 w-auto"
+              className="h-10 mobile:h-12 tablet:h-14 desktop:h-14 w-auto"
             />
           </a>
         </div>
 
-        {/* Desktop Navigation and CTA - Right Side */}
-        <div className="hidden mobile:flex items-center space-x-8">
+        {/* Desktop Navigation and CTA - Better spacing */}
+        <div className="hidden mobile:flex items-center space-x-6">
           {/* Navigation Menu */}
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-6">
             {menuItems.map((item) => (
               <a
                 key={item.label}
@@ -104,7 +104,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
                   handleMenuClick(item.href);
                 }}
                 className={cn(
-                  "font-montserrat font-medium transition-all duration-200 relative",
+                  "font-montserrat font-medium transition-all duration-200 relative py-2",
                   "hover:text-moody-red",
                   "after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0",
                   "after:bg-moody-red after:transform after:scale-x-0 after:origin-right after:transition-transform after:duration-300",
@@ -119,8 +119,8 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
             ))}
           </div>
           
-          {/* CTA Button with proper spacing */}
-          <div className="ml-6">
+          {/* CTA Button */}
+          <div className="ml-4">
             <Button 
               variant="primary" 
               size="sm"
@@ -132,9 +132,9 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Improved touch target */}
         <button
-          className="mobile:hidden p-2 text-black hover:text-moody-red transition-colors"
+          className="mobile:hidden p-3 text-black hover:text-moody-red transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -146,10 +146,10 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Improved spacing and touch targets */}
       {isMenuOpen && (
         <div className="mobile:hidden bg-bone border-t border-cream">
-          <div className="px-6 py-4 space-y-4">
+          <div className="px-4 py-6 space-y-6">
             {menuItems.map((item) => (
               <a
                 key={item.label}
@@ -159,7 +159,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
                   handleMenuClick(item.href);
                 }}
                 className={cn(
-                  "block font-montserrat font-medium py-2 transition-colors duration-200",
+                  "block font-montserrat font-medium py-3 transition-colors duration-200 text-lg",
                   activeSection === item.href.replace('#', '') 
                     ? "text-moody-red" 
                     : "text-black hover:text-moody-red"
@@ -168,15 +168,15 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
                 {item.label}
               </a>
             ))}
-            <div className="pt-2">
+            <div className="pt-4">
               <Button 
                 variant="primary" 
-                size="sm"
+                size="md"
                 onClick={() => {
                   onBrandApplicationClick();
                   setIsMenuOpen(false);
                 }}
-                className="w-full bg-moody-red text-bone hover:bg-opacity-90 border-moody-red"
+                className="w-full bg-moody-red text-bone hover:bg-opacity-90 border-moody-red py-4 text-lg"
               >
                 Showcase Your Brand
               </Button>
