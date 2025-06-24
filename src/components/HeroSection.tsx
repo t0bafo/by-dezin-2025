@@ -111,7 +111,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           muted
           playsInline
           preload="auto"
-          loading="eager"
           poster="/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png"
           onLoadedData={handleVideoLoad}
           onCanPlay={handleVideoCanPlay}
