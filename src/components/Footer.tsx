@@ -100,9 +100,13 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
             {/* Main Footer Content */}
             <div>
               {/* Logo */}
-              <HeadingM className="font-eb-garamond text-white mb-4 text-2xl mobile:text-3xl font-semibold">
-                ByDezin
-              </HeadingM>
+              <div className="mb-4">
+                <img 
+                  src="/lovable-uploads/f4048747-a829-4025-805c-7445cbcb2471.png" 
+                  alt="ByDezin" 
+                  className="h-12 mobile:h-16 w-auto mx-auto"
+                />
+              </div>
 
               {/* Tagline with hyperlinks */}
               <BodyS className="text-cream mb-8 opacity-80 font-inter">

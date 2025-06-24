@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/Button';
@@ -80,9 +81,13 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
               e.preventDefault();
               handleMenuClick('#hero');
             }}
-            className="font-eb-garamond text-2xl font-semibold text-black hover:text-moody-red transition-colors duration-200"
+            className="hover:opacity-80 transition-opacity duration-200"
           >
-            ByDezin
+            <img 
+              src="/lovable-uploads/8c9c5cf0-cfb7-4720-864a-175524d78e23.png" 
+              alt="ByDezin" 
+              className="h-8 mobile:h-10 w-auto"
+            />
           </a>
         </div>
 
