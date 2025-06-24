@@ -104,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
                 <img 
                   src="/lovable-uploads/f4048747-a829-4025-805c-7445cbcb2471.png" 
                   alt="ByDezin" 
-                  className="h-12 mobile:h-16 w-auto mx-auto"
+                  className="h-16 mobile:h-20 tablet:h-24 w-auto mx-auto"
                 />
               </div>
 
