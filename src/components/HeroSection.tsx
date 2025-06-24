@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { HeadingXL, BodyM } from '@/components/Typography';
 import { Button } from '@/components/Button';
@@ -170,8 +169,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <span className="text-gold">NYFW</span>
             </h1>
 
-            {/* Description - Optimized for single line on desktop */}
-            <div className="max-w-[400px] sm:max-w-[500px] md:max-w-[900px] lg:max-w-[1000px] xl:max-w-[1100px] mx-auto mb-8">
+            {/* Description - Single line on desktop 768px+ */}
+            <div className="max-w-[400px] sm:max-w-[500px] md:max-w-[1200px] lg:max-w-[1300px] xl:max-w-[1400px] mx-auto mb-8">
               <BodyM className="text-cream leading-relaxed opacity-95 text-lg md:text-xl drop-shadow-lg">
                 An invite-only fashion showroom experience, back in the city where it started.
               </BodyM>
