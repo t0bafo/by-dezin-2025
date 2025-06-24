@@ -24,16 +24,14 @@ export const MetaTags = () => {
       metaTag.setAttribute('content', content);
     };
 
-    // Get current URL and construct absolute URLs
-    const siteUrl = window.location.origin + window.location.pathname;
-    const baseUrl = window.location.origin;
-    const imageUrl = `${baseUrl}/lovable-uploads/00c601a6-600f-4e6e-b883-aff7c6a3a889.png`;
-    const heroImageUrl = `${baseUrl}/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png`;
+    // Updated URLs and content
+    const siteUrl = 'https://bydezin.apollowrldx.com/';
+    const baseUrl = 'https://bydezin.apollowrldx.com';
+    const imageUrl = `${baseUrl}/assets/og-bydezin-nyfw-ss26.jpg`;
 
-    // Enhanced social media optimized content
-    const title = 'ByDezin NYFW 2025 - Apply to Showcase Your Brand';
-    const description = 'Put your brand in the spotlight at an exclusive fashion showcase featuring emerging talent. Applications now open for September 13, 2025 in New York City.';
-    const shortDescription = 'Exclusive fashion showcase at NYFW 2025. Apply to showcase your emerging brand in NYC.';
+    // Updated social media optimized content
+    const title = 'ByDezin Showroom NYFW S/S 2026 — Showcase Your Brand';
+    const description = 'Apply now to showcase your SS\'26 collection at NYFW. Limited spots for emerging talent—Sept 13, 2025 in NYC.';
 
     // Open Graph tags (Facebook, LinkedIn, WhatsApp)
     updateMetaTag('og:title', title);
@@ -42,7 +40,7 @@ export const MetaTags = () => {
     updateMetaTag('og:image:secure_url', imageUrl);
     updateMetaTag('og:image:width', '1200');
     updateMetaTag('og:image:height', '630');
-    updateMetaTag('og:image:alt', 'ByDezin logo - Apply to showcase your brand at NYFW S/S 2026');
+    updateMetaTag('og:image:alt', 'ByDezin Showroom NYFW S/S 2026 - Apply to showcase your brand');
     updateMetaTag('og:type', 'website');
     updateMetaTag('og:url', siteUrl);
     updateMetaTag('og:site_name', 'ByDezin');
@@ -53,29 +51,36 @@ export const MetaTags = () => {
     updateMetaTagName('twitter:title', title);
     updateMetaTagName('twitter:description', description);
     updateMetaTagName('twitter:image', imageUrl);
-    updateMetaTagName('twitter:image:alt', 'ByDezin logo - Apply to showcase your brand at NYFW S/S 2026');
+    updateMetaTagName('twitter:image:alt', 'ByDezin Showroom NYFW S/S 2026 - Apply to showcase your brand');
     updateMetaTagName('twitter:site', '@ByDezin');
     updateMetaTagName('twitter:creator', '@ByDezin');
 
     // LinkedIn specific optimizations
+    updateMetaTagName('linkedin:title', title);
+    updateMetaTagName('linkedin:description', description);
     updateMetaTagName('linkedin:owner', 'ByDezin');
 
     // Pinterest specific tags
+    updateMetaTagName('pinterest:title', title);
+    updateMetaTagName('pinterest:description', description);
     updateMetaTagName('pinterest-rich-pin', 'true');
+
+    // TikTok optimization
+    updateMetaTagName('tiktok:site', '@ByDezinShowroom');
 
     // Additional social platforms
     updateMetaTagName('telegram:channel', '@ByDezin');
 
     // Standard meta tags
     updateMetaTagName('description', description);
-    updateMetaTagName('keywords', 'ByDezin, NYFW, New York Fashion Week, emerging designers, fashion showcase, brand application, 2025, sustainable fashion, fashion talent, fashion events, designer showcase');
+    updateMetaTagName('keywords', 'ByDezin, NYFW, New York Fashion Week, emerging designers, fashion showcase, brand application, 2026, SS26, sustainable fashion, fashion talent, fashion events, designer showcase');
     updateMetaTagName('author', 'ByDezin');
     updateMetaTagName('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
 
     // Enhanced SEO tags
     updateMetaTagName('theme-color', '#8B4513');
     updateMetaTagName('msapplication-TileColor', '#8B4513');
-    updateMetaTagName('application-name', 'ByDezin NYFW 2025');
+    updateMetaTagName('application-name', 'ByDezin Showroom NYFW S/S 2026');
 
     // Update page title
     document.title = title;
@@ -100,7 +105,7 @@ export const MetaTags = () => {
       const structuredData = {
         "@context": "https://schema.org",
         "@type": "Event",
-        "name": "ByDezin NYFW 2025",
+        "name": "ByDezin Showroom NYFW S/S 2026",
         "description": description,
         "startDate": "2025-09-13",
         "location": {
@@ -119,7 +124,7 @@ export const MetaTags = () => {
           "url": siteUrl,
           "logo": imageUrl
         },
-        "image": [imageUrl, heroImageUrl],
+        "image": [imageUrl],
         "offers": {
           "@type": "Offer",
           "availability": "https://schema.org/InStock",
@@ -140,18 +145,19 @@ export const MetaTags = () => {
 
     addStructuredData();
 
-    // Preload critical images for faster social sharing
-    const preloadImages = () => {
-      [imageUrl, heroImageUrl].forEach(url => {
+    // Preload critical image for faster social sharing
+    const preloadImage = () => {
+      const existingPreload = document.querySelector(`link[rel="preload"][href="${imageUrl}"]`);
+      if (!existingPreload) {
         const link = document.createElement('link');
         link.rel = 'preload';
         link.as = 'image';
-        link.href = url;
+        link.href = imageUrl;
         document.head.appendChild(link);
-      });
+      }
     };
 
-    preloadImages();
+    preloadImage();
 
   }, []);
 
