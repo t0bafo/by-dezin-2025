@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/Button';
@@ -73,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-bone shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 mobile:px-6 h-16 mobile:h-20 tablet:h-20 desktop:h-20 flex items-center justify-between">
-        {/* Logo - Improved mobile sizing and touch target */}
+        {/* Logo - Increased mobile sizes */}
         <div className="flex-shrink-0">
           <a 
             href="#hero"
@@ -86,7 +85,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
             <img 
               src="/lovable-uploads/e5ef0beb-96ac-45b6-821e-b91b2b2065bd.png" 
               alt="ByDezin" 
-              className="h-10 mobile:h-12 tablet:h-14 desktop:h-14 w-auto"
+              className="h-12 mobile:h-14 tablet:h-14 desktop:h-14 w-auto"
             />
           </a>
         </div>
