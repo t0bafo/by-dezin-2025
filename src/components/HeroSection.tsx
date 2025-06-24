@@ -28,6 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [showRSVPModal, setShowRSVPModal] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const { shouldShowRSVP, hideAutoRSVP } = useAutoLoadRSVP();
 
   // Auto-show Brand Application modal
@@ -63,14 +64,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     setVideoLoaded(true);
   };
 
+  const handleVideoCanPlay = () => {
+    console.log('Video can start playing');
+    setVideoReady(true);
+  };
+
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error('Video failed to load:', e);
     console.error('Video src:', videoSrc);
     setVideoError(true);
-  };
-
-  const handleVideoCanPlay = () => {
-    console.log('Video can start playing');
   };
 
   console.log('HeroSection rendering with videoSrc:', videoSrc);
@@ -92,7 +94,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
+            poster="/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png"
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
@@ -100,32 +103,57 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Main video - Clean on mobile, centered on desktop */}
         <video
-          className="absolute inset-0 w-full h-full object-cover md:object-contain"
+          className={`absolute inset-0 w-full h-full object-cover md:object-contain transition-opacity duration-700 ease-out ${
+            videoReady ? 'opacity-100' : 'opacity-0'
+          }`}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
+          loading="eager"
+          poster="/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png"
           onLoadedData={handleVideoLoad}
-          onError={handleVideoError}
           onCanPlay={handleVideoCanPlay}
+          onError={handleVideoError}
           controls={false}
         >
           <source src={videoSrc} type="video/mp4" />
-          <div className="absolute inset-0 bg-black" />
         </video>
+
+        {/* Poster Image Fallback - Shows immediately while video loads */}
+        {!videoReady && !videoError && (
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center md:bg-contain md:bg-no-repeat animate-fade-in"
+            style={{ 
+              backgroundImage: 'url(/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png)',
+              backgroundPosition: 'center center'
+            }}
+          />
+        )}
       </div>
 
-      {/* Error and Loading States */}
+      {/* Error State */}
       {videoError && (
         <div className="absolute inset-0 bg-black flex items-center justify-center z-20">
-          <p className="text-white text-center px-4">Video unavailable</p>
+          <div className="text-center text-white px-4">
+            <div 
+              className="w-full h-64 bg-cover bg-center mb-4 rounded-lg opacity-50"
+              style={{ backgroundImage: 'url(/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png)' }}
+            />
+            <p className="text-cream text-sm opacity-75">Video temporarily unavailable</p>
+          </div>
         </div>
       )}
 
-      {!videoLoaded && !videoError && (
-        <div className="absolute inset-0 bg-black animate-pulse flex items-center justify-center z-20">
-          <p className="text-white">Loading...</p>
+      {/* Elegant Loading State - Only shows briefly during initial load */}
+      {!videoReady && !videoError && (
+        <div className="absolute inset-0 flex items-center justify-center z-15">
+          <div className="flex flex-col items-center space-y-4">
+            {/* Subtle loading spinner with ByDezin aesthetic */}
+            <div className="w-8 h-8 border-2 border-gold/30 border-t-gold rounded-full animate-spin"></div>
+            <div className="text-cream text-sm opacity-60 font-light">Preparing experience...</div>
+          </div>
         </div>
       )}
 
@@ -135,7 +163,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Hero Content */}
       <div className="relative z-20 min-h-[100dvh] flex items-center justify-center px-4 py-20">
         <div className="w-full max-w-4xl mx-auto">
-          <div className="text-center text-white">
+          <div className="text-center text-white animate-fade-in">
             {/* Main Headline - Improved mobile sizing */}
             <h1 className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-bold font-playfair tracking-tight drop-shadow-2xl">
               <span className="text-gold">ByDezin</span>{' '}
@@ -161,7 +189,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 variant="primary" 
                 size="lg"
                 onClick={handleBrandApplicationClick}
-                className="px-10 py-4 text-lg font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg shadow-xl min-h-[56px] min-w-[200px]"
+                className="px-10 py-4 text-lg font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg shadow-xl min-h-[56px] min-w-[200px] transform hover:scale-105 transition-all duration-200"
               >
                 {primaryCta}
               </Button>
