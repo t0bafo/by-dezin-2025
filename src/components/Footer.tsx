@@ -100,7 +100,7 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
             {/* Main Footer Content */}
             <div>
               {/* Logo */}
-              <div className="mb-6">
+              <div className="mb-3">
                 <img 
                   src="/lovable-uploads/f4048747-a829-4025-805c-7445cbcb2471.png" 
                   alt="ByDezin" 
@@ -108,7 +108,7 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
                 />
               </div>
 
-              {/* Tagline with hyperlinks */}
+              {/* Tagline with hyperlinks - moved closer to logo */}
               <BodyS className="text-cream mb-8 opacity-80 font-inter">
                 Powered by{' '}
                 <a 
