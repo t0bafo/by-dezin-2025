@@ -75,15 +75,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   console.log('HeroSection rendering with videoSrc:', videoSrc);
 
   return (
-    <section className="relative min-h-screen mobile:min-h-[100dvh] w-full overflow-hidden">
-      {/* Simplified Video Background */}
+    <section className="relative min-h-screen w-full overflow-hidden">
+      {/* Video Background - Clean mobile, enhanced desktop */}
       <div className="absolute inset-0">
-        {/* Mobile: Simple single video */}
-        <div className="mobile:hidden absolute inset-0">
-          {/* Desktop: Enhanced background with gradients */}
+        {/* Desktop Only: Enhanced background with gradients and blur */}
+        <div className="hidden md:block absolute inset-0">
+          {/* Side gradients for desktop */}
           <div className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
           <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-black via-black/80 to-transparent z-10" />
           
+          {/* Blurred background video for desktop */}
           <video
             className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-30"
             autoPlay
@@ -96,7 +97,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </video>
         </div>
 
-        {/* Main video - simplified mobile handling */}
+        {/* Main video - responsive handling */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
@@ -114,7 +115,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </video>
       </div>
 
-      {/* Error and Loading States - Simplified */}
+      {/* Error and Loading States */}
       {videoError && (
         <div className="absolute inset-0 bg-black flex items-center justify-center z-20">
           <p className="text-white text-center px-4">Unable to load video</p>
@@ -127,40 +128,40 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       )}
 
-      {/* Enhanced Dark Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 mobile:bg-opacity-60 z-10" />
+      {/* Dark Overlay - lighter on mobile, heavier on desktop */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 md:bg-opacity-50 z-10" />
 
-      {/* Hero Content - Improved mobile spacing and hierarchy */}
-      <div className="relative z-20 min-h-screen mobile:min-h-[100dvh] flex items-center justify-center px-4 py-20 mobile:py-24">
+      {/* Hero Content */}
+      <div className="relative z-20 min-h-screen flex items-center justify-center px-6 py-24">
         <div className="w-full max-w-4xl mx-auto">
           <div className="text-center text-white animate-fade-in">
-            {/* Main Headline - Better mobile scaling */}
-            <h1 className="mb-4 mobile:mb-6 tablet:mb-8 text-2xl mobile:text-4xl tablet:text-5xl desktop:text-6xl leading-tight font-bold font-playfair tracking-tight drop-shadow-lg">
+            {/* Main Headline */}
+            <h1 className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-bold font-playfair tracking-tight drop-shadow-lg">
               <span className="text-gold">ByDezin</span>{' '}
               <span className="text-gold">Returns to</span>{' '}
               <span className="text-gold">NYFW</span>
             </h1>
 
-            {/* Description - Better mobile readability */}
-            <div className="max-w-[600px] mx-auto mb-6 mobile:mb-8 tablet:mb-10">
-              <BodyM className="text-cream leading-relaxed opacity-95 text-sm mobile:text-base tablet:text-lg drop-shadow-md">
+            {/* Description */}
+            <div className="max-w-[600px] mx-auto mb-8">
+              <BodyM className="text-cream leading-relaxed opacity-95 text-base md:text-lg drop-shadow-md">
                 An invite-only fashion showroom experience, back in the city where it started.
               </BodyM>
             </div>
 
             {/* Event Details */}
-            <BodyM className="text-cream mb-8 mobile:mb-10 tablet:mb-12 text-sm mobile:text-base tablet:text-lg opacity-90 drop-shadow-md">
+            <BodyM className="text-cream mb-10 text-base md:text-lg opacity-90 drop-shadow-md">
               {eventDetails}
             </BodyM>
 
-            {/* CTA Buttons - Improved mobile layout */}
-            <div className="flex flex-col mobile:flex-row mobile:justify-center items-center gap-4 mobile:gap-6">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row sm:justify-center items-center gap-4 sm:gap-6">
               {/* Primary CTA Button */}
               <Button 
                 variant="primary" 
                 size="md"
                 onClick={handleBrandApplicationClick}
-                className="w-full mobile:w-auto px-8 py-4 text-base mobile:text-lg font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg shadow-lg min-h-[48px]"
+                className="w-full sm:w-auto px-8 py-4 text-lg font-semibold bg-moody-red text-bone hover:bg-opacity-90 border-moody-red rounded-lg shadow-lg min-h-[56px]"
               >
                 {primaryCta}
               </Button>
@@ -170,7 +171,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 variant="secondary" 
                 size="md"
                 onClick={handleRSVPClick}
-                className="w-full mobile:w-auto px-8 py-4 text-base mobile:text-lg font-medium bg-transparent text-cream border border-cream hover:bg-cream hover:text-black transition-all duration-200 rounded-lg shadow-lg min-h-[48px]"
+                className="w-full sm:w-auto px-8 py-4 text-lg font-medium bg-transparent text-cream border-2 border-cream hover:bg-cream hover:text-black transition-all duration-200 rounded-lg shadow-lg min-h-[56px]"
               >
                 Get Early Access
               </Button>
