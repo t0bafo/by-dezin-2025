@@ -12,6 +12,7 @@ import ExperienceHighlights from '@/components/ExperienceHighlights';
 import { CollaborateSection } from '@/components/CollaborateSection';
 import { Footer } from '@/components/Footer';
 import { MetaTags } from '@/components/MetaTags';
+import { ScriptDivider } from '@/components/ScriptDivider';
 
 const Index = () => {
   const [showBrandApplicationModal, setShowBrandApplicationModal] = useState(false);
@@ -32,22 +33,37 @@ const Index = () => {
         <Header onBrandApplicationClick={handleBrandApplicationClick} />
         
         {/* Main content with top padding to account for larger sticky header */}
-        <main className="pt-24 mobile:pt-28 tablet:pt-32">
+        <main className="pt-32 mobile:pt-36 tablet:pt-40">
           <section id="hero">
             <HeroSection onBrandApplicationClick={handleBrandApplicationClick} />
           </section>
           
+          {/* Script divider between Hero and Gallery */}
+          <ScriptDivider text="✦" />
+          
           {/* Gallery Section */}
           <Gallery />
+          
+          {/* Script divider between Gallery and Experience */}
+          <ScriptDivider text="◆" />
           
           {/* Experience Highlights Section */}
           <ExperienceHighlights />
           
+          {/* Script divider with flourish */}
+          <ScriptDivider text="♦" />
+          
           {/* Featured Alumni Section */}
           <FeaturedAlumni onApplyClick={handleApplyClick} />
           
+          {/* Script divider */}
+          <ScriptDivider text="✧" />
+          
           {/* Vision 2025 Section */}
           <Vision2025 onBrandApplicationClick={handleBrandApplicationClick} />
+          
+          {/* Script divider */}
+          <ScriptDivider text="◇" />
           
           {/* Collaborate Section */}
           <CollaborateSection onPartnerClick={() => setShowPartnerModal(true)} />

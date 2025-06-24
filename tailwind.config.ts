@@ -81,6 +81,7 @@ export default {
 			fontFamily: {
 				'eb-garamond': ['EB Garamond', 'serif'],
 				'inter': ['Inter', 'sans-serif'],
+				'allura': ['Allura', 'cursive'],
 			},
 			spacing: {
 				'gutter': '24px',

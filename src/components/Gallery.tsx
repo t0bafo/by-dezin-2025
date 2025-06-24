@@ -57,6 +57,13 @@ const Gallery: React.FC = () => {
             <BodyM className="text-black">
               From SoHo to Houston to Lagos, we celebrated bold new voices. And we're just getting started.
             </BodyM>
+            
+            {/* Script accent for ByDezin 2024 */}
+            <div className="mt-4">
+              <span className="font-allura text-2xl mobile:text-3xl text-moody-red opacity-80">
+                ByDezin 2024
+              </span>
+            </div>
           </div>
           
           <BodyS className="text-black uppercase tracking-wider opacity-70">

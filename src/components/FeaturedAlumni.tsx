@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { HeadingL, BodyM } from '@/components/Typography';
 import { ChevronDown, ExternalLink } from 'lucide-react';
@@ -114,6 +115,13 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
             <BodyM className="text-black">
               Last season, these fresh voices made their ByDezin debut, each one shaping the future of style in their city and beyond.
             </BodyM>
+            
+            {/* Script accent quote */}
+            <div className="mt-6">
+              <span className="font-allura text-xl mobile:text-2xl text-gold italic">
+                "Where emerging meets established"
+              </span>
+            </div>
           </div>
         </div>
 

@@ -12,11 +12,11 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onBrandApplicationClick 
     <section id="vision" className="bg-cream py-20 mobile:py-24 tablet:py-28 desktop:py-32">
       <div className="max-w-7xl mx-auto px-6 mobile:px-8">
         <div className="text-center animate-fade-in">
-          {/* Elegant Badge */}
+          {/* Script accent for 2025 Vision */}
           <div className="inline-flex items-center justify-center mb-8">
-            <BodyS className="text-black uppercase tracking-wide px-6 py-3 border border-black border-opacity-20 rounded-full bg-bone bg-opacity-50 font-medium text-xs letter-spacing-[0.1em]">
+            <span className="font-allura text-3xl mobile:text-4xl text-moody-red">
               2025 Vision
-            </BodyS>
+            </span>
           </div>
           
           {/* Headline */}
