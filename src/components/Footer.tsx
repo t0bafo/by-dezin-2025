@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
               </div>
 
               {/* Tagline with hyperlinks - moved closer to logo */}
-              <BodyS className="text-cream mb-8 opacity-80 font-inter">
+              <BodyS className="text-cream mb-8 opacity-80 font-montserrat">
                 Powered by{' '}
                 <a 
                   href="https://apollowrldx.com" 

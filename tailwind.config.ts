@@ -79,9 +79,9 @@ export default {
 				}
 			},
 			fontFamily: {
-				'eb-garamond': ['EB Garamond', 'serif'],
-				'inter': ['Inter', 'sans-serif'],
-				'allura': ['Allura', 'cursive'],
+				'playfair': ['Playfair Display', 'serif'],
+				'montserrat': ['Montserrat', 'sans-serif'],
+				'dancing-script': ['Dancing Script', 'cursive'],
 			},
 			spacing: {
 				'gutter': '24px',

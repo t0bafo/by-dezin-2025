@@ -116,9 +116,9 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
               Last season, these fresh voices made their ByDezin debut, each one shaping the future of style in their city and beyond.
             </BodyM>
             
-            {/* Script accent quote */}
+            {/* Script accent quote - updated font */}
             <div className="mt-6">
-              <span className="font-allura text-xl mobile:text-2xl text-gold italic">
+              <span className="font-dancing-script text-xl mobile:text-2xl text-gold font-medium italic">
                 "Where emerging meets established"
               </span>
             </div>

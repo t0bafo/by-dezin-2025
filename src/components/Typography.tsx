@@ -15,7 +15,7 @@ export const HeadingXL: React.FC<TypographyProps> = ({
 }) => {
   return (
     <Component className={cn(
-      "font-eb-garamond text-5xl mobile:text-6xl tablet:text-7xl desktop:text-8xl font-semibold leading-tight tracking-tight text-black",
+      "font-playfair text-5xl mobile:text-6xl tablet:text-7xl desktop:text-8xl font-semibold leading-tight tracking-tight text-black",
       className
     )}>
       {children}
@@ -30,7 +30,7 @@ export const HeadingL: React.FC<TypographyProps> = ({
 }) => {
   return (
     <Component className={cn(
-      "font-eb-garamond text-3xl mobile:text-4xl tablet:text-5xl font-semibold leading-tight tracking-tight text-black",
+      "font-playfair text-3xl mobile:text-4xl tablet:text-5xl font-semibold leading-tight tracking-tight text-black",
       className
     )}>
       {children}
@@ -45,7 +45,7 @@ export const HeadingM: React.FC<TypographyProps> = ({
 }) => {
   return (
     <Component className={cn(
-      "font-eb-garamond text-xl mobile:text-2xl tablet:text-3xl font-medium leading-tight tracking-tight text-black",
+      "font-playfair text-xl mobile:text-2xl tablet:text-3xl font-medium leading-tight tracking-tight text-black",
       className
     )}>
       {children}
@@ -60,7 +60,7 @@ export const BodyM: React.FC<TypographyProps> = ({
 }) => {
   return (
     <Component className={cn(
-      "font-inter text-base mobile:text-lg leading-relaxed text-black",
+      "font-montserrat text-base mobile:text-lg leading-relaxed text-black",
       className
     )}>
       {children}
@@ -75,7 +75,7 @@ export const BodyS: React.FC<TypographyProps> = ({
 }) => {
   return (
     <Component className={cn(
-      "font-inter text-sm mobile:text-base leading-relaxed text-black",
+      "font-montserrat text-sm mobile:text-base leading-relaxed text-black",
       className
     )}>
       {children}

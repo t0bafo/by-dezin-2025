@@ -103,7 +103,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
                   handleMenuClick(item.href);
                 }}
                 className={cn(
-                  "font-inter font-medium transition-all duration-200 relative",
+                  "font-montserrat font-medium transition-all duration-200 relative",
                   "hover:text-moody-red",
                   "after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0",
                   "after:bg-moody-red after:transform after:scale-x-0 after:origin-right after:transition-transform after:duration-300",
@@ -158,7 +158,7 @@ export const Header: React.FC<HeaderProps> = ({ onBrandApplicationClick }) => {
                   handleMenuClick(item.href);
                 }}
                 className={cn(
-                  "block font-inter font-medium py-2 transition-colors duration-200",
+                  "block font-montserrat font-medium py-2 transition-colors duration-200",
                   activeSection === item.href.replace('#', '') 
                     ? "text-moody-red" 
                     : "text-black hover:text-moody-red"

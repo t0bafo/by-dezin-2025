@@ -58,9 +58,9 @@ const Gallery: React.FC = () => {
               From SoHo to Houston to Lagos, we celebrated bold new voices. And we're just getting started.
             </BodyM>
             
-            {/* Script accent for ByDezin 2024 */}
+            {/* Script accent for ByDezin 2024 - updated font */}
             <div className="mt-4">
-              <span className="font-allura text-2xl mobile:text-3xl text-moody-red opacity-80">
+              <span className="font-dancing-script text-2xl mobile:text-3xl text-moody-red opacity-80 font-medium">
                 ByDezin 2024
               </span>
             </div>

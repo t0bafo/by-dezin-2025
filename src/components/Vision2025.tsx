@@ -12,9 +12,9 @@ export const Vision2025: React.FC<Vision2025Props> = ({ onBrandApplicationClick 
     <section id="vision" className="bg-cream py-20 mobile:py-24 tablet:py-28 desktop:py-32">
       <div className="max-w-7xl mx-auto px-6 mobile:px-8">
         <div className="text-center animate-fade-in">
-          {/* Script accent for 2025 Vision */}
+          {/* Script accent for 2025 Vision - updated font */}
           <div className="inline-flex items-center justify-center mb-8">
-            <span className="font-allura text-3xl mobile:text-4xl text-moody-red">
+            <span className="font-dancing-script text-3xl mobile:text-4xl text-moody-red font-medium">
               2025 Vision
             </span>
           </div>
