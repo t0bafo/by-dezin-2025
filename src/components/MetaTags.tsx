@@ -27,7 +27,7 @@ export const MetaTags = () => {
     // Updated URLs and content
     const siteUrl = 'https://bydezin.apollowrldx.com/';
     const baseUrl = 'https://bydezin.apollowrldx.com';
-    const imageUrl = `${baseUrl}/assets/og-bydezin-nyfw-ss26.jpg`;
+    const imageUrl = `${baseUrl}/lovable-uploads/a65f5394-4b74-4e2e-9a74-e5d7c276a957.png`;
 
     // Updated social media optimized content
     const title = 'ByDezin Showroom NYFW S/S 2026 — Showcase Your Brand';
