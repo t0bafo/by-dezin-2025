@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HeadingL, BodyM } from '@/components/Typography';
 import { ChevronDown, ExternalLink } from 'lucide-react';
@@ -84,7 +83,7 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
     {
       name: "FMLIA",
       location: "New York",
-      logoSrc: "/lovable-uploads/2aaa3923-2db7-43f8-b223-731056768957.png",
+      logoSrc: "/lovable-uploads/ba4ee34b-527e-441c-b483-33f7a5e52dde.png",
       link: "https://fmilia.com/"
     },
     {
