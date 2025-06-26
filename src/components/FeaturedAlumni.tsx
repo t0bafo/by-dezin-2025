@@ -84,7 +84,7 @@ export const FeaturedAlumni: React.FC<FeaturedAlumniProps> = ({ onApplyClick }) 
     {
       name: "FMLIA",
       location: "New York",
-      logoSrc: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop",
+      logoSrc: "/lovable-uploads/2aaa3923-2db7-43f8-b223-731056768957.png",
       link: "https://fmilia.com/"
     },
     {
