@@ -23,19 +23,20 @@ export const BrandApplicationModal: React.FC<BrandApplicationModalProps> = ({ is
     collectionSnapshot: '',
     signUpForUpdates: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Close modal on ESC key
+  // Close modal on ESC key (but not during submission)
   React.useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (e.key === 'Escape' && isOpen && !isSubmitting) {
         onClose();
       }
     };
 
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, isSubmitting]);
 
   // Focus management
   React.useEffect(() => {
@@ -68,26 +69,83 @@ export const BrandApplicationModal: React.FC<BrandApplicationModalProps> = ({ is
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Brand application submitted:', formData);
-    toast({
-      title: "Application Submitted!",
-      description: "Thank you for your interest. Our team will review your application and be in touch soon.",
-    });
-    onClose();
-    setFormData({
-      fullName: '',
-      email: '',
-      brandName: '',
-      website: '',
-      collectionSnapshot: '',
-      signUpForUpdates: false
-    });
+    setIsSubmitting(true);
+    
+    // Transform form data to match API expectations
+    const apiData = {
+      full_name: formData.fullName,
+      email: formData.email,
+      brand_name: formData.brandName,
+      website_instagram: formData.website,
+      collection_snapshot: formData.collectionSnapshot,
+      signup_for_updates: formData.signUpForUpdates
+    };
+
+    try {
+      const response = await fetch('https://v0-vercel-api-endpoint-taupe.vercel.app/api/brand-application', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(apiData)
+      });
+
+      if (response.ok) {
+        // Success
+        toast({
+          title: "Your brand is in! We'll be in touch soon ✨",
+          description: "Thanks for applying to showcase at ByDezin NYFW 2025.",
+        });
+        
+        // Reset form and close modal
+        setFormData({
+          fullName: '',
+          email: '',
+          brandName: '',
+          website: '',
+          collectionSnapshot: '',
+          signUpForUpdates: false
+        });
+        onClose();
+      } else if (response.status === 400) {
+        // Validation error
+        const errorData = await response.json().catch(() => ({}));
+        toast({
+          title: "Looks like we're missing some info",
+          description: errorData.message || "Please check all required fields and try again.",
+          variant: "destructive"
+        });
+      } else if (response.status >= 500) {
+        // Server error
+        toast({
+          title: "Something went wrong on our end. Give it another shot!",
+          description: "Our servers are having a moment. Please try again.",
+          variant: "destructive"
+        });
+      } else {
+        // Other errors
+        toast({
+          title: "Something went wrong on our end. Give it another shot!",
+          description: "Please try submitting your application again.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      // Network error
+      toast({
+        title: "Connection hiccup! Check your internet and try again.",
+        description: "We couldn't reach our servers. Please check your connection.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
+    if (e.target === e.currentTarget && !isSubmitting) {
       onClose();
     }
   };
@@ -210,8 +268,14 @@ export const BrandApplicationModal: React.FC<BrandApplicationModalProps> = ({ is
           </div>
 
           <div className="flex flex-col gap-3 pt-4">
-            <Button type="submit" variant="primary" size="lg" className="w-full font-semibold">
-              Send
+            <Button 
+              type="submit" 
+              variant="primary" 
+              size="lg" 
+              className="w-full font-semibold"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Getting your brand ready..." : "Send"}
             </Button>
             <Button
               type="button"
@@ -219,6 +283,7 @@ export const BrandApplicationModal: React.FC<BrandApplicationModalProps> = ({ is
               size="lg"
               onClick={onClose}
               className="w-full font-medium"
+              disabled={isSubmitting}
             >
               Cancel
             </Button>
