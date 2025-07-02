@@ -95,8 +95,9 @@ export const BrandApplicationModal: React.FC<BrandApplicationModalProps> = ({ is
       if (response.ok) {
         // Success
         toast({
-          title: "Your brand is in! We'll be in touch soon ✨",
-          description: "Thanks for applying to showcase at ByDezin NYFW 2025.",
+          title: "Application received ✨",
+          description: "Your brand is now part of the ByDezin story. We'll review and be in touch soon.",
+          duration: 8000,
         });
         
         // Reset form and close modal
