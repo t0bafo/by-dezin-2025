@@ -12,16 +12,51 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Email signup:', email);
-    toast({
-      title: "Subscribed!",
-      description: "You'll receive updates and invites from ByDezin.",
-    });
-    setEmail('');
+    if (!email.trim()) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://v0-vercel-api-endpoint-taupe.vercel.app/api/forward-to-cymbal', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+          first_name: ''
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "You're in! ✨",
+          description: "Thanks for subscribing to ByDezin updates.",
+          duration: 5000,
+        });
+        setEmail('');
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        toast({
+          title: "Oops!",
+          description: errorData.message || "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Connection Error",
+        description: "Please check your internet connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
@@ -85,14 +120,16 @@ export const Footer: React.FC<FooterProps> = ({ onBrandApplicationClick }) => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
                   required
-                  className="flex-1 h-12 px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20"
+                  disabled={isSubmitting}
+                  className="flex-1 h-12 px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:border-gold focus:ring-2 focus:ring-gold focus:ring-opacity-20 disabled:opacity-50"
                 />
                 <Button
                   type="submit"
                   variant="primary"
-                  className="h-12 px-6 bg-gold text-black hover:bg-opacity-90 font-semibold rounded-lg"
+                  disabled={isSubmitting}
+                  className="h-12 px-6 bg-gold text-black hover:bg-opacity-90 font-semibold rounded-lg disabled:opacity-50"
                 >
-                  Subscribe
+                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
                 </Button>
               </form>
             </div>
