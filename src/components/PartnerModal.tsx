@@ -21,19 +21,20 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
     website: '',
     partnershipIdea: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Close modal on ESC key
+  // Close modal on ESC key (but not during submission)
   React.useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (e.key === 'Escape' && isOpen && !isSubmitting) {
         onClose();
       }
     };
 
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, isSubmitting]);
 
   // Focus management
   React.useEffect(() => {
@@ -59,25 +60,82 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Partnership inquiry submitted:', formData);
-    toast({
-      title: "Partnership Inquiry Sent",
-      description: "Thank you for your interest! Our partnership team will contact you within 24 hours.",
-    });
-    onClose();
-    setFormData({
-      fullName: '',
-      email: '',
-      organization: '',
-      website: '',
-      partnershipIdea: ''
-    });
+    setIsSubmitting(true);
+    
+    // Transform form data to match API expectations
+    const apiData = {
+      full_name: formData.fullName,
+      email: formData.email,
+      organization: formData.organization,
+      website: formData.website,
+      partnership_idea: formData.partnershipIdea
+    };
+
+    try {
+      const response = await fetch('https://v0-vercel-api-endpoint-taupe.vercel.app/api/partner-application', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(apiData)
+      });
+
+      if (response.ok) {
+        // Success
+        toast({
+          title: "Thank you for your interest ✨",
+          description: "We're excited to explore this partnership. We'll be in touch soon.",
+          duration: 8000,
+        });
+        
+        // Reset form and close modal
+        setFormData({
+          fullName: '',
+          email: '',
+          organization: '',
+          website: '',
+          partnershipIdea: ''
+        });
+        onClose();
+      } else if (response.status === 400) {
+        // Validation error
+        const errorData = await response.json().catch(() => ({}));
+        toast({
+          title: "Looks like we're missing some info",
+          description: errorData.message || "Please check all required fields and try again.",
+          variant: "destructive"
+        });
+      } else if (response.status >= 500) {
+        // Server error
+        toast({
+          title: "Something went wrong on our end. Give it another shot!",
+          description: "Our servers are having a moment. Please try again.",
+          variant: "destructive"
+        });
+      } else {
+        // Other errors
+        toast({
+          title: "Something went wrong on our end. Give it another shot!",
+          description: "Please try submitting your partnership inquiry again.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      // Network error
+      toast({
+        title: "Connection hiccup! Check your internet and try again.",
+        description: "We couldn't reach our servers. Please check your connection.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
+    if (e.target === e.currentTarget && !isSubmitting) {
       onClose();
     }
   };
@@ -187,8 +245,14 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
           </div>
 
           <div className="flex flex-col gap-3 pt-4">
-            <Button type="submit" variant="primary" size="lg" className="w-full font-semibold">
-              Let's Collaborate
+            <Button 
+              type="submit" 
+              variant="primary" 
+              size="lg" 
+              className="w-full font-semibold"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Connecting..." : "Let's Collaborate"}
             </Button>
             <Button
               type="button"
@@ -196,6 +260,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               size="lg"
               onClick={onClose}
               className="w-full font-medium"
+              disabled={isSubmitting}
             >
               Cancel
             </Button>
